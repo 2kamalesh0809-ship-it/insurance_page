@@ -2142,7 +2142,7 @@ header.active .main-nav {
 }
 
 .disease-list li::before {
-    content: "â€¢";
+    content: "\2022";
     position: absolute;
     left: 0;
     color: #ef4444;
