@@ -219,7 +219,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!popupShown) {
             setTimeout(() => {
                 calcModal.classList.add('active');
-                document.body.style.overflow = "hidden";
                 popupShown = true;
             }, 10000); // 10 seconds
         }
@@ -230,7 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
             checkPremiumBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 calcModal.classList.add('active');
-                document.body.style.overflow = "hidden";
             });
         }
 
@@ -238,7 +236,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (closeCalc) {
             closeCalc.addEventListener('click', () => {
                 calcModal.classList.remove('active');
-                document.body.style.overflow = "auto";
             });
         }
 
@@ -246,7 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
         calcModal.addEventListener('click', (e) => {
             if (e.target === calcModal) {
                 calcModal.classList.remove('active');
-                document.body.style.overflow = "auto";
             }
         });
     }
