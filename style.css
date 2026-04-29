@@ -2615,8 +2615,14 @@ img {
         margin-bottom: 40px;
     }
 
-    .hero h1 {
-        font-size: 2.2rem;
+    .hero h1,
+    .life-hero h1,
+    .health-hero h1,
+    .travel-hero h1,
+    .savings-hero h1,
+    .motor-hero h1,
+    .group-hero h1 {
+        font-size: 2.2rem !important;
     }
 
     .gradient-text {
