@@ -1136,15 +1136,16 @@ header.active .main-nav {
 .benefits-simple-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px 4rem;
-    margin-top: 3rem;
+    gap: 12px;
+    margin-top: 1.5rem;
 }
 
 .benefit-item {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding-bottom: 24px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
@@ -1154,19 +1155,19 @@ header.active .main-nav {
 
 .benefit-item i {
     color: #E85D04;
-    font-size: 1.25rem;
-    margin-top: 3px;
+    font-size: 16px;
+    margin-top: 0;
 }
 
 .benefit-text h4 {
-    margin-bottom: 6px;
-    font-size: 1.2rem;
+    margin-bottom: 2px;
+    font-size: 1.1rem;
     font-weight: 700;
     color: #0c3666;
 }
 
 .benefit-text p {
-    font-size: 1rem;
+    font-size: 14px;
     color: #64748b;
     line-height: 1.4;
 }
@@ -1174,7 +1175,10 @@ header.active .main-nav {
 @media (max-width: 768px) {
     .benefits-simple-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 10px;
+    }
+    .benefit-item {
+        padding: 8px 12px;
     }
     
     .benefit-item:nth-last-child(2) {
