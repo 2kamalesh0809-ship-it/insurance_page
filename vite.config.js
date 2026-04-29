@@ -1,17 +1,18 @@
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
+import fs from 'fs'
+
+const input = {}
+const files = fs.readdirSync(__dirname).filter(f => f.endsWith('.html'))
+files.forEach(file => {
+    const name = file.replace('.html', '')
+    input[name] = resolve(__dirname, file)
+})
 
 export default defineConfig({
   build: {
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        plans: resolve(__dirname, 'plans.html'),
-        services: resolve(__dirname, 'services.html'),
-        claims: resolve(__dirname, 'claims.html'),
-        about: resolve(__dirname, 'about.html'),
-        contact: resolve(__dirname, 'contact.html'),
-      },
+      input: input
     },
   },
 })
