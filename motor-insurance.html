@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Insurance | SFS Insurance</title>
+    <meta name="description" content="Secure your vehicle with SFS Motor Insurance. Coverage for accident damage, theft, and third-party liabilities with instant policy issuance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .motor-hero {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 120px 0 80px;
+            overflow: hidden;
+        }
+
+        .hero-blur-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('premium_car_insurance_images/hero.png');
+            background-size: cover;
+            background-position: center;
+            filter: blur(6px);
+            transform: scale(1.1);
+            z-index: 1;
+        }
+
+        .motor-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+            z-index: 2;
+        }
+
+        .motor-hero .container {
+            position: relative;
+            z-index: 3;
+        }
+
+        /* Coverage Detail Grid */
+        .motor-coverage-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .m-coverage-card {
+            padding: 40px;
+            background: #fff;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+        }
+
+        .m-coverage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-color: #E85D04;
+        }
+
+        .m-coverage-card i {
+            font-size: 2.5rem;
+            color: #E85D04;
+            margin-bottom: 20px;
+        }
+
+        /* Why Motor List */
+        .why-motor-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 4rem;
+            margin-top: 4rem;
+        }
+
+        .why-motor-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .why-motor-row i {
+            color: #E85D04;
+            font-size: 1.3rem;
+            margin-top: 5px;
+        }
+
+        .motor-cta-banner {
+            background: #0c3666;
+            color: white;
+            padding: 70px;
+            border-radius: 30px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 992px) {
+            .motor-hero .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .motor-coverage-list, .why-motor-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="top-header">
+            <div class="container top-header-content">
+                <div class="top-header-left">
+                    <a href="tel:+916382560104"><i class="fas fa-phone-alt"></i> Call Back</a>
+                </div>
+                <div class="top-header-right">
+                    <span class="divider" style="margin: 0 15px; color: #ddd;"></span>
+                    <a href="glossary.html">Info Centre</a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="navbar-container">
+                <div class="logo-section"><a href="index.html" class="logo"><img src="images/sfs_logo.jpg" alt="SFS Logo"><span class="logo-white">SFS</span></a></div><button class="mobile-menu-btn" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-menu mega-menu-container">
+                    <li class="mobile-menu-header" style="display: none;">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;">
+                            <span class="logo-text" style="font-family: 'Playfair Display', serif; color: white;">SFS</span>
+                        </div>
+                    </li>
+                    <li><a href="life-insurance.html">Life / Term Insurance</a></li>
+                    <li><a href="health-insurance.html">Health Insurance</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    <li><a href="group-insurance.html">Group Insurance</a></li>
+                    <li><a href="savings-pension.html">Savings / Pension</a></li>
+                    <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                    <li><a href="index.html#offers">Offers</a></li>
+                    <li><a href="agency-recruitment.html">Agency Recruitment</a></li>
+                    <li class="mobile-menu-footer" style="display: none;">
+                        <div class="social-links" style="margin-top: 15px; justify-content: center;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="contact-info" style="margin-top: 15px; text-align: center; font-size: 11px; color: #eaeaea;">
+                            <span style="margin-right: 15px;"><i class="fas fa-phone-alt"></i> +91 63825 60104</span>
+                            <span><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="motor-hero">
+            <div class="hero-blur-bg"></div>
+            <div class="container hero-content">
+                <div class="hero-left">
+                    <span class="subtitle" style="color: #E85D04;">Ultimate Vehicle Protection</span>
+                    <h1 style="font-size: 3.5rem; line-height: 1.2;">Drive Safe with <br><span style="color: #E85D04;">Complete Protection</span></h1>
+                    <p style="font-size: 1.2rem; margin: 20px 0 30px; opacity: 0.9;">Secure your car or bike with 24/7 roadside assistance and cashless repairs.</p>
+                    <div class="hero-cta-wrapper">
+                        <a href="#quote" class="btn btn-secondary">Get Vehicle Quote</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="hero-form-card glass-card" id="quote" style="background: rgba(255,255,255,0.95);">
+                        <h3 style="color: #0c3666;">Vehicle Quote</h3>
+                        <p style="color: #64748b; margin-bottom: 20px;">Instant digital policy in 2 minutes</p>
+                        <form id="calculator-form" class="premium-form">
+                            <div class="form-group">
+                                <label>Vehicle Number</label>
+                                <input type="text" placeholder="Eg: MH 01 AB 1234" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group flex-1">
+                                    <label>Vehicle Make</label>
+                                    <input type="text" placeholder="Eg: Honda" required>
+                                </div>
+                                <div class="form-group flex-1">
+                                    <label>Model Year</label>
+                                    <input type="number" placeholder="2023" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
+                            </div>
+                            <button type="submit" class="btn" style="background: #E85D04; color: white;">Calculate Premium <i class="fas fa-car"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coverage Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Comprehensive Cover</span>
+                    <h2>Plan Inclusions</h2>
+                </div>
+                <div class="motor-coverage-list">
+                    <div class="m-coverage-card">
+                        <i class="fas fa-car-crash"></i>
+                        <h4>Accident Damage</h4>
+                        <p>Complete coverage for damages to your vehicle due to road accidents or natural calamities.</p>
+                    </div>
+                    <div class="m-coverage-card">
+                        <i class="fas fa-user-shield"></i>
+                        <h4>Third-party Cover</h4>
+                        <p>Mandatory protection against legal liabilities for third-party injury or property damage.</p>
+                    </div>
+                    <div class="m-coverage-card">
+                        <i class="fas fa-mask"></i>
+                        <h4>Theft Protection</h4>
+                        <p>Get the full IDV of your vehicle in case of unfortunate theft or total loss.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Motor Section -->
+        <section class="section-padding light-bg">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">The SFS Journey</span>
+                    <h2>Why Insure with Us?</h2>
+                </div>
+                <div class="why-motor-list">
+                    <div class="why-motor-row">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="why-motor-info">
+                            <h4>Instant Policy</h4>
+                            <p>No waiting. Get your digital policy document instantly on your email and WhatsApp.</p>
+                        </div>
+                    </div>
+                    <div class="why-motor-row">
+                        <i class="fas fa-bolt"></i>
+                        <div class="why-motor-info">
+                            <h4>Quick Claims</h4>
+                            <p>Cashless repairs at 8500+ network garages with AI-powered claim settlement.</p>
+                        </div>
+                    </div>
+                    <div class="why-motor-row">
+                        <i class="fas fa-tags"></i>
+                        <div class="why-motor-info">
+                            <h4>Affordable Premiums</h4>
+                            <p>Best-in-class coverage at prices that fit your budget with zero-depreciation add-ons.</p>
+                        </div>
+                    </div>
+                    <div class="why-motor-row">
+                        <i class="fas fa-tools"></i>
+                        <div class="why-motor-info">
+                            <h4>24/7 Roadside Assistance</h4>
+                            <p>Emergency towing, flat tire support, and battery jumpstart anywhere in India.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- custom cta -->
+                <div class="motor-cta-banner">
+                    <h2 style="color: white; margin-bottom: 15px;">Get vehicle insurance now</h2>
+                    <p style="opacity: 0.8; margin-bottom: 30px;">Protect your ride with India's fastest digital motor insurer.</p>
+                    <a href="https://wa.me/916382560104" target="_blank" class="btn btn-secondary" style="background: #25D366; border: none; padding: 18px 40px;"><i class="fab fa-whatsapp"></i> Buy Policy in 2 Mins</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer section-padding">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;"><span class="logo-text" style="font-family: 'Playfair Display', serif;">SFS</span>
+                        </div>
+                        <p>India's leading partner for automotive protection and road safety. Engineering the future of motor insurance.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html#features">Our Features</a></li>
+                            <li><a href="index.html#plans">Insurance Plans</a></li>
+                            <li><a href="index.html#why-us">Why Choose Us</a></li>
+                            <li><a href="index.html#faq">Help & FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Insurance</h4>
+                        <ul>
+                            <li><a href="health-insurance.html">Health Insurance</a></li>
+                            <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                            <li><a href="life-insurance.html">Life / Term</a></li>
+                            <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> +91 63825 60104</li>
+                            <li><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> 3/82 Pillayar Koil Street, Porur, Chennai 600056</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 SFS Insurance. All Rights Reserved. IRDAI Registration No. 123456</p>
+                    <div class="legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+

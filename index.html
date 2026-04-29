@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SFS Insurance | Premium Protection for Your Family</title>
+    <meta name="description"
+        content="Get the best health insurance plans with SFS. Fast claims, wide network, and premium coverage tailored for you.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@600&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="top-header">
+            <div class="container top-header-content">
+                <div class="top-header-left">
+                    <a href="tel:+916382560104"><i class="fas fa-phone-alt"></i> Call Back</a>
+                </div>
+                <div class="top-header-right">
+                    <span class="divider" style="margin: 0 15px; color: #ddd;"></span>
+                    <a href="glossary.html">Info Centre</a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="navbar-container">
+                <div class="logo-section"><a href="index.html" class="logo"><img src="images/sfs_logo.jpg" alt="SFS Logo"><span
+                            class="logo-white">SFS</span></a></div><button class="mobile-menu-btn"
+                    aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-menu mega-menu-container">
+                    <li class="mobile-menu-header" style="display: none;">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo"
+                                style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;">
+                            <span class="logo-text"
+                                style="font-family: 'Playfair Display', serif; color: white;">SFS</span>
+                        </div>
+                    </li>
+                    <li><a href="life-insurance.html">Life / Term Insurance</a></li>
+                    <li><a href="health-insurance.html">Health Insurance</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    <li><a href="group-insurance.html">Group Insurance</a></li>
+                    <li><a href="savings-pension.html">Savings / Pension</a></li>
+                    <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                    <li><a href="index.html#offers">Offers</a></li>
+                    <li><a href="agency-recruitment.html">Agency Recruitment</a></li>
+                    <li class="mobile-menu-footer" style="display: none;">
+                        <div class="social-links" style="margin-top: 15px; justify-content: center;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="contact-info"
+                            style="margin-top: 15px; text-align: center; font-size: 11px; color: #eaeaea;">
+                            <span style="margin-right: 15px;"><i class="fas fa-phone-alt"></i> +91 63825 60104</span>
+                            <span><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="announcement-strip">
+            <div class="marquee-container">
+                <div class="marquee-content">
+                    <span>Health insurance just got 18% cheaper â€“ <span class="highlight-promo">no GST
+                            applicable!</span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-bg-carousel">
+                <div class="carousel-slide" style="background-image: url('images/carousel1.jpg');"></div>
+                <div class="carousel-slide" style="background-image: url('images/carousel2.jpg');"></div>
+                <div class="carousel-slide" style="background-image: url('images/carousel3.jpg');"></div>
+                <div class="carousel-slide" style="background-image: url('images/carousel4.jpg');"></div>
+                <div class="carousel-slide" style="background-image: url('images/carousel5.jpg');"></div>
+                <div class="carousel-slide" style="background-image: url('images/carousel6.jpg');"></div>
+            </div>
+            <div class="container hero-content">
+                <div class="hero-left">
+                    <span class="subtitle">Secure Health</span>
+                    <h1>Protect Your Health. <br><span class="gradient-text">Secure Your Future.</span></h1>
+                    <p>Smart health insurance plans tailored for you and your family.</p>
+                    <div class="hero-cta-wrapper">
+                        <a href="#quote" class="btn btn-secondary">Check Your Premium</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="calculator-modal-wrapper" id="calcModal">
+                        <div class="calculator-modal-content">
+                            <span class="close-calc-modal" id="closeCalc">&times;</span>
+                            <div class="hero-form-card glass-card" id="quote">
+                                <h3>Get Your Instant Quote âš¡</h3>
+                                <p>Get your estimated premium in seconds</p>
+                                <form id="calculator-form" class="premium-form">
+                                    <div class="form-row">
+                                        <div class="form-group flex-1">
+                                            <label>Age</label>
+                                            <input type="number" id="age" placeholder="Eg: 30" required>
+                                        </div>
+                                        <div class="form-group flex-1">
+                                            <label>Gender</label>
+                                            <select id="gender" required>
+                                                <option value="" disabled selected>Select</option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                                <option value="other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>City</label>
+                                        <input type="text" id="city" placeholder="Enter your city" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Phone Number</label>
+                                        <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
+                                    </div>
+                                    <button type="submit" id="quoteBtn" class="btn btn-primary btn-block">Get Quote on WhatsApp <i class="fas fa-bolt"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 1.5 What is SFS Policy? -->
+        <section id="about-product" class="about-product section-padding">
+            <div class="container about-grid">
+                <div class="about-image-wrapper">
+                    <div class="about-card">
+                        <img src="./images/sfs_logo.jpg" alt="SFS Protection" class="about-img">
+                    </div>
+                </div>
+                <div class="about-content">
+                    <span class="subtitle">Policy Overview</span>
+                    <h2>What is SFS Policy?</h2>
+                    <p>With rising medical inflation, a single hospitalization can deplete years of savings. SFS
+                        Policy is designed to provide you with a robust financial safety net when you need it most. Our
+                        flagship plan offers comprehensive coverage for a wide range of medical expenses, including
+                        inpatient hospitalization, day-care procedures, and critical illness treatments.</p>
+                    <p>Beyond just hospital bills, we provide flexibility with pre-designed add-ons, unlimited doctor
+                        consultations, advanced diagnostic testing, and emergency ambulance services. At SFS, we believe
+                        in proactive wellness, ensuring your family health is secured without the burden of financial
+                        stress.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item"><i class="fas fa-check-circle"></i> Unlimited Doctor Consultations
+                        </div>
+                        <div class="highlight-item"><i class="fas fa-check-circle"></i> 100% Cashless at 8500+ Hospitals
+                        </div>
+                        <div class="highlight-item"><i class="fas fa-check-circle"></i> Diagnostics & Pharmacy Benefits
+                        </div>
+                        <div class="highlight-item"><i class="fas fa-check-circle"></i> Global Coverage Options</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2.5 Products & Services -->
+        <section id="services" class="services section-padding light-bg">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Our Services</span>
+                    <h2>Financial Solutions for <span class="gradient-text">Every Need</span></h2>
+                </div>
+                <div class="services-grid">
+                    <!-- Life / Term -->
+                    <div class="service-card"
+                        style="background-image: url('images/WhatsApp Image 2026-04-27 at 6.38.20 PM (1).jpeg');">
+                        <div class="service-card-content">
+                            <h3>Life / Term</h3>
+                            <a href="life-insurance.html" class="service-link">View Plans</a>
+                        </div>
+                    </div>
+
+                    <!-- Savings / Pension -->
+                    <div class="service-card"
+                        style="background-image: url('images/WhatsApp Image 2026-04-27 at 6.38.20 PM (2).jpeg');">
+                        <div class="service-card-content">
+                            <h3>Savings / Pension</h3>
+                            <a href="savings-pension.html" class="service-link">Calculate ROI</a>
+                        </div>
+                    </div>
+
+                    <!-- Health -->
+                    <div class="service-card"
+                        style="background-image: url('images/WhatsApp Image 2026-04-27 at 6.38.20 PM.jpeg');">
+                        <div class="service-card-content">
+                            <h3>Health</h3>
+                            <a href="health-insurance.html" class="service-link">Explore Health</a>
+                        </div>
+                    </div>
+
+                    <!-- Travel Insurance -->
+                    <div class="service-card"
+                        style="background-image: url('images/WhatsApp Image 2026-04-27 at 6.38.21 PM (1).jpeg');">
+                        <div class="service-card-content">
+                            <h3>Travel Insurance</h3>
+                            <a href="travel-insurance.html" class="service-link">Get Quote</a>
+                        </div>
+                    </div>
+
+                    <!-- Group Insurance -->
+                    <div class="service-card"
+                        style="background-image: url('images/WhatsApp Image 2026-04-27 at 6.38.21 PM (2).jpeg');">
+                        <div class="service-card-content">
+                            <h3>Group Insurance</h3>
+                            <a href="group-insurance.html" class="service-link">Enquire Now</a>
+                        </div>
+                    </div>
+
+                    <!-- Agency Recruitment -->
+                    <div class="service-card"
+                        style="background-image: url('images/WhatsApp Image 2026-04-27 at 6.38.21 PM.jpeg');">
+                        <div class="service-card-content">
+                            <h3>Agency Recruitment</h3>
+                            <a href="agency-recruitment.html" class="service-link">Join Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2.4 Exclusive Offers Section -->
+        <section id="offers" class="offers section-padding light-bg">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Special Discounts</span>
+                    <h2>Exclusive Offers for You</h2>
+                    <p>Save more on your health insurance with our special offers</p>
+                </div>
+
+                <div class="offers-grid">
+                    <!-- Offer 1 -->
+                    <div class="offer-card">
+                        <div class="offer-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Instant Purchase Offer</h3>
+                        <p>Get special discount on instant policy purchase</p>
+                        <a href="https://wa.me/916382560104?text=Hi%2C%20I%20need%20your%20Instant%20Purchase%20Offer"
+                            target="_blank" rel="noopener noreferrer" class="offer-cta">Claim Offer <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Offer 2 -->
+                    <div class="offer-card">
+                        <div class="offer-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h3>Insurance Signup Offer</h3>
+                        <p>Exclusive discount for new policy buyers</p>
+                        <a href="https://wa.me/916382560104?text=Hi%2C%20I%20am%20interested%20in%20Insurance%20Signup%20Offer"
+                            target="_blank" rel="noopener noreferrer" class="offer-cta">Get Started <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Offer 3 -->
+                    <div class="offer-card">
+                        <div class="offer-icon">
+                            <i class="fas fa-users-rays"></i>
+                        </div>
+                        <h3>Refer & Earn</h3>
+                        <p>Refer your friends and earn exciting discounts</p>
+                        <a href="https://wa.me/916382560104?text=Hi%2C%20I%20have%20referred%20someone%20and%20want%20to%20know%20more%20about%20referral%20benefits"
+                            target="_blank" rel="noopener noreferrer" class="offer-cta">Refer Now <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2.3 What's Included and What's Not? -->
+        <section id="policy-details" class="policy-details section-padding">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Policy Coverage</span>
+                    <h2>Whatâ€™s included and whatâ€™s not?</h2>
+                </div>
+
+                <div class="tabs-wrapper">
+                    <div class="tabs-header">
+                        <button class="tab-trigger active" data-target="inclusions-tab">
+                            <i class="fas fa-check-circle"></i> Inclusions
+                        </button>
+                        <button class="tab-trigger" data-target="exclusions-tab">
+                            <i class="fas fa-times-circle"></i> Exclusions
+                        </button>
+                    </div>
+
+                    <div class="tabs-body">
+                        <!-- Inclusions Tab -->
+                        <div class="tab-panel active" id="inclusions-tab">
+                            <div class="inclusions-grid">
+                                <div class="include-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>In-patient Hospitalization</span>
+                                </div>
+                                <div class="include-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Day Care Procedures</span>
+                                </div>
+                                <div class="include-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Road Ambulance Cover</span>
+                                </div>
+                                <div class="include-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Organ Donor Expenses</span>
+                                </div>
+                                <div class="include-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Modern Treatments</span>
+                                </div>
+                                <div class="include-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>AYUSH Hospitalization</span>
+                                </div>
+                                <div class="include-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Pre & Post Hospitalization</span>
+                                </div>
+                                <div class="include-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Domiciliary Care</span>
+                                </div>
+                                <div class="include-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>Daily Cash Allowance</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Exclusions Tab -->
+                        <div class="tab-panel" id="exclusions-tab">
+                            <div class="exclusions-content">
+                                <div class="exclusions-grid">
+                                    <div class="exclude-item">
+                                        <i class="fas fa-times"></i>
+                                        <p>Self-inflicted injuries or attempted suicide.</p>
+                                    </div>
+                                    <div class="exclude-item">
+                                        <i class="fas fa-times"></i>
+                                        <p>Injuries caused by war, nuclear weapons or radioactivity.</p>
+                                    </div>
+                                    <div class="exclude-item">
+                                        <i class="fas fa-times"></i>
+                                        <p>Treatment of obesity or cosmetic surgeries.</p>
+                                    </div>
+                                    <div class="exclude-item">
+                                        <i class="fas fa-times"></i>
+                                        <p>Non-medical expenses like gloves, nebulizers, etc.</p>
+                                    </div>
+                                </div>
+
+                                <div class="specified-disease-box">
+                                    <h4>Specified Disease Exclusions</h4>
+                                    <ul class="disease-list">
+                                        <li>Cataract and age-related eye ailments</li>
+                                        <li>Internal & external hernia</li>
+                                        <li>Hysterectomy for Menorrhagia or Fibromyoma</li>
+                                        <li>Osteoarthritis and Osteoporosis</li>
+                                    </ul>
+                                    <a href="#" class="read-more-link">Read more detailed exclusions <i
+                                            class="fas fa-external-link-alt"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reasons to Buy Section (ICICI Style) -->
+        <section id="reasons-to-buy" class="reasons-to-buy section-padding" style="background-color: #f7f7f7;">
+            <div class="container">
+                <div class="reasons-flex-container">
+                    <div class="reasons-left-panel">
+                        <span class="subtitle">Why SFS?</span>
+                        <h2>Top reasons to choose SFS Insurance</h2>
+                        <div class="reasons-grid-items">
+                            <div class="reasons-col">
+                                <div class="reason-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Hospitalisation & day care coverage</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Unlimited sum insured reset</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Cashless treatment across India</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Renewal discounts for healthy style</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Annual sum insured increase</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Lifetime claim benefit</span>
+                                </div>
+                            </div>
+                            <div class="reasons-col">
+                                <div class="reason-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>AYUSH treatment coverage</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Pre & post hospitalisation (180 days)</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Ambulance coverage</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Custom waiting periods</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>OPD services (optional)</span>
+                                </div>
+                                <div class="reason-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Worldwide coverage</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reasons-right-panel">
+                        <div class="illustration-soft-bg">
+                            <img src="images/ChatGPT Image Apr 21, 2026, 01_52_25 PM.png" alt="Wellness"
+                                class="floating-illustration">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Features Grid -->
+        <section id="features" class="features section-padding">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Why Choose Us</span>
+                    <h2>Comprehensive <span class="gradient-text">Benefits</span></h2>
+                </div>
+                <div class="benefits-simple-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="benefit-text">
+                            <h4>Cashless Hospitalization</h4>
+                            <p>Get treated at 8500+ network hospitals without paying a single rupee upfront.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="benefit-text">
+                            <h4>No Claim Bonus</h4>
+                            <p>Enjoy up to 50% increase in your sum insured for every claim-free year.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="benefit-text">
+                            <h4>OPD Coverage</h4>
+                            <p>Direct reimbursement for doctor consultations, pharmacy, and diagnostic tests.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="benefit-text">
+                            <h4>Maternity Benefits</h4>
+                            <p>Comprehensive cover for pregnancy-related expenses and newborn vaccinations.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="benefit-text">
+                            <h4>Free Health Checkups</h4>
+                            <p>Annual comprehensive health checkups for all family members included at no extra cost.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="benefit-text">
+                            <h4>Tax Savings</h4>
+                            <p>Save up to â‚¹75,000 in taxes every year under Section 80D of the Income Tax Act.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 6. Why Choose Us -->
+        <section id="why-us" class="why-us section-padding">
+            <div class="container">
+                <div class="why-us-content">
+                    <div class="why-us-text">
+                        <span class="subtitle">Why SFS ?</span>
+                        <h2>More Than Just <span class="gradient-text">A Policy</span></h2>
+                        <p>We've combined technology with human empathy to redefine health insurance for the modern
+                            Indian family.</p>
+                        <div class="why-sfs-list">
+                            <div class="why-item">
+                                <div class="why-icon"><i class="fas fa-bolt"></i></div>
+                                <div class="why-content">
+                                    <h4>Fast Claim Processing</h4>
+                                    <p>Experience the industry's quickest turnaround time for all your medical
+                                        reimbursements.</p>
+                                </div>
+                            </div>
+                            <div class="why-item">
+                                <div class="why-icon"><i class="fas fa-brain"></i></div>
+                                <div class="why-content">
+                                    <h4>AI-Powered Approvals</h4>
+                                    <p>Our proprietary AI engine approves cashless requests within minutes, eliminating
+                                        long waits.</p>
+                                </div>
+                            </div>
+                            <div class="why-item">
+                                <div class="why-icon"><i class="fas fa-headset"></i></div>
+                                <div class="why-content">
+                                    <h4>Dedicated Support Team</h4>
+                                    <p>Get a personal health concierge to guide you through admission, treatment, and
+                                        discharge.</p>
+                                </div>
+                            </div>
+                            <div class="why-item">
+                                <div class="why-icon"><i class="fas fa-search-dollar"></i></div>
+                                <div class="why-content">
+                                    <h4>Transparent Policies</h4>
+                                    <p>Zero hidden clauses or confusing jargon. We tell you exactly what is covered and
+                                        what isn't.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="why-us-image">
+                        <div class="image-stack">
+                            <div class="main-img glass-card">
+                                <img src="images/WhatsApp Image 2026-04-27 at 6.38.21 PM (2).jpeg" alt="SFS Team">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Testimonials -->
+        <section class="testimonials section-padding light-bg">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Success Stories</span>
+                    <h2>Loved By Thousands <span class="gradient-text">Of Families</span></h2>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card glass-card">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"Extremely satisfied with SFS Insurance. I had a medical emergency last month and the
+                            cashless claim process at the hospital was completely seamless. The support team kept in
+                            touch throughout the admission and discharge."</p>
+                        <div class="user-info">
+                            <div class="user-avatar">AK</div>
+                            <div>
+                                <h5>Arjun Kumar</h5>
+                                <p>Chennai, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"I've been with SFS for 2 years now. Their customer service in Madurai is exceptional. They
+                            helped me choose the right plan for my parents and the documentation was very
+                            straightforward. Very reliable and trustable service."</p>
+                        <div class="user-info">
+                            <div class="user-avatar text-teal">PR</div>
+                            <div>
+                                <h5>Priya R</h5>
+                                <p>Madurai, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"The best insurance experience I've had so far. Not only is the premium affordable, but the
+                            coverage is also very comprehensive. I recently utilized their wellness portal for a health
+                            checkup in Coimbatore and it was a very smooth and organized process. Truly a premium
+                            experience."</p>
+                        <div class="user-info">
+                            <div class="user-avatar text-blue">KS</div>
+                            <div>
+                                <h5>Karthik S</h5>
+                                <p>Coimbatore, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"Support team helped me quickly when I had doubts about my policy renewal. The mobile app is
+                            very easy to use and I can track everything from my phone. Good response and helpful
+                            service."</p>
+                        <div class="user-info">
+                            <div class="user-avatar">DM</div>
+                            <div>
+                                <h5>Divya M</h5>
+                                <p>Trichy, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card glass-card">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p>"SFS made my family's health insurance journey very easy. The claim process was smooth and
+                            the hospital network in Salem is very wide. Happy with the service. Easy and reliable."</p>
+                        <div class="user-info">
+                            <div class="user-avatar">NR</div>
+                            <div>
+                                <h5>Naveen Raj</h5>
+                                <p>Salem, Tamil Nadu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FAQ Accordion -->
+        <section id="faq" class="faq section-padding">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Questions?</span>
+                    <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+                </div>
+                <div class="faq-accordion">
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>What is health insurance and why do I need it?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Health insurance helps cover medical expenses and protects you from high hospital costs.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>What does this policy actually cover?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>It covers hospitalization, treatments, doctor consultations, and selected medical
+                                expenses.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>What is not covered in this insurance?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Pre-existing conditions (initial period), cosmetic treatments, and non-medical expenses
+                                are usually excluded.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>How do I make a claim?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can make a claim through cashless hospitals or submit bills for reimbursement.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>How long does it take to get claim approval?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Most claims are processed within a few hours for cashless and a few days for
+                                reimbursement.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>Is cashless treatment available in hospitals?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can avail cashless treatment at our network hospitals.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>How much premium do I need to pay?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Premium depends on your age, coverage amount, and selected plan.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>Can I pay monthly instead of yearly?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, flexible payment options like monthly and yearly are available.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>Are there any hidden charges?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, all charges are clearly mentioned upfront with full transparency.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>Can I include my family in one plan?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, family floater plans allow coverage for multiple members under one policy.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>Is there any age limit to buy insurance?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Most plans are available for individuals from young adults to senior citizens.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>How fast can I get my policy after applying?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Your policy can be issued within minutes after successful verification.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>Can I talk to someone before buying?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can connect with our experts via call or WhatsApp anytime.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item glass-card">
+                        <div class="faq-question">
+                            <h4>Will someone help me during hospital admission?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, our support team assists you throughout the hospitalization process.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Footer -->
+        <footer class="footer section-padding">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo"
+                                style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;"><span
+                                class="logo-text" style="font-family: 'Playfair Display', serif;">SFS</span>
+                        </div>
+                        <p>Trusted insurance solutions designed to protect what matters most. We help you and your
+                            family stay financially secure with reliable coverage and expert support..</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#features">Our Features</a></li>
+                            <li><a href="#plans">Insurance Plans</a></li>
+                            <li><a href="#why-us">Why Choose Us</a></li>
+                            <li><a href="#faq">Help & FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Insurance</h4>
+                        <ul>
+                            <li><a href="#">Family Insurance</a></li>
+                            <li><a href="#">Senior Citizen</a></li>
+                            <li><a href="#">Critical Illness</a></li>
+                            <li><a href="#">Term Life</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> +91 63825 60104</li>
+                            <li><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> 3/82 Pillayar Koil Street, Porur, Chennai 600056
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 SFS Insurance. All Rights Reserved. IRDAI Registration No. 123456</p>
+                    <div class="legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Mega Menu Portals (Root Level) -->
+    <div id="mega-menu-portal">
+        <div id="menu-motor" class="mega-menu">
+            <div class="mega-grid">
+                <div class="mega-col main-links">
+                    <a href="#">
+                        <i class="fas fa-car"></i>
+                        <div class="link-text">
+                            <h5>Car Insurance</h5>
+                            <p>Stay protected on every road with instant policy issuance.</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-motorcycle"></i>
+                        <div class="link-text">
+                            <h5>Bike Insurance</h5>
+                            <p>Affordable coverage for two-wheelers with up to 70% NCB.</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-truck"></i>
+                        <div class="link-text">
+                            <h5>Commercial Vehicle</h5>
+                            <p>Robust protection for your business wheels and fleet.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="mega-col sub-links">
+                    <h4>Special Products</h4>
+                    <a href="#">Motor Floater <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">EV Special <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">Roadside Assistance <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">Renew Policy <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="menu-health" class="mega-menu">
+            <div class="mega-grid">
+                <div class="mega-col main-links">
+                    <a href="#" class="featured-item">
+                        <i class="fas fa-heart-pulse"></i>
+                        <div class="link-text">
+                            <h5>Elevate <span>New</span></h5>
+                            <p>Unlock our most premium health features and concierge care.</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-users"></i>
+                        <div class="link-text">
+                            <h5>Family Plans</h5>
+                            <p>Comprehensive floater plans for up to 4 family members.</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-user-plus"></i>
+                        <div class="link-text">
+                            <h5>Senior Citizens</h5>
+                            <p>Zero pre-policy medical checkups for adults aged 60+.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="mega-col sub-links">
+                    <h4>Wellness Portal</h4>
+                    <a href="#">Activate Booster <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">Combo Plans <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">Wellness Rewards <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">Hospital Locator <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="menu-claims" class="mega-menu">
+            <div class="mega-grid">
+                <div class="mega-col main-links">
+                    <a href="#">
+                        <i class="fas fa-hospital-user"></i>
+                        <div class="link-text">
+                            <h5>Health Claims</h5>
+                            <p>24-hour cashless approval at 8500+ network hospitals.</p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-car-crash"></i>
+                        <div class="link-text">
+                            <h5>Motor Claims</h5>
+                            <p>Fast track your car and bike insurance claims online.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="mega-col sub-links">
+                    <h4>Claim Services</h4>
+                    <a href="#">Travel Claims <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">Home Claims <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">Download Forms <i class="fas fa-chevron-right"></i></a>
+                    <a href="#">Track Claim Status <i class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

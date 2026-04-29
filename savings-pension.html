@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings / Pension Plans | SFS Insurance</title>
+    <meta name="description" content="Build wealth and secure your retirement with SFS Savings and Pension plans. Guaranteed returns and safe investment options.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .savings-hero {
+            position: relative;
+            background-image: url('images/WhatsApp Image 2026-04-27 at 6.38.20 PM (2).jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 120px 0 80px;
+        }
+
+        .savings-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+        }
+
+        .savings-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Wealth Trust Panel */
+        .wealth-panel {
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(232, 93, 4, 0.2);
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+            color: #1e293b;
+        }
+
+        .wealth-tag {
+            background: #E85D04;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .wealth-points {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0 35px;
+        }
+
+        .wealth-points li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .wealth-points li i { color: #22c55e; }
+
+        /* Feature Row Styles */
+        .savings-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .feature-box {
+            padding: 40px;
+            background: #fff;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-color: #E85D04;
+        }
+
+        .feature-box i {
+            font-size: 2.5rem;
+            color: #E85D04;
+            margin-bottom: 20px;
+        }
+
+        /* Why List View */
+        .why-savings-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 5rem;
+            margin-top: 4rem;
+        }
+
+        .why-savings-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .why-savings-row i {
+            color: #E85D04;
+            font-size: 1.4rem;
+            margin-top: 5px;
+        }
+
+        .savings-cta-banner {
+            background: #0c3666;
+            color: white;
+            padding: 70px;
+            border-radius: 30px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 992px) {
+            .savings-hero .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .savings-features, .why-savings-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="top-header">
+            <div class="container top-header-content">
+                <div class="top-header-left">
+                    <a href="tel:+916382560104"><i class="fas fa-phone-alt"></i> Call Back</a>
+                </div>
+                <div class="top-header-right">
+                    <span class="divider" style="margin: 0 15px; color: #ddd;"></span>
+                    <a href="glossary.html">Info Centre</a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="navbar-container">
+                <div class="logo-section"><a href="index.html" class="logo"><img src="images/sfs_logo.jpg" alt="SFS Logo"><span class="logo-white">SFS</span></a></div><button class="mobile-menu-btn" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-menu mega-menu-container">
+                    <li class="mobile-menu-header" style="display: none;">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;">
+                            <span class="logo-text" style="font-family: 'Playfair Display', serif; color: white;">SFS</span>
+                        </div>
+                    </li>
+                    <li><a href="life-insurance.html">Life / Term Insurance</a></li>
+                    <li><a href="health-insurance.html">Health Insurance</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    <li><a href="group-insurance.html">Group Insurance</a></li>
+                    <li><a href="savings-pension.html">Savings / Pension</a></li>
+                    <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                    <li><a href="index.html#offers">Offers</a></li>
+                    <li><a href="agency-recruitment.html">Agency Recruitment</a></li>
+                    <li class="mobile-menu-footer" style="display: none;">
+                        <div class="social-links" style="margin-top: 15px; justify-content: center;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="contact-info" style="margin-top: 15px; text-align: center; font-size: 11px; color: #eaeaea;">
+                            <span style="margin-right: 15px;"><i class="fas fa-phone-alt"></i> +91 63825 60104</span>
+                            <span><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="savings-hero">
+            <div class="container hero-content">
+                <div class="hero-left">
+                    <span class="subtitle" style="color: #E85D04;">Wealth Building & Retirement</span>
+                    <h1 style="font-size: 3.5rem; line-height: 1.2;">Build Wealth. <br><span style="color: #E85D04;">Secure Your Retirement</span></h1>
+                    <p style="font-size: 1.2rem; margin: 20px 0 30px; opacity: 0.9;">Professional financial planning to ensure a stress-free future for you and your family.</p>
+                    <div class="hero-cta-wrapper">
+                        <a href="#quote" class="btn btn-secondary">Check Returns</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="wealth-panel" id="quote">
+                        <span class="wealth-tag">RETIREMENT EXPERTS</span>
+                        <h3 style="color: #0c3666;">Expert Financial <br>Growth Advice</h3>
+                        
+                        <ul class="wealth-points">
+                            <li><i class="fas fa-check-circle"></i> Guaranteed income options</li>
+                            <li><i class="fas fa-check-circle"></i> Tax-free wealth accumulation</li>
+                            <li><i class="fas fa-check-circle"></i> Flexible contribution periods</li>
+                            <li><i class="fas fa-check-circle"></i> Regulated & safe investments</li>
+                        </ul>
+
+                        <a href="https://wa.me/916382560104" target="_blank" class="trust-cta">Start Monthly Savings</a>
+                        <span class="secure-note"><i class="fas fa-lock"></i> 100% Secure & Compliant.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Our Offerings</span>
+                    <h2>Financial Security Redefined</h2>
+                </div>
+                <div class="savings-features">
+                    <div class="feature-box">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h4>Guaranteed Returns</h4>
+                        <p>Lock in your future returns today with our guaranteed savings plans regardless of market ups and downs.</p>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fas fa-piggy-bank"></i>
+                        <h4>Long-term Savings</h4>
+                        <p>Disciplined wealth creation tailored to your life goals like home purchase or children's education.</p>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fas fa-chart-pie"></i>
+                        <h4>Retirement Planning</h4>
+                        <p>Create a steady stream of secondary income for your golden years with our expert pension tools.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Savings Section -->
+        <section class="section-padding light-bg">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">The SFS Advantage</span>
+                    <h2>Why Trust Our Plans?</h2>
+                </div>
+                <div class="why-savings-list">
+                    <div class="why-savings-row">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="why-savings-info">
+                            <h4>Stable Income</h4>
+                            <p>Reliable monthly or quarterly payouts to maintain your lifestyle after retirement.</p>
+                        </div>
+                    </div>
+                    <div class="why-savings-row">
+                        <i class="fas fa-shield-alt"></i>
+                        <div class="why-savings-info">
+                            <h4>Safe Investment</h4>
+                            <p>Your money is invested in highly regulated, secure funds to ensure maximum capital protection.</p>
+                        </div>
+                    </div>
+                    <div class="why-savings-row">
+                        <i class="fas fa-coins"></i>
+                        <div class="why-savings-info">
+                            <h4>Tax Benefits</h4>
+                            <p>Maximize your savings with tax deductions on premiums and tax-free maturity proceeds.</p>
+                        </div>
+                    </div>
+                    <div class="why-savings-row">
+                        <i class="fas fa-bolt"></i>
+                        <div class="why-savings-info">
+                            <h4>Instant Activation</h4>
+                            <p>Our digital onboarding allows you to start your wealth journey in less than 5 minutes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- custom cta banner -->
+                <div class="savings-cta-banner">
+                    <h2 style="color: white; margin-bottom: 15px;">Start your savings plan today</h2>
+                    <p style="opacity: 0.8; margin-bottom: 30px;">Let our advisors hand-pick the best performing plan for your financial goals.</p>
+                    <a href="https://wa.me/916382560104" target="_blank" class="btn btn-secondary" style="padding: 18px 40px; background: #25D366; border: none;"><i class="fab fa-whatsapp"></i> Chat with Wealth Advisor</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer section-padding">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;"><span class="logo-text" style="font-family: 'Playfair Display', serif;">SFS</span>
+                        </div>
+                        <p>India's leading partner for financial growth and retirement security. Building wealth for the next generation.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html#features">Our Features</a></li>
+                            <li><a href="index.html#plans">Insurance Plans</a></li>
+                            <li><a href="index.html#why-us">Why Choose Us</a></li>
+                            <li><a href="index.html#faq">Help & FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Insurance</h4>
+                        <ul>
+                            <li><a href="health-insurance.html">Health Insurance</a></li>
+                            <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                            <li><a href="life-insurance.html">Life / Term</a></li>
+                            <li><a href="savings-pension.html">Savings / Pension</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> +91 63825 60104</li>
+                            <li><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> 3/82 Pillayar Koil Street, Porur, Chennai 600056</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 SFS Insurance. All Rights Reserved. IRDAI Registration No. 123456</p>
+                    <div class="legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Insurance | SFS Insurance</title>
+    <meta name="description"
+        content="Protect your vehicle with smart, affordable, and instant car insurance coverage from SFS. Get a quote in minutes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Section Specific Styles */
+        .car-hero {
+            background: linear-gradient(135deg, #E85D04 0%, #cc4f03 100%);
+            color: white;
+            padding: 160px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .car-hero::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(100, 255, 218, 0.05) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        /* Section 2: How to Choose */
+        .choice-section {
+            background: #f8fafc;
+            padding: 100px 0;
+        }
+
+        .choice-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .choice-card {
+            background: #E85D04;
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            color: white;
+            position: relative;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .choice-card:hover {
+            transform: translateY(-10px);
+            background: #0f3458;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .choice-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: rgba(100, 255, 218, 0.1);
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            line-height: 1;
+        }
+
+        .choice-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .choice-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Section 3: Things to keep in mind */
+        .mind-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .mind-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #f1f5f9;
+            transition: var(--transition);
+        }
+
+        .mind-card:hover {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border-color: var(--secondary);
+        }
+
+        .mind-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            background: rgba(100, 255, 218, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Section 4: Why Buy Online */
+        .online-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .online-item {
+            text-align: left;
+        }
+
+        .online-item i {
+            color: var(--secondary);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .online-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .online-item p {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        /* Section 5: CTA */
+        .car-cta {
+            background: #E85D04;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+            margin-top: 100px;
+        }
+
+        .car-cta h2 { color: white; margin-bottom: 2rem; }
+
+        @media (max-width: 1024px) {
+            .choice-grid, .online-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .choice-grid, .online-grid, .mind-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body style="padding-top: 0;">
+    <header id="header">
+        <div class="top-header">
+            <div class="container top-header-content">
+                <div class="top-header-left">
+                    <a href="tel:+916382560104"><i class="fas fa-phone-alt"></i> Call Back</a>
+                </div>
+                <div class="top-header-right">
+                    <a href="glossary.html">Info Centre</a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="navbar-container">
+                <div class="logo">
+                    <img src="images/sfs_logo.jpg" alt="SFS Logo" class="logo-img">
+                    <span class="brand-name">SFS</span>
+                </div>
+                <ul class="nav-menu mega-menu-container">
+                    <li class="mobile-menu-header" style="display: none;">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;">
+                            <span class="logo-text" style="font-family: 'Playfair Display', serif; color: white;">SFS</span>
+                        </div>
+                    </li>
+                    <li><a href="life-insurance.html">Life / Term Insurance</a></li>
+                    <li><a href="health-insurance.html">Health Insurance</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    <li><a href="group-insurance.html">Group Insurance</a></li>
+                    <li><a href="savings-pension.html">Savings / Pension</a></li>
+                    <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                    <li><a href="index.html#offers">Offers</a></li>
+                    <li><a href="agency-recruitment.html">Agency Recruitment</a></li>
+                    <li class="mobile-menu-footer" style="display: none;">
+                        <div class="social-links" style="margin-top: 15px; justify-content: center;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="contact-info" style="margin-top: 15px; text-align: center; font-size: 11px; color: #eaeaea;">
+                            <span style="margin-right: 15px;"><i class="fas fa-phone-alt"></i> +91 63825 60104</span>
+                            <span><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Hero -->
+        <section class="car-hero">
+            <div class="container" style="position: relative; z-index: 1;">
+                <div style="max-width: 700px;">
+                    <span class="subtitle" style="background: rgba(255,255,255,0.1); color: var(--secondary);">Premium Motor Cover</span>
+                    <h1 style="color: white; margin-bottom: 1.5rem;">Car Insurance <br><span class="gradient-text">Made Simple</span></h1>
+                    <p style="color: #a8b2d1; font-size: 1.3rem; margin-bottom: 2.5rem; line-height: 1.5;">Protect your vehicle with smart, affordable, and instant coverage tailored for the modern driver.</p>
+                    <div class="hero-cta-wrapper" style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+                        <a href="https://wa.me/916382560104?text=I%20want%20a%20Car%20Insurance%20quote" class="btn btn-secondary">Get Quote</a>
+                        <a href="https://wa.me/916382560104?text=Hi%2C%20I%20want%20to%20talk%20about%20Car%20Insurance" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">Talk on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: How to Choose -->
+        <section class="choice-section">
+            <div class="container">
+                <div class="centered">
+                    <span class="subtitle">Decision Guide</span>
+                    <h2>How to choose the right <br><span class="gradient-text">car insurance policy?</span></h2>
+                </div>
+                <div class="choice-grid">
+                    <div class="choice-card">
+                        <div class="choice-number">01</div>
+                        <h3>Coverage Type</h3>
+                        <p>Choose between third-party liability, comprehensive, or standalone personal protection based on your needs.</p>
+                    </div>
+                    <div class="choice-card">
+                        <div class="choice-number">02</div>
+                        <h3>Vehicle Value</h3>
+                        <p>Ensure your coverage accurately matches your car's current market value (IDV) for proper protection.</p>
+                    </div>
+                    <div class="choice-card">
+                        <div class="choice-number">03</div>
+                        <h3>Driving Style</h3>
+                        <p>Your driving habits and mileage significantly impact your premium costs and coverage requirements.</p>
+                    </div>
+                    <div class="choice-card">
+                        <div class="choice-number">04</div>
+                        <h3>Budget</h3>
+                        <p>Select a balanced deductible and premium ratio that keeps you protected without overspending.</p>
+                    </div>
+                    <div class="choice-card">
+                        <div class="choice-number">05</div>
+                        <h3>Location</h3>
+                        <p>Your primary driving location and city affects risk assessment and final policy pricing.</p>
+                    </div>
+                    <div class="choice-card">
+                        <div class="choice-number">06</div>
+                        <h3>Discounts</h3>
+                        <p>Always check your eligibility for no-claim bonuses (NCB) and special corporate offers to save more.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Things to keep in mind -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="centered">
+                    <span class="subtitle">Buyer's Checklist</span>
+                    <h2>Things to keep in <span class="gradient-text">mind before buying</span></h2>
+                </div>
+                <div class="mind-grid">
+                    <div class="mind-card">
+                        <div class="mind-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem; font-weight: 700;">Policy Coverage</h4>
+                            <p style="color: #64748b; font-size: 0.95rem;">Understand the exact inclusions & exclusions of the policy clearly before signing.</p>
+                        </div>
+                    </div>
+                    <div class="mind-card">
+                        <div class="mind-icon"><i class="fas fa-plus-circle"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem; font-weight: 700;">Add-ons</h4>
+                            <p style="color: #64748b; font-size: 0.95rem;">Consider zero depreciation, engine protection, and 24/7 roadside assistance.</p>
+                        </div>
+                    </div>
+                    <div class="mind-card">
+                        <div class="mind-icon"><i class="fas fa-tools"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem; font-weight: 700;">Service Benefits</h4>
+                            <p style="color: #64748b; font-size: 0.95rem;">Check for cashless garage networks and the reputation for quick claim support.</p>
+                        </div>
+                    </div>
+                    <div class="mind-card">
+                        <div class="mind-icon"><i class="fas fa-chart-line"></i></div>
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem; font-weight: 700;">IDV Value</h4>
+                            <p style="color: #64748b; font-size: 0.95rem;">Choose the correct Insured Declared Value to ensure maximum claim payout.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Why Buy Online -->
+        <section class="section-padding light-bg">
+            <div class="container">
+                <div class="centered">
+                    <span class="subtitle">Digital First</span>
+                    <h2>Why buy car insurance online?</h2>
+                    <p style="max-width: 600px; margin: 1rem auto; color: #64748b;">Fast, simple, and a fully transparent process designed for the digital age.</p>
+                </div>
+                <div class="online-grid">
+                    <div class="online-item">
+                        <i class="fas fa-clock"></i>
+                        <h4>Instant Quote</h4>
+                        <p>Get a precise price instantly by providing just your basic vehicle details.</p>
+                    </div>
+                    <div class="online-item">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Quick Purchase</h4>
+                        <p>Complete your application and buy the policy in under 5 minutes.</p>
+                    </div>
+                    <div class="online-item">
+                        <i class="fas fa-headset"></i>
+                        <h4>Expert Help</h4>
+                        <p>Dedicated support team available anytime to answer your queries.</p>
+                    </div>
+                    <div class="online-item">
+                        <i class="fas fa-file-alt"></i>
+                        <h4>No Paperwork</h4>
+                        <p>Enjoy a 100% digital process with no physical document handling.</p>
+                    </div>
+                    <div class="online-item">
+                        <i class="fas fa-camera"></i>
+                        <h4>Touchless Issuance</h4>
+                        <p>Policy issued instantly with no physical vehicle inspection required.</p>
+                    </div>
+                    <div class="online-item">
+                        <i class="fas fa-search-dollar"></i>
+                        <h4>Transparent Pricing</h4>
+                        <p>What you see is what you pay. Absolutely no hidden charges or fees.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: CTA -->
+        <section class="car-cta">
+            <div class="container">
+                <h2>Get your car insured in minutes</h2>
+                <div class="hero-cta-wrapper" style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://wa.me/916382560104?text=I%20want%20to%20buy%20Car%20Insurance" class="btn btn-secondary">Get Quote</a>
+                    <a href="tel:+916382560104" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">Call Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="images/sfs_logo.jpg" alt="SFS Logo" class="logo-img" style="filter: brightness(0) invert(1);">
+                        <span class="brand-name" style="margin-left: 10px; color: white;">SFS</span>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">Precision protection for your journey. Driving the future of digital motor insurance in India.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="glossary.html" style="color: #94a3b8;">Glossary</a></li>
+                        <li><a href="tax-benefits.html" style="color: #94a3b8;">Tax Benefits</a></li>
+                        <li><a href="health-tips.html" style="color: #94a3b8;">Health Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #94a3b8;"><i class="fas fa-phone-alt"></i> +91 63825 60104</li>
+                        <li style="color: #94a3b8;"><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</li>
+                        <li style="color: #94a3b8;"><i class="fas fa-map-marker-alt"></i> 3/82 Pillayar Koil Street, Porur, Chennai 600056</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 SFS Insurance. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

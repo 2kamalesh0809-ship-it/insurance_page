@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance Offers | SFS Insurance</title>
+    <meta name="description"
+        content="Save more on your health protection with exclusive SFS Health Insurance offers. Explore discounts for families, seniors, and instant quotes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .health-hero {
+            background: linear-gradient(135deg, #E85D04 0%, #cc4f03 100%);
+            color: white;
+            padding: 160px 0 100px;
+            text-align: center;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: -60px;
+            padding-bottom: 80px;
+        }
+
+        .offer-item {
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #f1f5f9;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .offer-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--secondary);
+        }
+
+        .offer-item h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .offer-item p {
+            color: #64748b;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .inclusion-exclusion {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4rem;
+            padding: 80px 0;
+        }
+
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+
+        .check-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .check-list li i.fa-check { color: #10b981; }
+        .check-list li i.fa-times { color: #ef4444; }
+
+        .cta-box {
+            background: var(--primary);
+            color: white;
+            padding: 6rem;
+            border-radius: 40px;
+            text-align: center;
+            margin: 40px 0 100px;
+        }
+
+        @media (max-width: 768px) {
+            .inclusion-exclusion { grid-template-columns: 1fr; gap: 3rem; }
+        }
+    </style>
+</head>
+
+<body style="padding-top: 110px;">
+    <header id="header">
+        <div class="top-header">
+            <div class="container top-header-content">
+                <div class="top-header-left">
+                    <a href="tel:+916382560104"><i class="fas fa-phone-alt"></i> Call Back</a>
+                </div>
+                <div class="top-header-right">
+                    <a href="glossary.html">Info Centre</a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="navbar-container">
+                <div class="logo">
+                    <img src="images/sfs_logo.jpg" alt="SFS Logo" class="logo-img">
+                    <span class="brand-name">SFS</span>
+                </div>
+                <ul class="nav-menu mega-menu-container">
+                    <li class="mobile-menu-header" style="display: none;">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;">
+                            <span class="logo-text" style="font-family: 'Playfair Display', serif; color: white;">SFS</span>
+                        </div>
+                    </li>
+                    <li><a href="life-insurance.html">Life / Term Insurance</a></li>
+                    <li><a href="health-insurance.html">Health Insurance</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    <li><a href="group-insurance.html">Group Insurance</a></li>
+                    <li><a href="savings-pension.html">Savings / Pension</a></li>
+                    <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                    <li><a href="index.html#offers">Offers</a></li>
+                    <li><a href="agency-recruitment.html">Agency Recruitment</a></li>
+                    <li class="mobile-menu-footer" style="display: none;">
+                        <div class="social-links" style="margin-top: 15px; justify-content: center;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="contact-info" style="margin-top: 15px; text-align: center; font-size: 11px; color: #eaeaea;">
+                            <span style="margin-right: 15px;"><i class="fas fa-phone-alt"></i> +91 63825 60104</span>
+                            <span><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="health-hero">
+            <div class="container">
+                <span class="subtitle" style="background: rgba(255,255,255,0.1); color: var(--secondary);">Priority Benefits</span>
+                <h1>Exclusive Health Insurance <br><span class="gradient-text">Offers</span></h1>
+                <p style="color: rgba(255,255,255,0.7); font-size: 1.25rem; max-width: 600px; margin: 1rem auto 3rem;">Get the best coverage with exclusive benefits designed for your family's safety.</p>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="offers-grid">
+                <div class="offer-item">
+                    <i class="fas fa-bolt" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1.5rem;"></i>
+                    <h3>Instant Discount Offer</h3>
+                    <p>Get an immediate 10% discount on your first premium when you buy online today.</p>
+                    <a href="https://wa.me/916382560104?text=I%20want%20to%20claim%20the%20Instant%20Discount%20Health%20Offer" target="_blank" class="btn btn-secondary">Get via WhatsApp <i class="fab fa-whatsapp" style="margin-left: 8px;"></i></a>
+                </div>
+                <div class="offer-item">
+                    <i class="fas fa-users" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1.5rem;"></i>
+                    <h3>Family Combo Offer</h3>
+                    <p>Save up to 15% on total premiums when you cover 3 or more family members in a single plan.</p>
+                    <a href="https://wa.me/916382560104?text=I%20want%20to%20know%20more%20about%20the%20Family%20Combo%20Health%20Offer" target="_blank" class="btn btn-secondary">Get via WhatsApp <i class="fab fa-whatsapp" style="margin-left: 8px;"></i></a>
+                </div>
+                <div class="offer-item">
+                    <i class="fas fa-user-shield" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1.5rem;"></i>
+                    <h3>Senior Citizen Special</h3>
+                    <p>Exclusive 5% additional benefit and zero pre-medical checkups for adults aged 60+.</p>
+                    <a href="https://wa.me/916382560104?text=I%20want%20to%20claim%20the%20Senior%20Citizen%20Special%20Health%20Offer" target="_blank" class="btn btn-secondary">Get via WhatsApp <i class="fab fa-whatsapp" style="margin-left: 8px;"></i></a>
+                </div>
+            </div>
+
+            <div class="inclusion-exclusion">
+                <div>
+                    <h2 style="color: var(--primary);">Whatâ€™s Included</h2>
+                    <ul class="check-list">
+                        <li><i class="fas fa-check"></i> Cashless hospitalization at 8500+ hospitals</li>
+                        <li><i class="fas fa-check"></i> Pre & post hospitalization expenses covered</li>
+                        <li><i class="fas fa-check"></i> Full coverage for Ambulance charges</li>
+                        <li><i class="fas fa-check"></i> 580+ Day care procedures included</li>
+                        <li><i class="fas fa-check"></i> Annual health checkup for all insured</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 style="color: var(--primary);">Whatâ€™s Not Included</h2>
+                    <ul class="check-list">
+                        <li><i class="fas fa-times"></i> Pre-existing diseases (subject to waiting period)</li>
+                        <li><i class="fas fa-times"></i> Cosmetic or aesthetic procedures</li>
+                        <li><i class="fas fa-times"></i> Self-inflicted injuries or suicide attempts</li>
+                        <li><i class="fas fa-times"></i> Non-medical expenses (registration, utility, etc.)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h2 style="color: white; margin-bottom: 1rem;">Get your personalized plan now</h2>
+                <p style="color: #a8b2d1; margin-bottom: 3rem;">Our health experts are ready to help you choose the best protection for your loved ones.</p>
+                <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://wa.me/916382560104?text=I%20want%20a%20personalized%20Health%20Insurance%20plan" target="_blank" class="btn btn-secondary">Talk on WhatsApp <i class="fab fa-whatsapp" style="margin-left: 10px;"></i></a>
+                    <a href="tel:+916382560104" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">Call Now <i class="fas fa-phone-alt" style="margin-left: 10px;"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="images/sfs_logo.jpg" alt="SFS Logo" class="logo-img" style="filter: brightness(0) invert(1);">
+                        <span class="brand-name" style="margin-left: 10px; color: white;">SFS</span>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">Precision protection for every journey. Leading the future of medical security in India.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="glossary.html" style="color: #94a3b8;">Glossary</a></li>
+                        <li><a href="tax-benefits.html" style="color: #94a3b8;">Tax Benefits</a></li>
+                        <li><a href="health-tips.html" style="color: #94a3b8;">Health Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #94a3b8;"><i class="fas fa-phone-alt"></i> +91 63825 60104</li>
+                        <li style="color: #94a3b8;"><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</li>
+                        <li style="color: #94a3b8;"><i class="fas fa-map-marker-alt"></i> 3/82 Pillayar Koil Street, Porur, Chennai 600056</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 SFS Insurance. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Recruitment | SFS Insurance</title>
+    <meta name="description" content="Start your career in insurance with SFS. High earning potential, flexible work, and world-class training support for our agents.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .agency-hero {
+            position: relative;
+            background-image: url('images/WhatsApp Image 2026-04-27 at 6.38.21 PM.jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 120px 0 80px;
+        }
+
+        .agency-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.3));
+        }
+
+        .agency-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Career Trust Panel */
+        .career-panel {
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(232, 93, 4, 0.2);
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+            color: #1e293b;
+        }
+
+        .career-tag {
+            background: #E85D04;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .career-points {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0 35px;
+        }
+
+        .career-points li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .career-points li i { color: #E85D04; }
+
+        /* Process Flow */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 5rem;
+        }
+
+        .process-box {
+            position: relative;
+            padding: 50px 40px;
+            background: #fff;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+        }
+
+        .process-box:hover {
+            transform: translateY(-10px);
+            border-color: #E85D04;
+        }
+
+        .process-num {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: #E85D04;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 20px rgba(232, 93, 4, 0.2);
+        }
+
+        /* Why Join List View */
+        .why-join-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 5rem;
+            margin-top: 4rem;
+        }
+
+        .why-join-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .why-join-row i {
+            color: #E85D04;
+            font-size: 1.4rem;
+            margin-top: 5px;
+        }
+
+        .agency-cta-banner {
+            background: #0c3666;
+            color: white;
+            padding: 70px;
+            border-radius: 30px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 992px) {
+            .agency-hero .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .process-grid, .why-join-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="top-header">
+            <div class="container top-header-content">
+                <div class="top-header-left">
+                    <a href="tel:+916382560104"><i class="fas fa-phone-alt"></i> Call Back</a>
+                </div>
+                <div class="top-header-right">
+                    <span class="divider" style="margin: 0 15px; color: #ddd;"></span>
+                    <a href="glossary.html">Info Centre</a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="navbar-container">
+                <div class="logo-section"><a href="index.html" class="logo"><img src="images/sfs_logo.jpg" alt="SFS Logo"><span class="logo-white">SFS</span></a></div><button class="mobile-menu-btn" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-menu mega-menu-container">
+                    <li class="mobile-menu-header" style="display: none;">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;">
+                            <span class="logo-text" style="font-family: 'Playfair Display', serif; color: white;">SFS</span>
+                        </div>
+                    </li>
+                    <li><a href="life-insurance.html">Life / Term Insurance</a></li>
+                    <li><a href="health-insurance.html">Health Insurance</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    <li><a href="group-insurance.html">Group Insurance</a></li>
+                    <li><a href="savings-pension.html">Savings / Pension</a></li>
+                    <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                    <li><a href="index.html#offers">Offers</a></li>
+                    <li><a href="agency-recruitment.html">Agency Recruitment</a></li>
+                    <li class="mobile-menu-footer" style="display: none;">
+                        <div class="social-links" style="margin-top: 15px; justify-content: center;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="contact-info" style="margin-top: 15px; text-align: center; font-size: 11px; color: #eaeaea;">
+                            <span style="margin-right: 15px;"><i class="fas fa-phone-alt"></i> +91 63825 60104</span>
+                            <span><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="agency-hero">
+            <div class="container hero-content">
+                <div class="hero-left">
+                    <span class="subtitle" style="color: #E85D04;">Join Our Mission</span>
+                    <h1 style="font-size: 3.5rem; line-height: 1.2;">Start Your Career <br><span style="color: #E85D04;">in Insurance</span></h1>
+                    <p style="font-size: 1.2rem; margin: 20px 0 30px; opacity: 0.9;">Be part of India's fastest-growing digital insurance agency and unlock infinite growth opportunities.</p>
+                    <div class="hero-cta-wrapper">
+                        <a href="#register" class="btn btn-secondary">Apply Now</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="career-panel" id="register">
+                        <span class="career-tag">CAREER OPPORTUNITY</span>
+                        <h3 style="color: #0c3666;">Become a Certified <br>SFS Advisor</h3>
+                        
+                        <ul class="career-points">
+                            <li><i class="fas fa-check-circle"></i> High commissions & renewal income</li>
+                            <li><i class="fas fa-check-circle"></i> Lifetime passive earning model</li>
+                            <li><i class="fas fa-check-circle"></i> Zero investment startup</li>
+                            <li><i class="fas fa-check-circle"></i> Digital-first sales platform</li>
+                        </ul>
+
+                        <a href="https://wa.me/916382560104" target="_blank" class="trust-cta">Apply via WhatsApp</a>
+                        <span class="secure-note"><i class="fas fa-handshake"></i> Over 2,000+ Active Advisors.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Onboarding Path</span>
+                    <h2>Simple 3-Step Process</h2>
+                </div>
+                <div class="process-grid">
+                    <div class="process-box">
+                        <div class="process-num">1</div>
+                        <i class="fas fa-user-edit" style="font-size: 2.5rem; color: #E85D04; margin-bottom: 20px; display: block;"></i>
+                        <h4>Register</h4>
+                        <p>Fill out our simple application form and submit your basic documents online.</p>
+                    </div>
+                    <div class="process-box">
+                        <div class="process-num">2</div>
+                        <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: #E85D04; margin-bottom: 20px; display: block;"></i>
+                        <h4>Get Trained</h4>
+                        <p>Complete our 15-hour digital training module and IRDAI certification exam.</p>
+                    </div>
+                    <div class="process-box">
+                        <div class="process-num">3</div>
+                        <i class="fas fa-rocket" style="font-size: 2.5rem; color: #E85D04; margin-bottom: 20px; display: block;"></i>
+                        <h4>Start Earning</h4>
+                        <p>Access our premium sales portal and start your high-growth career immediately.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Join Section -->
+        <section class="section-padding light-bg">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Partner Rewards</span>
+                    <h2>Why Join SFS Agency?</h2>
+                </div>
+                <div class="why-join-list">
+                    <div class="why-join-row">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <div class="why-join-info">
+                            <h4>High Earning Potential</h4>
+                            <p>Industry-leading payout structures with monthly bonuses and foreign trip incentives.</p>
+                        </div>
+                    </div>
+                    <div class="why-join-row">
+                        <i class="fas fa-home"></i>
+                        <div class="why-join-info">
+                            <h4>Flexible Work</h4>
+                            <p>Be your own boss. Work from home or office, at your own pace and time.</p>
+                        </div>
+                    </div>
+                    <div class="why-join-row">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <div class="why-join-info">
+                            <h4>Training Support</h4>
+                            <p>Ongoing sales mentorship and technical training from regional managers.</p>
+                        </div>
+                    </div>
+                    <div class="why-join-row">
+                        <i class="fas fa-laptop-code"></i>
+                        <div class="why-join-info">
+                            <h4>Advanced Tech Portal</h4>
+                            <p>Manage your entire business, quotes, and claims from our state-of-the-art mobile app.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- custom cta banner -->
+                <div class="agency-cta-banner">
+                    <h2 style="color: white; margin-bottom: 15px;">Join as an Agent</h2>
+                    <p style="opacity: 0.8; margin-bottom: 30px;">Partner with India's most innovative agency and transform your future.</p>
+                    <a href="mailto:sathvikinsuranceservice@gmail.com" class="btn btn-secondary" style="padding: 18px 40px; background: #fff; color: #0c3666; border: none;">Request Agent Kit</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer section-padding">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;"><span class="logo-text" style="font-family: 'Playfair Display', serif;">SFS</span>
+                        </div>
+                        <p>India's leading partner for career growth and financial independence. Empowering 2,000+ advisors nationwide.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html#features">Our Features</a></li>
+                            <li><a href="index.html#plans">Insurance Plans</a></li>
+                            <li><a href="index.html#why-us">Why Choose Us</a></li>
+                            <li><a href="index.html#faq">Help & FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Insurance</h4>
+                        <ul>
+                            <li><a href="health-insurance.html">Health Insurance</a></li>
+                            <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                            <li><a href="life-insurance.html">Life / Term</a></li>
+                            <li><a href="agency-recruitment.html">Agency Recruitment</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> +91 63825 60104</li>
+                            <li><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> 3/82 Pillayar Koil Street, Porur, Chennai 600056</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 SFS Insurance. All Rights Reserved. IRDAI Registration No. 123456</p>
+                    <div class="legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+

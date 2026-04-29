@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance Claims | SFS Insurance</title>
+    <meta name="description"
+        content="Quick and hassle-free health insurance claim support with SFS. Understand cashless and reimbursement claim processes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .claims-hero {
+            background: var(--gradient-blue);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .claims-content {
+            margin-top: -60px;
+            padding-bottom: 100px;
+        }
+
+        .claims-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .claim-type-card {
+            padding: 3rem;
+            text-align: center;
+            border-top: 5px solid var(--secondary);
+        }
+
+        .type-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(100, 255, 218, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--secondary);
+            font-size: 2rem;
+        }
+
+        .doc-section {
+            background: white;
+            border-radius: 24px;
+            padding: 4rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 4rem;
+        }
+
+        .doc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .doc-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .doc-item:hover {
+            background: #f0fdfa;
+            transform: translateY(-2px);
+        }
+
+        .doc-item i {
+            color: var(--secondary);
+        }
+
+        .steps-section {
+            padding: 4rem 0;
+        }
+
+        .step-timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 3rem;
+        }
+
+        .step-timeline::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #e2e8f0;
+            z-index: 0;
+        }
+
+        .step-node {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            width: 20%;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border: 2px solid var(--secondary);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 700;
+        }
+
+        .cta-center {
+            text-align: center;
+            margin-top: 4rem;
+            padding: 4rem;
+            background: var(--primary);
+            border-radius: 24px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .step-timeline {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .step-timeline::before {
+                display: none;
+            }
+            .step-node {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body style="padding-top: 110px;">
+    <header id="header">
+        <div class="top-header">
+            <div class="container top-header-content">
+                <div class="top-header-left">
+                    <a href="tel:+916382560104"><i class="fas fa-phone-alt"></i> Call Back</a>
+                </div>
+                <div class="top-header-right">
+                    <a href="glossary.html">Info Centre</a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="navbar-container">
+                <div class="logo">
+                    <img src="images/sfs_logo.jpg" alt="SFS Logo" class="logo-img">
+                    <span class="brand-name">SFS</span>
+                </div>
+                <ul class="nav-menu mega-menu-container">
+                    <li class="mobile-menu-header" style="display: none;">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;">
+                            <span class="logo-text" style="font-family: 'Playfair Display', serif; color: white;">SFS</span>
+                        </div>
+                    </li>
+                    <li><a href="life-insurance.html">Life / Term Insurance</a></li>
+                    <li><a href="health-insurance.html">Health Insurance</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    <li><a href="group-insurance.html">Group Insurance</a></li>
+                    <li><a href="savings-pension.html">Savings / Pension</a></li>
+                    <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                    <li><a href="index.html#offers">Offers</a></li>
+                    <li><a href="agency-recruitment.html">Agency Recruitment</a></li>
+                    <li class="mobile-menu-footer" style="display: none;">
+                        <div class="social-links" style="margin-top: 15px; justify-content: center;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="contact-info" style="margin-top: 15px; text-align: center; font-size: 11px; color: #eaeaea;">
+                            <span style="margin-right: 15px;"><i class="fas fa-phone-alt"></i> +91 63825 60104</span>
+                            <span><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="claims-hero">
+            <div class="container">
+                <span class="subtitle" style="background: rgba(255,255,255,0.1); color: var(--secondary);">Claim Support</span>
+                <h1>Health Insurance Claims</h1>
+                <p style="color: rgba(255,255,255,0.8); font-size: 1.2rem;">Quick and hassle-free claim support when you need it most</p>
+            </div>
+        </section>
+
+        <section class="container claims-content">
+            <div class="claims-grid">
+                <div class="claim-type-card glass-card">
+                    <div class="type-icon"><i class="fas fa-credit-card"></i></div>
+                    <h3>Cashless Claims</h3>
+                    <p style="color: #64748b;">Get treated at any of our 8,500+ network hospitals without paying upfront. We settle directly with the hospital.</p>
+                </div>
+                <div class="claim-type-card glass-card">
+                    <div class="type-icon"><i class="fas fa-hand-holding-usd"></i></div>
+                    <h3>Reimbursement Claims</h3>
+                    <p style="color: #64748b;">Pay your bills first if treated at a non-network hospital, then submit documents to us for a full reimbursement.</p>
+                </div>
+            </div>
+
+            <div class="doc-section">
+                <div class="centered">
+                    <span class="subtitle">Checklist</span>
+                    <h2>Required Documents</h2>
+                    <p>Keep these primary documents ready for a smooth claim process</p>
+                </div>
+                <div class="doc-list">
+                    <div class="doc-item"><i class="fas fa-id-card"></i> Valid ID Proof</div>
+                    <div class="doc-item"><i class="fas fa-file-medical"></i> Policy Copy</div>
+                    <div class="doc-item"><i class="fas fa-receipt"></i> Original Hospital Bills</div>
+                    <div class="doc-item"><i class="fas fa-file-alt"></i> Discharge Summary</div>
+                </div>
+            </div>
+
+            <div class="steps-section">
+                <div class="centered">
+                    <span class="subtitle">Process</span>
+                    <h2>Claim Steps</h2>
+                </div>
+                <div class="step-timeline">
+                    <div class="step-node">
+                        <div class="step-number">1</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Inform Insurer</h4>
+                        <p style="font-size: 0.9rem; color: #64748b;">Notify us within 24 hours of hospitalization.</p>
+                    </div>
+                    <div class="step-node">
+                        <div class="step-number">2</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Submit Documents</h4>
+                        <p style="font-size: 0.9rem; color: #64748b;">Send us the digital or physical copies as required.</p>
+                    </div>
+                    <div class="step-node">
+                        <div class="step-number">3</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Verification</h4>
+                        <p style="font-size: 0.9rem; color: #64748b;">Our medical experts will verify the details.</p>
+                    </div>
+                    <div class="step-node">
+                        <div class="step-number">4</div>
+                        <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Settlement</h4>
+                        <p style="font-size: 0.9rem; color: #64748b;">Recieve payment directly into your account.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-center">
+                <h2 style="color: white;">Need Assistance with a Claim?</h2>
+                <p style="color: #a8b2d1; margin-bottom: 2.5rem;">Our claims team is available 24x7 to guide you through the process.</p>
+                <a href="https://wa.me/916382560104?text=I%20want%20to%20start%20a%20Health%20Insurance%20claim" target="_blank" class="btn btn-secondary">Start Your Claim <i class="fab fa-whatsapp" style="margin-left: 10px;"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="images/sfs_logo.jpg" alt="SFS Logo" class="logo-img" style="filter: brightness(0) invert(1);">
+                        <span class="brand-name" style="margin-left: 10px; color: white;">SFS</span>
+                    </div>
+                    <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">Your most trusted insurance partner. Protecting your future with premium care and AI-powered solutions.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="glossary.html" style="color: #94a3b8;">Glossary</a></li>
+                        <li><a href="tax-benefits.html" style="color: #94a3b8;">Tax Benefits</a></li>
+                        <li><a href="health-tips.html" style="color: #94a3b8;">Health Tips</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="color: #94a3b8;"><i class="fas fa-phone-alt"></i> +91 63825 60104</li>
+                        <li style="color: #94a3b8;"><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</li>
+                        <li style="color: #94a3b8;"><i class="fas fa-map-marker-alt"></i> 3/82 Pillayar Koil Street, Porur, Chennai 600056</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                <p style="color: #64748b; font-size: 0.9rem;">&copy; 2026 SFS Insurance. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+

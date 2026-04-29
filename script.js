@@ -1,0 +1,272 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Sticky Header
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('active');
+        } else {
+            header.classList.remove('active');
+        }
+    });
+
+    // 2. FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            faqItems.forEach(faq => faq.classList.remove('active'));
+            
+            // Toggle current if not active
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // 3. Scroll Animations (Intersection Observer)
+    const observerOptions = {
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Apply initial styles and observe
+    const animElements = document.querySelectorAll('.feature-card, .plan-card, .testimonial-card, .why-us-text, .why-us-image, .service-card, .trust-stat');
+    animElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'all 0.6s ease-out';
+        observer.observe(el);
+    });
+
+    // 4. Form Submission & WhatsApp Redirect
+    const quoteBtn = document.getElementById('quoteBtn');
+    if (quoteBtn) {
+        quoteBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const age = document.getElementById("age").value;
+            const gender = document.getElementById("gender").value;
+            const city = document.getElementById("city").value;
+            const phone = document.getElementById("phone").value;
+
+            if (!age || !gender || !city || !phone) {
+                alert("Please fill all details");
+                return;
+            }
+
+            // Simple validation
+            if (phone.length < 10) {
+                alert("Please enter a valid phone number");
+                return;
+            }
+
+            const message = `Hello, I would like to get an insurance quote:\n\nAge: ${age}\nGender: ${gender}\nCity: ${city}\nPhone: ${phone}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/916382560104?text=${encodedMessage}`;
+
+            window.open(whatsappURL, "_blank");
+        });
+    }
+
+    // 5. Horizontal Scroll buttons (Optional improvement)
+    const scrollContainer = document.querySelector('.horizontal-scroll-container');
+    if (scrollContainer) {
+        // Smooth scrolling for add-ons logic can be added here if needed
+        // For now, native touch/mouse scroll is enabled
+    }
+
+    // 6. Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const megaMenuContainer = document.querySelector('.mega-menu-container');
+    
+    if (mobileMenuBtn && megaMenuContainer) {
+        mobileMenuBtn.addEventListener('click', () => {
+            megaMenuContainer.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            if (megaMenuContainer.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu on link click
+        megaMenuContainer.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                megaMenuContainer.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            });
+        });
+    }
+
+    // 7. Mega Menu Portal Logic
+    const megaTriggers = document.querySelectorAll('[data-menu]');
+    const megaMenus = document.querySelectorAll('.mega-menu');
+    let activeMenu = null;
+    let hideTimeout = null;
+
+    megaTriggers.forEach(trigger => {
+        trigger.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+            const menuId = trigger.getAttribute('data-menu');
+            const targetMenu = document.getElementById(menuId);
+
+            megaMenus.forEach(m => {
+                if (m !== targetMenu) m.classList.remove('active');
+            });
+
+            if (targetMenu) {
+                // Calculate dynamic positioning
+                const rect = trigger.getBoundingClientRect();
+                const windowWidth = window.innerWidth;
+                const menuWidth = 820; // Matches CSS width
+                
+                let leftPos = rect.left;
+                
+                // Ensure menu doesn't overflow right edge
+                if (leftPos + menuWidth > windowWidth - 20) {
+                    leftPos = windowWidth - menuWidth - 20;
+                }
+
+                targetMenu.style.left = `${leftPos}px`;
+                targetMenu.classList.add('active');
+                activeMenu = targetMenu;
+            }
+        });
+
+        trigger.addEventListener('mouseleave', () => {
+            hideTimeout = setTimeout(() => {
+                if (activeMenu) {
+                    activeMenu.classList.remove('active');
+                    activeMenu = null;
+                }
+            }, 200);
+        });
+    });
+
+    megaMenus.forEach(menu => {
+        menu.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+            activeMenu = menu;
+        });
+
+        menu.addEventListener('mouseleave', () => {
+            hideTimeout = setTimeout(() => {
+                menu.classList.remove('active');
+                activeMenu = null;
+            }, 200);
+        });
+    });
+
+    // 8. Policy Details Tab Switcher
+    const tabTriggers = document.querySelectorAll('.tab-trigger');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const target = trigger.getAttribute('data-target');
+
+            // Update triggers
+            tabTriggers.forEach(t => t.classList.remove('active'));
+            trigger.classList.add('active');
+
+            // Update panels
+            tabPanels.forEach(p => {
+                p.classList.remove('active');
+                if (p.id === target) {
+                    p.classList.add('active');
+                }
+            });
+        });
+    });
+    // 9. Logo Click Behavior (Smooth Scroll to Top if on Home)
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('click', (e) => {
+            const isHomePage = window.location.pathname.endsWith('index.html') || 
+                               window.location.pathname === '/' || 
+                               window.location.pathname.endsWith('/');
+            
+            if (isHomePage) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+    // 10. Timed Calculator Popup on Mobile
+    const calcModal = document.getElementById('calcModal');
+    const closeCalc = document.getElementById('closeCalc');
+    const isMobile = window.innerWidth <= 768 || window.matchMedia("(max-width: 768px)").matches || (document.querySelector('.mobile-menu-btn') && getComputedStyle(document.querySelector('.mobile-menu-btn')).display !== 'none');
+    let popupShown = false;
+
+    if (isMobile && calcModal) {
+        if (!popupShown) {
+            setTimeout(() => {
+                calcModal.classList.add('active');
+                popupShown = true;
+            }, 10000); // 10 seconds
+        }
+
+        // Open calculator popup on mobile "Check Your Premium" click
+        const checkPremiumBtn = document.querySelector('a[href="#quote"]');
+        if (checkPremiumBtn) {
+            checkPremiumBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                calcModal.classList.add('active');
+            });
+        }
+
+        // Close on 'X' click
+        if (closeCalc) {
+            closeCalc.addEventListener('click', () => {
+                calcModal.classList.remove('active');
+            });
+        }
+
+        // Close on outside click
+        calcModal.addEventListener('click', (e) => {
+            if (e.target === calcModal) {
+                calcModal.classList.remove('active');
+            }
+        });
+    }
+
+    // Calculator Form WhatsApp Submission (Global for desktop & mobile)
+    const calcForm = document.getElementById('calculator-form');
+    if (calcForm) {
+        calcForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+            const city = document.getElementById('city').value;
+            const phone = document.getElementById('phone').value;
+
+            if (!age || !gender || !city || !phone) {
+                alert('Please fill out all fields before proceeding.');
+                return;
+            }
+
+            const waMessage = `Hello, I want a health insurance quote.%0A%0AAge: ${age}%0AGender: ${gender}%0ACity: ${city}%0APhone: ${phone}`;
+            const waUrl = `https://wa.me/916382560104?text=${waMessage}`;
+            
+            window.open(waUrl, '_blank');
+        });
+    }
+});
+

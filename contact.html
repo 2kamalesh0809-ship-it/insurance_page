@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | SFS Health Insurance</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: var(--radius-md);
+            border: 1px solid #e2e8f0;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+        }
+        textarea.form-control {
+            height: 120px;
+            resize: vertical;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="/" class="logo">
+                <img src="/public/logo.png" alt="SFS Logo" onerror="this.src='https://via.placeholder.com/150x50?text=SFS+Insurance'">
+                <span>SFS Insurance</span>
+            </a>
+            <nav class="nav">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/plans.html" class="nav-link">Insurance Plans</a>
+                <a href="/services.html" class="nav-link">Services</a>
+                <a href="/claims.html" class="nav-link">Claims</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <a href="/contact.html" class="nav-link active">Contact</a>
+            </nav>
+            <a href="#" class="btn btn-primary">Get a Quote</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="padding-bottom: 60px;">
+            <div class="container" style="text-align: center;">
+                <h1>Get in <span style="color: var(--accent-blue);">Touch</span></h1>
+                <p style="max-width: 600px; margin: 20px auto;">Have questions about our plans? Our team of experts is here to help you.</p>
+            </div>
+        </section>
+
+        <section class="contact-details">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px;">
+                    <div>
+                        <div style="background: var(--white); padding: 40px; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05); height: 100%;">
+                            <h2 style="margin-bottom: 32px;">Contact Information</h2>
+                            <div style="display: grid; gap: 32px;">
+                                <div style="display: flex; gap: 16px;">
+                                    <div style="width: 48px; height: 48px; background: rgba(37, 99, 235, 0.1); color: var(--accent-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center;">ðŸ“</div>
+                                    <div>
+                                        <h4 style="margin-bottom: 4px;">Our Office</h4>
+                                        <p style="color: var(--text-muted);">123 Insurance Avenue, Suite 500, New York, NY 10001</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 16px;">
+                                    <div style="width: 48px; height: 48px; background: rgba(16, 185, 129, 0.1); color: var(--accent-green); border-radius: 50%; display: flex; align-items: center; justify-content: center;">ðŸ“ž</div>
+                                    <div>
+                                        <h4 style="margin-bottom: 4px;">Phone</h4>
+                                        <p style="color: var(--text-muted);">1-800-SFS-SAFE (Toll Free)</p>
+                                        <p style="color: var(--text-muted);">+1 (212) 555-0123</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; gap: 16px;">
+                                    <div style="width: 48px; height: 48px; background: rgba(245, 158, 11, 0.1); color: var(--accent-orange); border-radius: 50%; display: flex; align-items: center; justify-content: center;">âœ‰ï¸</div>
+                                    <div>
+                                        <h4 style="margin-bottom: 4px;">Email</h4>
+                                        <p style="color: var(--text-muted);">support@sfsinsurance.com</p>
+                                        <p style="color: var(--text-muted);">info@sfsinsurance.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: var(--white); padding: 40px; border-radius: var(--radius-lg); border: 1px solid rgba(0,0,0,0.05);">
+                        <h2 style="margin-bottom: 32px;">Send us a Message</h2>
+                        <form id="contact-form">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" class="form-control" placeholder="Inquiry about Smart Plan" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="form-control" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="map" style="padding-top: 0;">
+            <div class="container">
+                <div style="height: 450px; background: #e2e8f0; border-radius: var(--radius-lg); overflow: hidden; position: relative;">
+                    <!-- Placeholder for Map -->
+                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1200') center/cover;">
+                         <div style="background: var(--white); padding: 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-premium); text-align: center;">
+                             <h4 style="margin-bottom: 8px;">Find us here</h4>
+                             <p style="color: var(--text-muted);">SFS Headquarters</p>
+                             <a href="#" style="color: var(--accent-blue); font-size: 0.9rem; font-weight: 600;">Open in Maps â†’</a>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <!-- Same Footer -->
+    </footer>
+</body>
+</html>
+
+

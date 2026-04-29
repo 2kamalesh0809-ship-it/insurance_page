@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Insurance | SFS Insurance</title>
+    <meta name="description" content="Protect your team with tailored group insurance plans from SFS. Comprehensive employee coverage with cost-effective solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .group-hero {
+            position: relative;
+            background-image: url('images/WhatsApp Image 2026-04-27 at 6.38.21 PM (2).jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 120px 0 80px;
+        }
+
+        .group-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+        }
+
+        .group-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Features List View */
+        .features-list-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .feature-item-card {
+            padding: 40px;
+            background: #fff;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+
+        .feature-item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-color: #E85D04;
+        }
+
+        .feature-item-card i {
+            font-size: 2.5rem;
+            color: #E85D04;
+            margin-bottom: 20px;
+        }
+
+        /* Business Trust Panel */
+        .business-trust-panel {
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(232, 93, 4, 0.2);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+            color: #1e293b;
+        }
+
+        .biz-tag {
+            background: #0c3666;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .biz-points {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0 35px;
+        }
+
+        .biz-points li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .biz-points li i { color: #E85D04; }
+
+        /* Why List Section */
+        .why-corp-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 5rem;
+            margin-top: 4rem;
+        }
+
+        .why-corp-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .why-corp-row i {
+            color: #E85D04;
+            font-size: 1.4rem;
+            margin-top: 5px;
+        }
+
+        .corporate-cta-banner {
+            background: #0c3666;
+            color: white;
+            padding: 70px;
+            border-radius: 30px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        @media (max-width: 992px) {
+            .group-hero .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .features-list-container, .why-corp-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="top-header">
+            <div class="container top-header-content">
+                <div class="top-header-left">
+                    <a href="tel:+916382560104"><i class="fas fa-phone-alt"></i> Call Back</a>
+                </div>
+                <div class="top-header-right">
+                    <span class="divider" style="margin: 0 15px; color: #ddd;"></span>
+                    <a href="glossary.html">Info Centre</a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="navbar-container">
+                <div class="logo-section"><a href="index.html" class="logo"><img src="images/sfs_logo.jpg" alt="SFS Logo"><span class="logo-white">SFS</span></a></div><button class="mobile-menu-btn" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-menu mega-menu-container">
+                    <li class="mobile-menu-header" style="display: none;">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;">
+                            <span class="logo-text" style="font-family: 'Playfair Display', serif; color: white;">SFS</span>
+                        </div>
+                    </li>
+                    <li><a href="life-insurance.html">Life / Term Insurance</a></li>
+                    <li><a href="health-insurance.html">Health Insurance</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    <li><a href="group-insurance.html">Group Insurance</a></li>
+                    <li><a href="savings-pension.html">Savings / Pension</a></li>
+                    <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                    <li><a href="index.html#offers">Offers</a></li>
+                    <li><a href="agency-recruitment.html">Agency Recruitment</a></li>
+                    <li class="mobile-menu-footer" style="display: none;">
+                        <div class="social-links" style="margin-top: 15px; justify-content: center;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="contact-info" style="margin-top: 15px; text-align: center; font-size: 11px; color: #eaeaea;">
+                            <span style="margin-right: 15px;"><i class="fas fa-phone-alt"></i> +91 63825 60104</span>
+                            <span><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="group-hero">
+            <div class="container hero-content">
+                <div class="hero-left">
+                    <span class="subtitle" style="color: #E85D04;">B2B Employer Solutions</span>
+                    <h1 style="font-size: 3.5rem; line-height: 1.2;">Protect Your Team <br><span style="color: #E85D04;">with Smart Group Plans</span></h1>
+                    <p style="font-size: 1.2rem; margin: 20px 0 30px; opacity: 0.9;">Custom corporate health and life insurance solutions designed to boost employee retention and safety.</p>
+                    <div class="hero-cta-wrapper">
+                        <a href="#quote" class="btn btn-secondary">Get Corporate Quote</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="business-trust-panel" id="quote">
+                        <span class="biz-tag">CORPORATE SOLUTIONS</span>
+                        <h3 style="color: #0c3666;">Partner with India's <br>Finest B2B Provider</h3>
+                        
+                        <ul class="biz-points">
+                            <li><i class="fas fa-check-circle"></i> Employee medical & life cover</li>
+                            <li><i class="fas fa-check-circle"></i> Fully customizable policy limits</li>
+                            <li><i class="fas fa-check-circle"></i> Tax-deductible premiums</li>
+                            <li><i class="fas fa-check-circle"></i> Dedicated corporate RM</li>
+                        </ul>
+
+                        <a href="https://wa.me/916382560104" target="_blank" class="trust-cta">Enquire for Your Business</a>
+                        <span class="secure-note"><i class="fas fa-building"></i> Over 500+ companies onboarded.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Our Capabilities</span>
+                    <h2>Designed for Modern Workplaces</h2>
+                </div>
+                <div class="features-list-container">
+                    <div class="feature-item-card">
+                        <i class="fas fa-user-friends"></i>
+                        <h4>Employee Coverage</h4>
+                        <p>Comprehensive health, life and accident cover for your workforce with zero waiting period.</p>
+                    </div>
+                    <div class="feature-item-card">
+                        <i class="fas fa-layer-group"></i>
+                        <h4>Custom Plans</h4>
+                        <p>Fully flexible policy structures. Choose your own room limits and corporate add-ons.</p>
+                    </div>
+                    <div class="feature-item-card">
+                        <i class="fas fa-piggy-bank"></i>
+                        <h4>Cost-Effective</h4>
+                        <p>Premium optimization based on claims history and team strength for the best ROI.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Corporate Section -->
+        <section class="section-padding light-bg">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">The SFS Advantage</span>
+                    <h2>Why Businesses Choose Us</h2>
+                </div>
+                <div class="why-corp-list">
+                    <div class="why-corp-row">
+                        <i class="fas fa-check-circle"></i>
+                        <div class="why-corp-info">
+                            <h4>Flexible Policies</h4>
+                            <p>Add or remove employees midway through the project with ease and pro-rata credit.</p>
+                        </div>
+                    </div>
+                    <div class="why-corp-row">
+                        <i class="fas fa-bolt"></i>
+                        <div class="why-corp-info">
+                            <h4>Quick Onboarding</h4>
+                            <p>Our 100% digital platform allows you to get your team covered in less than 24 hours.</p>
+                        </div>
+                    </div>
+                    <div class="why-corp-row">
+                        <i class="fas fa-handshake"></i>
+                        <div class="why-corp-info">
+                            <h4>Trusted by Companies</h4>
+                            <p>Leading startups and enterprises in India trust SFS for their employee welfare programs.</p>
+                        </div>
+                    </div>
+                    <div class="why-corp-row">
+                        <i class="fas fa-headset"></i>
+                        <div class="why-corp-info">
+                            <h4>Priority Support</h4>
+                            <p>Dedicated claim relationship managers for your employees to ensure smooth settlements.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- custom cta banner -->
+                <div class="corporate-cta-banner">
+                    <h2 style="color: white; margin-bottom: 15px;">Get corporate insurance solution</h2>
+                    <p style="opacity: 0.8; margin-bottom: 30px;">Let our business consultants create the perfect welfare plan for your team.</p>
+                    <a href="mailto:sathvikinsuranceservice@gmail.com" class="btn btn-secondary" style="padding: 18px 40px;">Send Business RFP</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer section-padding">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;"><span class="logo-text" style="font-family: 'Playfair Display', serif;">SFS</span>
+                        </div>
+                        <p>India's leading partner for corporate health and life protection. Setting the standard for employee welfare excellence.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html#features">Our Features</a></li>
+                            <li><a href="index.html#plans">Insurance Plans</a></li>
+                            <li><a href="index.html#why-us">Why Choose Us</a></li>
+                            <li><a href="index.html#faq">Help & FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Insurance</h4>
+                        <ul>
+                            <li><a href="health-insurance.html">Health Insurance</a></li>
+                            <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                            <li><a href="life-insurance.html">Life / Term</a></li>
+                            <li><a href="group-insurance.html">Group Insurance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> +91 63825 60104</li>
+                            <li><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> 3/82 Pillayar Koil Street, Porur, Chennai 600056</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 SFS Insurance. All Rights Reserved. IRDAI Registration No. 123456</p>
+                    <div class="legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+

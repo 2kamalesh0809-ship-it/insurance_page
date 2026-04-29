@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance | SFS Insurance</title>
+    <meta name="description" content="Protect your family with SFS Health Insurance. Cashless hospitalization, fast claims, and comprehensive coverage.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700;800&family=Plus+Jakarta+Sans:wght@600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .health-hero {
+            position: relative;
+            background-image: url('images/WhatsApp Image 2026-04-27 at 6.38.20 PM.jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 120px 0 80px;
+        }
+
+        .health-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+        }
+
+        .health-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Coverage Grid */
+        .coverage-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 4rem;
+        }
+
+        .coverage-list h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #0c3666;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .coverage-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .coverage-item i.fa-check-circle { color: #22c55e; }
+        .coverage-item i.fa-times-circle { color: #ef4444; }
+
+        /* Why Choose Cards */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .advantage-card {
+            padding: 40px;
+            background: #fff;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            border-color: #E85D04;
+        }
+
+        .advantage-card i {
+            font-size: 2.5rem;
+            color: #E85D04;
+            margin-bottom: 20px;
+        }
+
+        .advantage-card h4 {
+            font-size: 1.3rem;
+            color: #0c3666;
+            margin-bottom: 12px;
+        }
+
+        /* Expert CTA */
+        .health-expert-cta {
+            background: linear-gradient(135deg, #0c3666 0%, #08264a 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 30px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        /* Trust Panel Styles */
+        .trust-panel {
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(232, 93, 4, 0.15);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            color: #1e293b;
+        }
+
+        .trust-tag {
+            display: inline-block;
+            background: rgba(232, 93, 4, 0.12);
+            color: #E85D04;
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .trust-panel h3 {
+            font-size: 1.65rem;
+            color: #0c3666;
+            margin-bottom: 25px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .trust-points {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 35px;
+        }
+
+        .trust-points li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            color: #475569;
+        }
+
+        .trust-points li i {
+            color: #E85D04;
+            font-size: 1.1rem;
+        }
+
+        .trust-cta {
+            background: #E85D04;
+            color: white;
+            padding: 18px 30px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            display: block;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(232, 93, 4, 0.2);
+        }
+
+        .trust-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(232, 93, 4, 0.3);
+        }
+
+        .secure-note {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 992px) {
+            .health-hero .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .coverage-container, .advantage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="top-header">
+            <div class="container top-header-content">
+                <div class="top-header-left">
+                    <a href="tel:+916382560104"><i class="fas fa-phone-alt"></i> Call Back</a>
+                </div>
+                <div class="top-header-right">
+                    <span class="divider" style="margin: 0 15px; color: #ddd;"></span>
+                    <a href="glossary.html">Info Centre</a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="navbar-container">
+                <div class="logo-section"><a href="index.html" class="logo"><img src="images/sfs_logo.jpg" alt="SFS Logo"><span class="logo-white">SFS</span></a></div><button class="mobile-menu-btn" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+                <ul class="nav-menu mega-menu-container">
+                    <li class="mobile-menu-header" style="display: none;">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;">
+                            <span class="logo-text" style="font-family: 'Playfair Display', serif; color: white;">SFS</span>
+                        </div>
+                    </li>
+                    <li><a href="life-insurance.html">Life / Term Insurance</a></li>
+                    <li><a href="health-insurance.html">Health Insurance</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    <li><a href="group-insurance.html">Group Insurance</a></li>
+                    <li><a href="savings-pension.html">Savings / Pension</a></li>
+                    <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                    <li><a href="index.html#offers">Offers</a></li>
+                    <li><a href="agency-recruitment.html">Agency Recruitment</a></li>
+                    <li class="mobile-menu-footer" style="display: none;">
+                        <div class="social-links" style="margin-top: 15px; justify-content: center;">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="contact-info" style="margin-top: 15px; text-align: center; font-size: 11px; color: #eaeaea;">
+                            <span style="margin-right: 15px;"><i class="fas fa-phone-alt"></i> +91 63825 60104</span>
+                            <span><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="health-hero">
+            <div class="container hero-content">
+                <div class="hero-left">
+                    <span class="subtitle" style="color: #E85D04;">Comprehensive Medical Cover</span>
+                    <h1 style="font-size: 3.5rem; line-height: 1.2;">Protect Your Health. <br><span style="color: #E85D04;">Secure Your Future.</span></h1>
+                    <p style="font-size: 1.2rem; margin: 20px 0 30px; opacity: 0.9;">World-class healthcare protection for you and your family with cashless hospital stay.</p>
+                    <div class="hero-cta-wrapper">
+                        <a href="#quote" class="btn btn-secondary">Check Your Premium</a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="trust-panel" id="quote">
+                        <span class="trust-tag"><i class="fas fa-users"></i> Trusted by 10,000+ Customers</span>
+                        <h3>Why Choose Our <br>Health Insurance</h3>
+                        
+                        <ul class="trust-points">
+                            <li><i class="fas fa-check-circle"></i> 8500+ Cashless Hospitals</li>
+                            <li><i class="fas fa-check-circle"></i> Instant Claim Support</li>
+                            <li><i class="fas fa-check-circle"></i> Pre & Post Hospital Coverage</li>
+                            <li><i class="fas fa-check-circle"></i> Free Annual Health Checkups</li>
+                            <li><i class="fas fa-check-circle"></i> Affordable Premium Plans</li>
+                        </ul>
+
+                        <a href="https://wa.me/916382560104" target="_blank" class="trust-cta">Get Free Consultation</a>
+                        <span class="secure-note"><i class="fas fa-shield-alt"></i> No spam. 100% secure assistance.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coverage Details -->
+        <section class="section-padding">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Policy Summary</span>
+                    <h2>Whatâ€™s Covered & Whatâ€™s Not</h2>
+                </div>
+                
+                <div class="coverage-container">
+                    <!-- Inclusions -->
+                    <div class="coverage-list">
+                        <h3><i class="fas fa-heart" style="color: #22c55e;"></i> Included Benefits</h3>
+                        <div class="coverage-item"><i class="fas fa-check-circle"></i> Cashless hospitalization at 8500+ hospitals</div>
+                        <div class="coverage-item"><i class="fas fa-check-circle"></i> Pre & post hospitalization (60/180 days)</div>
+                        <div class="coverage-item"><i class="fas fa-check-circle"></i> Emergency Road Ambulance cover</div>
+                        <div class="coverage-item"><i class="fas fa-check-circle"></i> Annual health checkups for all members</div>
+                        <div class="coverage-item"><i class="fas fa-check-circle"></i> Day care procedures (540+)</div>
+                    </div>
+
+                    <!-- Exclusions -->
+                    <div class="coverage-list">
+                        <h3><i class="fas fa-shield-alt" style="color: #ef4444;"></i> Not Included</h3>
+                        <div class="coverage-item"><i class="fas fa-times-circle"></i> Cosmetic & Aesthetic treatments</div>
+                        <div class="coverage-item"><i class="fas fa-times-circle"></i> Waiting period conditions for PEDs</div>
+                        <div class="coverage-item"><i class="fas fa-times-circle"></i> Self-inflicted injuries or suicide attempts</div>
+                        <div class="coverage-item"><i class="fas fa-times-circle"></i> Non-medical expenses (Glove, mask etc.)</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Section -->
+        <section class="section-padding light-bg">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">The SFS Advantage</span>
+                    <h2>Trust the Health Experts</h2>
+                </div>
+                <div class="advantage-grid">
+                    <div class="advantage-card">
+                        <i class="fas fa-hospital-alt"></i>
+                        <h4>8500+ Hospitals</h4>
+                        <p>Access our vast network of high-quality cashless hospitals across India.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h4>Fast Claims</h4>
+                        <p>Paperless claim processing with 2-hour cashless approval turnaround.</p>
+                    </div>
+                    <div class="advantage-card">
+                        <i class="fas fa-tags"></i>
+                        <h4>Affordable Plans</h4>
+                        <p>Premiums that fit your budget without compromising on care quality.</p>
+                    </div>
+                </div>
+
+                <div class="health-expert-cta">
+                    <h2 style="color: white; margin-bottom: 15px;">Get your personalized health plan</h2>
+                    <p style="opacity: 0.8; margin-bottom: 30px;">Talk to our health insurance specialists for a curated recommendation.</p>
+                    <a href="https://wa.me/916382560104" target="_blank" class="btn btn-secondary" style="background: #25D366; border: none;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer section-padding">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;"><span class="logo-text" style="font-family: 'Playfair Display', serif;">SFS</span>
+                        </div>
+                        <p>India's most trusted premium health insurance provider. Protecting your health and your family's future with AI-powered care.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="index.html#features">Our Features</a></li>
+                            <li><a href="index.html#plans">Insurance Plans</a></li>
+                            <li><a href="index.html#why-us">Why Choose Us</a></li>
+                            <li><a href="index.html#faq">Help & FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Insurance</h4>
+                        <ul>
+                            <li><a href="health-insurance.html">Health Insurance</a></li>
+                            <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                            <li><a href="life-insurance.html">Life / Term</a></li>
+                            <li><a href="savings-pension.html">Savings / Pension</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>Contact Us</h4>
+                        <ul>
+                            <li><i class="fas fa-phone-alt"></i> +91 63825 60104</li>
+                            <li><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> 3/82 Pillayar Koil Street, Porur, Chennai 600056</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 SFS Insurance. All Rights Reserved. IRDAI Registration No. 123456</p>
+                    <div class="legal-links">
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                        <a href="terms-of-service.html">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+
