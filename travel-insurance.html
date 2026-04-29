@@ -111,6 +111,13 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        @media (max-width: 768px) {
+            .travel-submit-btn {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
     </style>
 </head>
 
@@ -175,7 +182,7 @@
                     </div>
                 </div>
                 <div class="hero-right">
-                    <div class="hero-form-card glass-card" id="quote">
+                    <div class="hero-form-card glass-card" id="quote" style="padding: 16px 16px 20px;">
                         <h3 style="color: #0c3666;">Travel Quote</h3>
                         <p style="color: #64748b; margin-bottom: 20px;">Get your policy in 2 minutes</p>
                         <form id="calculator-form" class="premium-form">
@@ -197,7 +204,9 @@
                                 <label>Phone Number</label>
                                 <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
                             </div>
-                            <button type="submit" class="btn" style="background: #E85D04; color: white;">See Plans <i class="fas fa-plane"></i></button>
+                            <div class="form-btn-wrapper" style="display: flex; justify-content: center; align-items: center; margin-top: 16px;">
+                                <button type="submit" class="btn travel-submit-btn" style="background: #E85D04; color: white; width: 100%; max-width: 320px;">See Plans <i class="fas fa-plane"></i></button>
+                            </div>
                         </form>
                     </div>
                 </div>
