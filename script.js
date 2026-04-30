@@ -324,5 +324,26 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(waUrl, '_blank');
         });
     }
+    // 11. Bottom Navigation Logic
+    const bottomHome = document.getElementById('bottom-nav-home');
+    const bottomOffers = document.getElementById('bottom-nav-offers');
+    const bottomServices = document.getElementById('bottom-nav-services');
+
+    if (bottomHome) {
+        bottomHome.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    if (bottomOffers) {
+        bottomOffers.addEventListener('click', () => {
+            const offersSection = document.getElementById('offers');
+            if (offersSection) {
+                offersSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                window.location.href = 'index.html#offers';
+            }
+        });
+    }
 });
 
