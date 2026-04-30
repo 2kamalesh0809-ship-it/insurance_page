@@ -3,259 +3,453 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Our Services | SFS Insurance</title>
+    <title>SFS Services | Apple-Level Premium Experience</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #f8fafc;
-            padding-bottom: 110px;
+        /* SCOPED APPLE-STYLE SERVICES PAGE */
+        :root {
+            --apple-orange: #FF6A00;
+            --apple-bg: #F8FAFC;
+            --apple-navy: #0c3666;
+            --apple-glass: rgba(255, 255, 255, 0.6);
+            --apple-card-radius: 24px;
+        }
+
+        body.services-apple-body {
+            background-color: var(--apple-bg);
             font-family: 'Inter', sans-serif;
+            color: var(--apple-navy);
+            margin: 0;
+            padding-bottom: 110px;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .services-page-container {
-            padding: 2rem 1.5rem;
-        }
-
-        .services-header {
-            margin-bottom: 2rem;
-        }
-
-        .services-header h1 {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #0c3666;
-            margin-bottom: 0.5rem;
-        }
-
-        .services-header p {
-            color: #64748b;
-            font-size: 1rem;
-        }
-
-        /* Netflix Style Horizontal Row */
-        .services-section-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #0c3666;
-            margin-bottom: 1rem;
+        /* 1. GLASS HEADER */
+        .services-header-glass {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 64px;
+            background: var(--apple-glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 2000;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-items: center;
+            padding: 0 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            box-sizing: border-box;
         }
 
-        .swipe-hint {
-            font-size: 0.8rem;
-            color: #ff6600;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            animation: pulse 2s infinite;
+        .services-logo-box img {
+            height: 32px;
+            width: auto;
         }
 
-        @keyframes pulse {
-            0% { transform: translateX(0); opacity: 1; }
-            50% { transform: translateX(5px); opacity: 0.7; }
-            100% { transform: translateX(0); opacity: 1; }
+        .services-header-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin: 0;
         }
 
-        .services-row {
+        .services-header-icon {
+            font-size: 1.2rem;
+            color: var(--apple-navy);
+            opacity: 0.8;
+        }
+
+        /* 2. CATEGORY TABS (FLOATING GLASS) */
+        .services-tabs-outer {
+            padding-top: 24px;
+            background: var(--apple-bg);
+        }
+
+        .services-tabs-scroll {
             display: flex;
             overflow-x: auto;
-            gap: 16px;
-            padding: 10px 0 30px;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE/Edge */
-        }
-
-        .services-row::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
-        }
-
-        /* Card Design */
-        .service-card {
-            min-width: 82%;
-            flex-shrink: 0;
-            scroll-snap-align: center;
-            background: #ffffff;
-            border-radius: 24px;
-            overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            gap: 12px;
+            padding: 0 20px 20px;
+            scrollbar-width: none;
             position: relative;
         }
 
-        .service-card:active {
-            transform: scale(0.97);
+        .services-tabs-scroll::-webkit-scrollbar {
+            display: none;
         }
 
-        .service-image {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
+        .services-tab-pill {
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            color: var(--apple-navy);
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            cursor: pointer;
         }
 
-        .service-content {
-            padding: 18px;
+        .services-tab-pill.active {
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transform: scale(1.05);
+            color: var(--apple-orange);
+            border-color: #ffffff;
         }
 
-        .service-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #0c3666;
-            margin-bottom: 6px;
+        .services-tab-indicator {
+            position: absolute;
+            bottom: 12px;
+            height: 3px;
+            background: var(--apple-orange);
+            border-radius: 10px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: none; /* Logic can enable this if needed */
         }
 
-        .service-desc {
+        /* 3. HERO SPACING & CONTENT */
+        .services-content-main {
+            padding-top: 10px;
+        }
+
+        .services-category-info {
+            padding: 0 20px;
+            margin-bottom: 24px;
+        }
+
+        .services-category-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--apple-navy);
+        }
+
+        .services-category-info span {
             font-size: 0.9rem;
-            color: #64748b;
-            line-height: 1.4;
-            margin-bottom: 15px;
+            color: var(--apple-text-muted);
+            opacity: 0.7;
+            font-weight: 500;
         }
 
-        .service-btn {
-            display: block;
-            background: linear-gradient(135deg, #ff6600, #ff8533);
-            color: white;
-            padding: 12px;
-            border-radius: 14px;
-            text-align: center;
+        /* 4. APPLE CARD SYSTEM */
+        .services-snap-row {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 0 20px 40px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .services-snap-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        .services-apple-card {
+            min-width: 88%;
+            height: 280px;
+            scroll-snap-align: center;
+            border-radius: var(--apple-card-radius);
+            position: relative;
+            overflow: hidden;
+            background: #000;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .services-apple-card.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .services-apple-card:active {
+            transform: scale(0.96);
+        }
+
+        .services-card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .services-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, transparent 60%),
+                        linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 40%);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .services-card-top {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .services-card-title {
+            color: #ffffff;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
             font-weight: 700;
-            text-decoration: none;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+            margin: 0;
         }
 
-        /* Desktop Adjustments */
+        .services-card-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* GLASS BUTTON */
+        .services-glass-btn {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 12px 24px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            align-self: flex-start;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .services-glass-btn i {
+            font-size: 0.8rem;
+        }
+
+        .services-glass-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        /* 5. DEPTH & MOTION */
+        .services-apple-card:hover .services-card-img {
+            transform: scale(1.1);
+        }
+
+        /* Floating Nav fix */
+        .services-apple-body .bottom-nav {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
         @media (min-width: 769px) {
-            .services-page-container {
-                max-width: 1000px;
-                margin: 0 auto;
+            .services-snap-row {
+                justify-content: center;
+                flex-wrap: wrap;
+                overflow: visible;
+                gap: 30px;
             }
-            .service-card {
-                min-width: 300px;
+            .services-apple-card {
+                min-width: 380px;
+                max-width: 380px;
+                height: 300px;
+            }
+            .services-header-glass {
+                padding: 0 100px;
+                height: 80px;
+            }
+            .services-tabs-scroll {
+                justify-content: center;
+                padding-bottom: 40px;
+            }
+            .services-category-info {
+                padding: 0 100px;
             }
         }
     </style>
 </head>
-<body>
+<body class="services-apple-body">
 
-    <div class="services-page-container">
-        <div class="services-header">
-            <h1>Our Services</h1>
-            <p>Choose the right plan for your needs</p>
+    <!-- Apple Style Glass Header -->
+    <header class="services-header-glass">
+        <div class="services-logo-box">
+            <img src="images/sfs_logo.jpg" alt="SFS Logo">
         </div>
-
-        <div class="services-section">
-            <h2 class="services-section-title">
-                Insurance Services
-                <span class="swipe-hint" id="swipeHint">Swipe <i class="fas fa-arrow-right"></i></span>
-            </h2>
-            
-            <div class="services-row" id="servicesRow">
-            <!-- Health Insurance -->
-            <div class="service-card">
-                <img src="images/premium_health_insurance_netflix_1777539971482.png" alt="Health Insurance" class="service-image">
-                <div class="service-content">
-                    <h3 class="service-title">Health Insurance</h3>
-                    <p class="service-desc">Medical coverage with access to top cashless hospitals.</p>
-                    <a href="index.html#financial-services" class="service-btn">Book Now</a>
-                </div>
-            </div>
-
-            <!-- Life Insurance -->
-            <div class="service-card">
-                <img src="images/premium_life_insurance_netflix_1777539955013.png" alt="Life Insurance" class="service-image">
-                <div class="service-content">
-                    <h3 class="service-title">Life Insurance</h3>
-                    <p class="service-desc">Family protection with secure and flexible life coverage plans.</p>
-                    <a href="index.html#financial-services" class="service-btn">Book Now</a>
-                </div>
-            </div>
-
-            <!-- Motor Insurance -->
-            <div class="service-card">
-                <img src="images/premium_motor_insurance_netflix_1777539988685.png" alt="Motor Insurance" class="service-image">
-                <div class="service-content">
-                    <h3 class="service-title">Motor Insurance</h3>
-                    <p class="service-desc">All-round vehicle protection with instant policy and claim support.</p>
-                    <a href="index.html#financial-services" class="service-btn">Book Now</a>
-                </div>
-            </div>
-
-            <!-- Travel Insurance -->
-            <div class="service-card">
-                <img src="images/premium_travel_insurance_netflix_1777540004997.png" alt="Travel Insurance" class="service-image">
-                <div class="service-content">
-                    <h3 class="service-title">Travel Insurance</h3>
-                    <p class="service-desc">Global travel safety with emergency assistance wherever you go.</p>
-                    <a href="index.html#financial-services" class="service-btn">Book Now</a>
-                </div>
-            </div>
-
-            <!-- Savings -->
-            <div class="service-card">
-                <img src="images/premium_savings_pension_netflix_1777540023298.png" alt="Savings / Pension" class="service-image">
-                <div class="service-content">
-                    <h3 class="service-title">Savings / Pension</h3>
-                    <p class="service-desc">Retirement & wealth building with smart long-term savings plans.</p>
-                    <a href="index.html#financial-services" class="service-btn">Book Now</a>
-                </div>
-            </div>
-
-            <!-- Group Insurance -->
-            <div class="service-card">
-                <img src="images/premium_group_insurance_netflix_1777540057873.png" alt="Group Insurance" class="service-image">
-                <div class="service-content">
-                    <h3 class="service-title">Group Insurance</h3>
-                    <p class="service-desc">Customized employee coverage for corporate teams and businesses.</p>
-                    <a href="index.html#financial-services" class="service-btn">Book Now</a>
-                </div>
-            </div>
-            </div>
+        <h1 class="services-header-title">Our Services</h1>
+        <div class="services-header-icon">
+            <i class="fas fa-bars-staggered"></i>
         </div>
+    </header>
+
+    <!-- Floating Glass Category Tabs -->
+    <div class="services-tabs-outer">
+        <nav class="services-tabs-scroll" id="appleTabs">
+            <div class="services-tab-pill active" data-cat="LIFE">Life</div>
+            <div class="services-tab-pill" data-cat="HEALTH">Health</div>
+            <div class="services-tab-pill" data-cat="MOTOR">Motor</div>
+            <div class="services-tab-pill" data-cat="TRAVEL">Travel</div>
+            <div class="services-tab-pill" data-cat="SAVINGS">Savings</div>
+            <div class="services-tab-pill" data-cat="AGENCY">Agency</div>
+        </nav>
     </div>
 
-    <!-- Apple-Style Floating Bottom Nav -->
+    <!-- Main Content -->
+    <main class="services-content-main">
+        <div class="services-category-info">
+            <span id="catSubtitle">SECURE YOUR FUTURE</span>
+            <h2 id="catMainTitle">Life Insurance</h2>
+        </div>
+
+        <div class="services-snap-row" id="appleGrid">
+            <!-- Apple Cards will be injected here -->
+        </div>
+    </main>
+
+    <!-- Floating Bottom Nav -->
     <nav class="bottom-nav">
-        <div class="nav-indicator"></div>
-        <a href="services.html" class="nav-item active" id="bottom-nav-services">
+        <div class="nav-indicator" style="left: 12.5%;"></div>
+        <a href="services.html" class="nav-item active">
             <i class="fas fa-th-large"></i>
             <span>Services</span>
         </a>
-        <div class="nav-item home-item" id="bottom-nav-home">
+        <a href="index.html" class="nav-item home-item">
             <div class="home-btn">
                 <i class="fas fa-home"></i>
             </div>
             <span>Home</span>
-        </div>
-        <div class="nav-item" id="bottom-nav-offers">
+        </a>
+        <a href="index.html#offers" class="nav-item">
             <i class="fas fa-percent"></i>
             <span>Offers</span>
-        </div>
+        </a>
     </nav>
 
-    <script src="script.js"></script>
     <script>
-        // Hide swipe hint after first interaction
-        const servicesRow = document.getElementById('servicesRow');
-        const swipeHint = document.getElementById('swipeHint');
-        
-        servicesRow.addEventListener('scroll', () => {
-            if (servicesRow.scrollLeft > 20) {
-                swipeHint.style.opacity = '0';
-                swipeHint.style.transition = 'opacity 0.5s ease';
-                setTimeout(() => {
-                    swipeHint.style.display = 'none';
-                }, 500);
+        const appleData = {
+            LIFE: {
+                title: "Life Insurance",
+                subtitle: "SECURE YOUR LEGACY",
+                items: [
+                    { name: "Term Protection", sub: "Maximum Coverage", img: "images/premium_life_insurance_netflix_1777539955013.png" },
+                    { name: "Savings Plus", sub: "Growth & Safety", img: "images/premium_savings_pension_netflix_1777540023298.png" }
+                ]
+            },
+            HEALTH: {
+                title: "Health Insurance",
+                subtitle: "WELLNESS FOR FAMILY",
+                items: [
+                    { name: "Family Shield", sub: "Cashless Network", img: "images/premium_health_insurance_netflix_1777539971482.png" },
+                    { name: "Critical Care", sub: "Advanced Support", img: "images/medical_consultation_premium_1776751609522.png" }
+                ]
+            },
+            MOTOR: {
+                title: "Motor Insurance",
+                subtitle: "PROTECTION ON ROAD",
+                items: [
+                    { name: "Car Luxury", sub: "Zero Depreciation", img: "images/premium_car_insurance_hero_1777370034395.png" },
+                    { name: "Bike Swift", sub: "Instant Policy", img: "images/premium_motor_insurance_netflix_1777539988685.png" }
+                ]
+            },
+            TRAVEL: {
+                title: "Travel Insurance",
+                subtitle: "EXPLORE WITHOUT WORRY",
+                items: [
+                    { name: "Global Wanderer", sub: "Worldwide Support", img: "images/premium_travel_insurance_netflix_1777540004997.png" },
+                    { name: "Domestic Trip", sub: "India Special", img: "images/travel_card.png" }
+                ]
+            },
+            SAVINGS: {
+                title: "Savings & Pension",
+                subtitle: "RETIRE WITH PRIDE",
+                items: [
+                    { name: "Golden Pension", sub: "Life-long Income", img: "images/premium_savings_pension_netflix_1777540023298.png" },
+                    { name: "Education Goal", sub: "For Your Kids", img: "images/premium_group_insurance_netflix_1777540057873.png" }
+                ]
+            },
+            AGENCY: {
+                title: "Agency Partner",
+                subtitle: "BUILD YOUR CAREER",
+                items: [
+                    { name: "Join SFS", sub: "Certified Advisor", img: "images/agency_card.png" }
+                ]
             }
-        }, { once: true });
+        };
+
+        function renderAppleCards(cat) {
+            const grid = document.getElementById('appleGrid');
+            const mainTitle = document.getElementById('catMainTitle');
+            const subTitle = document.getElementById('catSubtitle');
+            
+            const data = appleData[cat];
+            mainTitle.textContent = data.title;
+            subTitle.textContent = data.subtitle;
+            
+            grid.innerHTML = '';
+            grid.scrollLeft = 0;
+
+            data.items.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'services-apple-card';
+                
+                const waMsg = encodeURIComponent(`I want to know more about ${item.name} insurance plans. Please assist.`);
+                const waLink = `https://wa.me/916382560104?text=${waMsg}`;
+
+                card.innerHTML = `
+                    <img src="${item.img}" alt="${item.name}" class="services-card-img">
+                    <div class="services-card-overlay">
+                        <div class="services-card-top">
+                            <h3 class="services-card-title">${item.name}</h3>
+                            <span class="services-card-subtitle">${item.sub}</span>
+                        </div>
+                        <a href="${waLink}" target="_blank" class="services-glass-btn">
+                            Book Now <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                `;
+                
+                grid.appendChild(card);
+                
+                // Entrance animation
+                setTimeout(() => {
+                    card.classList.add('reveal');
+                }, index * 100 + 100);
+            });
+        }
+
+        // Tab Switching
+        const tabs = document.querySelectorAll('.services-tab-pill');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                const cat = tab.getAttribute('data-cat');
+                renderAppleCards(cat);
+                
+                tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            });
+        });
+
+        // Initial
+        document.addEventListener('DOMContentLoaded', () => {
+            renderAppleCards('LIFE');
+        });
     </script>
 </body>
 </html>
