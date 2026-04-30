@@ -19,79 +19,139 @@
 
         body.services-page-body {
             background-color: var(--services-bg);
+            padding-top: 0 !important; /* Remove global top padding */
             padding-bottom: 110px;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
             margin: 0;
         }
 
-        /* NEW HERO SECTION */
-        .services-hero {
+        /* PREMIUM CAROUSEL SECTION */
+        .services-carousel-container {
             position: relative;
             width: 100%;
-            height: 220px;
-            background-color: #0c3666;
+            height: 300px; /* Increased from 240px */
             overflow: hidden;
             border-radius: 0 0 24px 24px;
-            opacity: 0;
-            transform: translateY(10px);
-            animation: servicesFadeIn 0.8s ease-out forwards;
+            background: #0c3666;
         }
 
-        @keyframes servicesFadeIn {
-            to { opacity: 1; transform: translateY(0); }
+        .services-carousel-track {
+            display: flex;
+            width: 400%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .services-hero-img {
+        .services-slide {
+            width: 25%;
+            height: 100%;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .services-slide-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transform: scale(1.05);
-            filter: brightness(0.7) blur(1px);
+            filter: brightness(0.7);
         }
 
-        .services-hero-overlay {
+        .services-slide-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
             padding: 20px;
+            box-sizing: border-box;
         }
 
-        .services-hero-tag {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            padding: 4px 12px;
+        .services-slide-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .services-slide.active .services-slide-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .services-slide-tag {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(4px);
+            padding: 3px 10px;
             border-radius: 50px;
             color: #ffffff;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 700;
             letter-spacing: 1px;
             display: inline-block;
-            margin-bottom: 8px;
-            width: fit-content;
+            margin-bottom: 6px;
         }
 
-        .services-hero-title {
+        .services-slide-title {
             font-family: 'Playfair Display', serif;
             color: #ffffff;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            margin: 0 0 8px;
+            margin: 0 0 4px;
             line-height: 1.2;
         }
 
-        .services-hero-subtext {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.9rem;
-            margin: 0;
-            max-width: 80%;
-            line-height: 1.4;
+        .services-slide-subtext {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 0.85rem;
+            margin: 0 0 15px;
+            font-weight: 500;
+        }
+
+        .services-slide-cta {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .services-slide-cta:active {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(0.95);
+        }
+
+        /* Indicators */
+        .services-carousel-dots {
+            position: absolute;
+            bottom: 12px;
+            right: 20px;
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+
+        .services-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .services-dot.active {
+            background: #ffffff;
+            width: 18px;
+            border-radius: 10px;
         }
 
         .services-sticky-header {
@@ -326,13 +386,65 @@
 </head>
 <body class="services-page-body">
 
-    <!-- Premium Hero Section -->
-    <div class="services-hero">
-        <img src="images/hero_family_house_wide_final_1776775163384.png" alt="Family Protection" class="services-hero-img">
-        <div class="services-hero-overlay">
-            <span class="services-hero-tag">SMART INSURANCE</span>
-            <h2 class="services-hero-title">Protect What Matters Most</h2>
-            <p class="services-hero-subtext">Simple. Secure. Reliable plans for every stage of life.</p>
+    <!-- Premium Sliding Carousel -->
+    <div class="services-carousel-container">
+        <div class="services-carousel-track" id="carouselTrack">
+            <!-- Slide 1: Family -->
+            <div class="services-slide active">
+                <img src="images/hero_family_house_wide_final_1776775163384.png" alt="Family" class="services-slide-img">
+                <div class="services-slide-overlay">
+                    <div class="services-slide-content">
+                        <span class="services-slide-tag">PROTECTION</span>
+                        <h2 class="services-slide-title">Protect Your Family</h2>
+                        <p class="services-hero-subtext" style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">Secure their future with confidence</p>
+                        <a href="#servicesGrid" class="services-slide-cta">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 2: Health -->
+            <div class="services-slide">
+                <img src="images/premium_health_insurance_netflix_1777539971482.png" alt="Health" class="services-slide-img">
+                <div class="services-slide-overlay">
+                    <div class="services-slide-content">
+                        <span class="services-slide-tag">HEALTH</span>
+                        <h2 class="services-slide-title">Health Comes First</h2>
+                        <p class="services-hero-subtext" style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">Cashless treatment across India</p>
+                        <a href="#servicesGrid" class="services-slide-cta">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 3: Motor -->
+            <div class="services-slide">
+                <img src="images/premium_motor_insurance_netflix_1777539988685.png" alt="Motor" class="services-slide-img">
+                <div class="services-slide-overlay">
+                    <div class="services-slide-content">
+                        <span class="services-slide-tag">MOTOR</span>
+                        <h2 class="services-slide-title">Drive With Confidence</h2>
+                        <p class="services-hero-subtext" style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">Complete motor protection plans</p>
+                        <a href="#servicesGrid" class="services-slide-cta">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Slide 4: Travel -->
+            <div class="services-slide">
+                <img src="images/premium_travel_insurance_netflix_1777540004997.png" alt="Travel" class="services-slide-img">
+                <div class="services-slide-overlay">
+                    <div class="services-slide-content">
+                        <span class="services-slide-tag">TRAVEL</span>
+                        <h2 class="services-slide-title">Travel Without Worries</h2>
+                        <p class="services-hero-subtext" style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">Global coverage, zero stress</p>
+                        <a href="#servicesGrid" class="services-slide-cta">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Indicators -->
+        <div class="services-carousel-dots">
+            <div class="services-dot active" data-index="0"></div>
+            <div class="services-dot" data-index="1"></div>
+            <div class="services-dot" data-index="2"></div>
+            <div class="services-dot" data-index="3"></div>
         </div>
     </div>
 
@@ -524,9 +636,63 @@
             });
         });
 
+        // Carousel Logic
+        let currentSlide = 0;
+        const totalSlides = 4;
+        const track = document.getElementById('carouselTrack');
+        const dots = document.querySelectorAll('.services-dot');
+        const slides = document.querySelectorAll('.services-slide');
+
+        function updateCarousel(index) {
+            track.style.transform = `translateX(-${index * 25}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % totalSlides;
+            updateCarousel(next);
+        }
+
+        let autoSlideInterval = setInterval(nextSlide, 3000);
+
+        // Dot Clicks
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(autoSlideInterval);
+                updateCarousel(index);
+                autoSlideInterval = setInterval(nextSlide, 3000);
+            });
+        });
+
+        // Swipe Support (Simple)
+        let touchStartX = 0;
+        track.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX, {passive: true});
+        track.addEventListener('touchend', e => {
+            let touchEndX = e.changedTouches[0].clientX;
+            if (touchStartX - touchEndX > 50) {
+                // Swipe Left -> Next
+                clearInterval(autoSlideInterval);
+                nextSlide();
+                autoSlideInterval = setInterval(nextSlide, 3000);
+            } else if (touchEndX - touchStartX > 50) {
+                // Swipe Right -> Prev
+                clearInterval(autoSlideInterval);
+                let prev = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateCarousel(prev);
+                autoSlideInterval = setInterval(nextSlide, 3000);
+            }
+        }, {passive: true});
+
         // Initial Render
         document.addEventListener('DOMContentLoaded', () => {
             renderCards('LIFE');
+            // Ensure first slide is active
+            setTimeout(() => slides[0].classList.add('active'), 100);
         });
     </script>
 </body>
