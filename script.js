@@ -404,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 guide.classList.remove('show');
                 guide.classList.add('hide');
-            }, 3000);
+            }, 5000);
         }
     }, 3000);
 });
