@@ -2322,9 +2322,11 @@ header.active .main-nav {
 @media (max-width: 992px) {
     .offers-interactive-container {
         flex-direction: column;
-        padding: 20px;
+        padding: 24px 16px;
         min-height: auto;
-        gap: 20px;
+        gap: 24px;
+        border-radius: 20px;
+        margin-top: 2rem;
     }
 
     .offer-selectors {
@@ -2332,56 +2334,85 @@ header.active .main-nav {
         flex-direction: row;
         border-right: none;
         padding-right: 0;
-        overflow-x: auto;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        scroll-snap-type: x mandatory;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-
-    .offer-selectors::-webkit-scrollbar {
-        display: none;
+        justify-content: center;
+        gap: 10px;
+        padding-bottom: 0;
+        border-bottom: none;
     }
 
     .offer-selector-item {
-        flex: 0 0 auto;
-        padding: 12px 20px;
-        scroll-snap-align: center;
+        flex: 1;
+        padding: 12px;
+        justify-content: center;
+        border-radius: 12px;
+        background: #f1f5f9;
+        border: 1px solid transparent;
+        max-width: 100px;
     }
 
     .offer-selector-item.active {
-        transform: none;
+        background: #ffffff;
+        border-color: rgba(255, 122, 26, 0.2);
+        box-shadow: 0 4px 12px rgba(255, 122, 26, 0.1);
+        transform: scale(1.05);
+    }
+
+    .offer-selector-item span {
+        display: none; /* Keep it minimal on mobile */
+    }
+
+    .offer-selector-item i {
+        font-size: 1.4rem;
+        margin: 0;
     }
 
     .offer-content-display {
-        min-height: 300px;
+        min-height: 320px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .offer-slide {
+        align-items: flex-start;
+        text-align: center;
+    }
+
+    .offer-slide-inner {
+        width: 100%;
+        max-width: 100%;
     }
 
     .offer-slide h3 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+
+    .offer-slide p {
+        font-size: 1rem;
+        margin-bottom: 24px;
+    }
+
+    .offer-slide .btn {
+        width: 100%;
+        padding: 16px;
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 480px) {
     .offers-interactive-container {
-        border-radius: 20px;
-    }
-    
-    .offer-selector-item span {
-        display: none;
+        padding: 20px 12px;
     }
     
     .offer-selector-item {
-        padding: 12px;
-        border-radius: 50%;
-        width: 45px;
-        height: 45px;
-        justify-content: center;
+        max-width: 80px;
     }
     
-    .offer-selector-item i {
-        margin: 0;
+    .offer-slide h3 {
+        font-size: 1.4rem;
+    }
+    
+    .offer-content-display {
+        min-height: 350px;
     }
 }
 
