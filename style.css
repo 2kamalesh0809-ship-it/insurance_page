@@ -2017,10 +2017,9 @@ header.active .main-nav {
 .tab-trigger {
     padding: 1rem 2.5rem;
     border-radius: 50px;
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
-    color: #0c3666;
-    /* var(--primary) fallback */
+    border: none;
+    background: #E5E7EB;
+    color: #6B7280;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -2031,18 +2030,26 @@ header.active .main-nav {
 
 .tab-trigger i {
     font-size: 1.1rem;
-    opacity: 0.6;
 }
 
-.tab-trigger.active {
-    background: #0c3666;
-    color: #ffffff;
-    border-color: #0c3666;
-    box-shadow: 0 10px 20px rgba(10, 48, 86, 0.2);
+.tab-trigger:hover {
+    filter: brightness(1.05);
+}
+
+.tab-trigger.active.inclusion-btn {
+    background: #14532D;
+    color: #FFFFFF;
+    box-shadow: 0 6px 16px rgba(20, 83, 45, 0.3);
+}
+
+.tab-trigger.active.exclusion-btn {
+    background: #7F1D1D;
+    color: #FFFFFF;
+    box-shadow: 0 6px 16px rgba(127, 29, 29, 0.3);
 }
 
 .tab-trigger.active i {
-    opacity: 1;
+    color: #FFFFFF;
 }
 
 .tab-panel {
@@ -2196,10 +2203,16 @@ header.active .main-nav {
         color: #64748b;
     }
 
-    .tab-trigger.active {
-        background: #0c3666;
+    .tab-trigger.active.inclusion-btn {
+        background: #14532D;
         color: #ffffff;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(20, 83, 45, 0.2);
+    }
+
+    .tab-trigger.active.exclusion-btn {
+        background: #7F1D1D;
+        color: #ffffff;
+        box-shadow: 0 4px 12px rgba(127, 29, 29, 0.2);
     }
 
     .inclusions-grid,
