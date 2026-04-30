@@ -324,26 +324,60 @@ document.addEventListener('DOMContentLoaded', () => {
             window.open(waUrl, '_blank');
         });
     }
-    // 11. Bottom Navigation Logic
-    const bottomHome = document.getElementById('bottom-nav-home');
-    const bottomOffers = document.getElementById('bottom-nav-offers');
-    const bottomServices = document.getElementById('bottom-nav-services');
+    // 11. Apple-Style Bottom Navigation Logic
+    const bottomNav = document.querySelector('.bottom-nav');
+    const navItems = document.querySelectorAll('.nav-item');
+    const navIndicator = document.querySelector('.nav-indicator');
 
-    if (bottomHome) {
-        bottomHome.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+    function updateIndicator(activeItem) {
+        if (!navIndicator || !activeItem) return;
+        const rect = activeItem.getBoundingClientRect();
+        const navRect = bottomNav.getBoundingClientRect();
+        const centerX = rect.left - navRect.left + rect.width / 2;
+        navIndicator.style.left = `${centerX - navIndicator.offsetWidth / 2}px`;
     }
 
-    if (bottomOffers) {
-        bottomOffers.addEventListener('click', () => {
-            const offersSection = document.getElementById('offers');
-            if (offersSection) {
-                offersSection.scrollIntoView({ behavior: 'smooth' });
-            } else {
-                window.location.href = 'index.html#offers';
+    // Set initial position
+    const initialActive = document.querySelector('.nav-item.active');
+    if (initialActive) {
+        setTimeout(() => updateIndicator(initialActive), 100);
+    }
+
+    navItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            // Smooth Scroll / Redirect Logic
+            if (item.id === 'bottom-nav-home') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else if (item.id === 'bottom-nav-offers') {
+                e.preventDefault();
+                const offersSection = document.getElementById('offers');
+                if (offersSection) {
+                    offersSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    window.location.href = 'index.html#offers';
+                }
+            } else if (item.id === 'bottom-nav-services') {
+                // Let the default <a> behavior handle the redirect
             }
+
+            // UI Update
+            navItems.forEach(nav => nav.classList.remove('active'));
+            item.classList.add('active');
+            updateIndicator(item);
+
+            // Add bounce animation
+            item.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                item.style.transform = '';
+            }, 100);
         });
-    }
+    });
+
+    // Handle window resize for indicator
+    window.addEventListener('resize', () => {
+        const currentActive = document.querySelector('.nav-item.active');
+        if (currentActive) updateIndicator(currentActive);
+    });
 });
 
