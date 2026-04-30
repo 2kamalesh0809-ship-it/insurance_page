@@ -345,20 +345,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
+            const isHomePage = window.location.pathname.endsWith('index.html') || 
+                               window.location.pathname === '/' || 
+                               window.location.pathname.endsWith('/');
+
             // Smooth Scroll / Redirect Logic
             if (item.id === 'bottom-nav-home') {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                if (isHomePage) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    window.location.href = 'index.html';
+                }
             } else if (item.id === 'bottom-nav-offers') {
-                e.preventDefault();
-                const offersSection = document.getElementById('offers');
-                if (offersSection) {
-                    offersSection.scrollIntoView({ behavior: 'smooth' });
+                if (isHomePage) {
+                    e.preventDefault();
+                    const offersSection = document.getElementById('offers');
+                    if (offersSection) {
+                        offersSection.scrollIntoView({ behavior: 'smooth' });
+                    }
                 } else {
                     window.location.href = 'index.html#offers';
                 }
             } else if (item.id === 'bottom-nav-services') {
-                // Let the default <a> behavior handle the redirect
+                if (window.location.pathname.endsWith('services.html')) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
             }
 
             // UI Update
@@ -379,10 +392,5 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentActive = document.querySelector('.nav-item.active');
         if (currentActive) updateIndicator(currentActive);
     });
-
-    // Initialize Lucide Icons
-    if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-    }
 });
 
