@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function startOfferRotation() {
-        offerInterval = setInterval(nextOffer, 4000);
+        offerInterval = setInterval(nextOffer, 5000);
     }
 
     function stopOfferRotation() {
