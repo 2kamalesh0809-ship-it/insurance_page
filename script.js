@@ -170,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 200);
         });
     });
-
     // 8. Policy Details Tab Switcher
     const tabTriggers = document.querySelectorAll('.tab-trigger');
     const tabPanels = document.querySelectorAll('.tab-panel');
@@ -192,6 +191,63 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    // 9. Interactive Offers Slider Logic
+    const offerSelectors = document.querySelectorAll('.offer-selector-item');
+    const offerSlides = document.querySelectorAll('.offer-slide');
+    const offersContainer = document.querySelector('.offers-interactive-container');
+    let currentOfferIndex = 0;
+    let offerInterval;
+
+    function showOffer(index) {
+        // Handle selectors
+        offerSelectors.forEach(s => s.classList.remove('active'));
+        offerSelectors[index].classList.add('active');
+
+        // Handle slides
+        offerSlides.forEach(slide => {
+            if (slide.classList.contains('active')) {
+                slide.classList.remove('active');
+                slide.classList.add('exit');
+                setTimeout(() => {
+                    slide.classList.remove('exit');
+                }, 400);
+            }
+        });
+
+        offerSlides[index].classList.add('active');
+        currentOfferIndex = index;
+    }
+
+    function nextOffer() {
+        let nextIndex = (currentOfferIndex + 1) % offerSelectors.length;
+        showOffer(nextIndex);
+    }
+
+    function startOfferRotation() {
+        offerInterval = setInterval(nextOffer, 4000);
+    }
+
+    function stopOfferRotation() {
+        clearInterval(offerInterval);
+    }
+
+    if (offerSelectors.length > 0) {
+        offerSelectors.forEach((selector, index) => {
+            selector.addEventListener('click', () => {
+                showOffer(index);
+                stopOfferRotation();
+                startOfferRotation(); // Reset timer on manual click
+            });
+        });
+
+        if (offersContainer) {
+            offersContainer.addEventListener('mouseenter', stopOfferRotation);
+            offersContainer.addEventListener('mouseleave', startOfferRotation);
+        }
+
+        startOfferRotation();
+    }
     // 9. Logo Click Behavior (Smooth Scroll to Top if on Home)
     const logo = document.querySelector('.logo');
     if (logo) {
