@@ -27,14 +27,17 @@ section {
     scroll-margin-top: 150px;
 }
 
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     color: var(--primary);
     background-color: #f8fafc;
     line-height: 1.6;
-    overflow-x: hidden;
     padding-top: 150px;
-    /* Offset for Top Bar (40) + Nav (70) + Strip (40) */
 }
 
 .container {
@@ -65,6 +68,10 @@ img {
 
 .section-padding {
     padding: 100px 0;
+}
+
+.features, .why-us {
+    overflow-x: hidden;
 }
 
 /* 3.0 Hero Section with Dynamic Carousel */
@@ -3215,10 +3222,10 @@ img {
 /* Apple-Style Floating Bottom Navigation */
 .bottom-nav {
     position: fixed;
-    bottom: 20px;
+    bottom: 14px;
     left: 50%;
     transform: translateX(-50%);
-    width: 90%;
+    width: 92%;
     max-width: 400px;
     height: 64px;
     background: rgba(255, 255, 255, 0.7);
@@ -3322,22 +3329,16 @@ img {
 /* 14. Why SFS Feature Animations */
 .feature-item {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
     transition: all 0.6s ease-out;
 }
 
 .feature-left {
-    transform: translateX(-40px);
+    transform: translateX(-60px);
 }
 
 .feature-right {
-    transform: translateX(40px);
-}
-
-@media (max-width: 768px) {
-    .feature-left, .feature-right {
-        transform: translateX(0) translateY(20px); /* Slide up instead of side on mobile to prevent overflow */
-    }
+    transform: translateX(60px);
 }
 
 .feature-item.show {
@@ -3373,28 +3374,12 @@ img {
 .why-item.feature-item {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 12px;
-    padding: 15px;
-    margin: 10px 0; /* Removed negative margin to prevent mobile overflow */
+    padding: 15px; 
+    margin: 5px 0; /* Changed from -15px to 0 to prevent mobile overflow */
 }
 
 .why-item.feature-item:hover {
     transform: scale(1.02) !important;
     background: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-}
-
-/* Mobile Service Grid Fix */
-@media (max-width: 480px) {
-    .services-grid {
-        grid-template-columns: 1fr !important;
-        gap: 15px !important;
-    }
-    
-    .service-card {
-        height: 180px !important; /* Slightly taller for better readability */
-    }
-    
-    .service-card-content h3 {
-        font-size: 1.1rem !important;
-    }
 }
