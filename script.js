@@ -379,5 +379,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentActive = document.querySelector('.nav-item.active');
         if (currentActive) updateIndicator(currentActive);
     });
+
+    // Initialize Lucide Icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 });
 
