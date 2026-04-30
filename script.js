@@ -438,5 +438,17 @@ document.addEventListener('DOMContentLoaded', () => {
         item.style.transitionDelay = `${index * 0.1}s`;
         featureObserver.observe(item);
     });
+
+    // 4. Service Card Full Click Interaction
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', (e) => {
+            const link = card.getAttribute('data-link');
+            if (link && !e.target.closest('.service-link')) {
+                window.location.href = link;
+            }
+        });
+    });
 });
 

@@ -3,452 +3,530 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SFS Services | Apple-Level Premium Experience</title>
+    <title>SFS Services | Premium Insurance Experience</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* SCOPED APPLE-STYLE SERVICES PAGE */
+        /* SCOPED SERVICES PAGE STYLES */
         :root {
-            --apple-orange: #FF6A00;
-            --apple-bg: #F8FAFC;
-            --apple-navy: #0c3666;
-            --apple-glass: rgba(255, 255, 255, 0.6);
-            --apple-card-radius: 24px;
+            --services-primary: #FF6A00;
+            --services-bg: #f8fafc;
+            --services-card-bg: #ffffff;
+            --services-text: #0c3666;
+            --services-text-muted: #64748b;
         }
 
-        body.services-apple-body {
-            background-color: var(--apple-bg);
-            font-family: 'Inter', sans-serif;
-            color: var(--apple-navy);
-            margin: 0;
+        body.services-page-body {
+            background-color: var(--services-bg);
             padding-bottom: 110px;
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
+            margin: 0;
         }
 
-        /* 1. GLASS HEADER */
-        .services-header-glass {
+        /* NEW HERO SECTION */
+        .services-hero {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background-color: #0c3666;
+            overflow: hidden;
+            border-radius: 0 0 24px 24px;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: servicesFadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes servicesFadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .services-hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.05);
+            filter: brightness(0.7) blur(1px);
+        }
+
+        .services-hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.2));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .services-hero-tag {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 4px 12px;
+            border-radius: 50px;
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 8px;
+            width: fit-content;
+        }
+
+        .services-hero-title {
+            font-family: 'Playfair Display', serif;
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 0 8px;
+            line-height: 1.2;
+        }
+
+        .services-hero-subtext {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+            margin: 0;
+            max-width: 80%;
+            line-height: 1.4;
+        }
+
+        .services-sticky-header {
             position: sticky;
             top: 0;
-            width: 100%;
-            height: 64px;
-            background: var(--apple-glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 20px;
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 15px 20px;
             border-bottom: 1px solid rgba(0,0,0,0.05);
-            box-sizing: border-box;
         }
 
-        .services-logo-box img {
-            height: 32px;
-            width: auto;
-        }
-
-        .services-header-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
+        .services-sticky-header h1 {
+            font-size: 1.6rem;
             font-weight: 800;
+            color: var(--services-text);
             margin: 0;
+            letter-spacing: -1px;
         }
 
-        .services-header-icon {
-            font-size: 1.2rem;
-            color: var(--apple-navy);
-            opacity: 0.8;
-        }
-
-        /* 2. CATEGORY TABS (FLOATING GLASS) */
-        .services-tabs-outer {
-            padding-top: 24px;
-            background: var(--apple-bg);
-        }
-
-        .services-tabs-scroll {
-            display: flex;
-            overflow-x: auto;
-            gap: 12px;
-            padding: 0 20px 20px;
-            scrollbar-width: none;
-            position: relative;
-        }
-
-        .services-tabs-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        .services-tab-pill {
-            padding: 10px 22px;
-            border-radius: 50px;
+        .services-sticky-header p {
+            color: var(--services-text-muted);
             font-size: 0.85rem;
-            font-weight: 600;
-            white-space: nowrap;
-            color: var(--apple-navy);
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            cursor: pointer;
-        }
-
-        .services-tab-pill.active {
-            background: #ffffff;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transform: scale(1.05);
-            color: var(--apple-orange);
-            border-color: #ffffff;
-        }
-
-        .services-tab-indicator {
-            position: absolute;
-            bottom: 12px;
-            height: 3px;
-            background: var(--apple-orange);
-            border-radius: 10px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            display: none; /* Logic can enable this if needed */
-        }
-
-        /* 3. HERO SPACING & CONTENT */
-        .services-content-main {
-            padding-top: 10px;
-        }
-
-        .services-category-info {
-            padding: 0 20px;
-            margin-bottom: 24px;
-        }
-
-        .services-category-info h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin: 0;
-            color: var(--apple-navy);
-        }
-
-        .services-category-info span {
-            font-size: 0.9rem;
-            color: var(--apple-text-muted);
-            opacity: 0.7;
+            margin: 2px 0 0;
             font-weight: 500;
         }
 
-        /* 4. APPLE CARD SYSTEM */
-        .services-snap-row {
+        /* CATEGORY TABS */
+        .services-tabs-row {
             display: flex;
             overflow-x: auto;
-            gap: 20px;
-            padding: 0 20px 40px;
-            scroll-snap-type: x mandatory;
+            gap: 12px;
+            padding: 15px 20px 20px;
             scrollbar-width: none;
-            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
         }
 
-        .services-snap-row::-webkit-scrollbar {
+        .services-tabs-row::-webkit-scrollbar {
             display: none;
         }
 
-        .services-apple-card {
-            min-width: 88%;
-            height: 280px;
-            scroll-snap-align: center;
-            border-radius: var(--apple-card-radius);
-            position: relative;
-            overflow: hidden;
-            background: #000;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        .services-tab {
+            padding: 10px 24px;
+            border-radius: 50px;
+            background: #e5e7eb;
+            color: #4b5563;
+            font-size: 0.9rem;
+            font-weight: 700;
+            white-space: nowrap;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
         }
 
-        .services-apple-card.reveal {
+        .services-tab.active {
+            background: var(--services-primary);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(255, 106, 0, 0.3);
+            transform: scale(1.05);
+        }
+
+        /* MAIN SECTION */
+        .services-main-container {
+            padding: 0 0 20px;
+        }
+
+        .services-section-heading {
+            padding: 0 20px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .services-section-heading h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--services-text);
+            margin: 0;
+        }
+
+        .services-swipe-label {
+            font-size: 0.85rem;
+            color: var(--services-primary);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* NETFLIX ROW */
+        .services-netflix-row {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 20px 40px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+
+        .services-netflix-row::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* PREMIUM CARD */
+        .services-card {
+            min-width: 85%;
+            max-width: 85%;
+            flex-shrink: 0;
+            scroll-snap-align: center;
+            background: var(--services-card-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.03);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+
+        .services-card.animate-in {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .services-apple-card:active {
-            transform: scale(0.96);
+        .services-img-container {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
         }
 
         .services-card-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s ease;
+            transition: transform 0.6s ease;
         }
 
-        .services-card-overlay {
+        .services-card:hover .services-card-img {
+            transform: scale(1.1);
+        }
+
+        .services-img-overlay {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, transparent 60%),
-                        linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 40%);
-            padding: 24px;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 70%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 20px;
+        }
+
+        .services-card-title-on-img {
+            color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .services-card-info {
+            padding: 20px;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .services-card-top {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .services-card-title {
-            color: #ffffff;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin: 0;
-        }
-
-        .services-card-subtitle {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.85rem;
+        .services-card-desc {
+            font-size: 0.95rem;
+            color: var(--services-text-muted);
+            line-height: 1.5;
+            margin: 0 0 20px;
             font-weight: 500;
-            letter-spacing: 0.5px;
         }
 
-        /* GLASS BUTTON */
-        .services-glass-btn {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            padding: 12px 24px;
-            border-radius: 50px;
+        .services-book-btn {
+            background: linear-gradient(135deg, #FF6A00, #FF8C00);
             color: #ffffff;
+            border: none;
+            padding: 15px;
+            border-radius: 16px;
+            font-size: 1rem;
             font-weight: 700;
-            font-size: 0.9rem;
-            text-decoration: none;
-            align-self: flex-start;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 106, 0, 0.3);
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
         }
 
-        .services-glass-btn i {
-            font-size: 0.8rem;
+        .services-book-btn:active {
+            transform: scale(0.96);
+            box-shadow: 0 4px 10px rgba(255, 106, 0, 0.2);
         }
 
-        .services-glass-btn:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
-        }
-
-        /* 5. DEPTH & MOTION */
-        .services-apple-card:hover .services-card-img {
-            transform: scale(1.1);
-        }
-
-        /* Floating Nav fix */
-        .services-apple-body .bottom-nav {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
+        /* Desktop Adjustments */
         @media (min-width: 769px) {
-            .services-snap-row {
+            .services-netflix-row {
                 justify-content: center;
-                flex-wrap: wrap;
-                overflow: visible;
                 gap: 30px;
             }
-            .services-apple-card {
-                min-width: 380px;
-                max-width: 380px;
-                height: 300px;
+            .services-card {
+                min-width: 320px;
+                max-width: 320px;
             }
-            .services-header-glass {
-                padding: 0 100px;
-                height: 80px;
+            .services-sticky-header {
+                padding: 40px 100px 20px;
             }
-            .services-tabs-scroll {
+            .services-tabs-row {
                 justify-content: center;
-                padding-bottom: 40px;
+                padding: 20px 0 40px;
             }
-            .services-category-info {
+            .services-section-heading {
                 padding: 0 100px;
             }
         }
     </style>
 </head>
-<body class="services-apple-body">
+<body class="services-page-body">
 
-    <!-- Apple Style Glass Header -->
-    <header class="services-header-glass">
-        <div class="services-logo-box">
-            <img src="images/sfs_logo.jpg" alt="SFS Logo">
+    <!-- Premium Hero Section -->
+    <div class="services-hero">
+        <img src="images/hero_family_house_wide_final_1776775163384.png" alt="Family Protection" class="services-hero-img">
+        <div class="services-hero-overlay">
+            <span class="services-hero-tag">SMART INSURANCE</span>
+            <h2 class="services-hero-title">Protect What Matters Most</h2>
+            <p class="services-hero-subtext">Simple. Secure. Reliable plans for every stage of life.</p>
         </div>
-        <h1 class="services-header-title">Our Services</h1>
-        <div class="services-header-icon">
-            <i class="fas fa-bars-staggered"></i>
-        </div>
-    </header>
-
-    <!-- Floating Glass Category Tabs -->
-    <div class="services-tabs-outer">
-        <nav class="services-tabs-scroll" id="appleTabs">
-            <div class="services-tab-pill active" data-cat="LIFE">Life</div>
-            <div class="services-tab-pill" data-cat="HEALTH">Health</div>
-            <div class="services-tab-pill" data-cat="MOTOR">Motor</div>
-            <div class="services-tab-pill" data-cat="TRAVEL">Travel</div>
-            <div class="services-tab-pill" data-cat="SAVINGS">Savings</div>
-            <div class="services-tab-pill" data-cat="AGENCY">Agency</div>
-        </nav>
     </div>
 
-    <!-- Main Content -->
-    <main class="services-content-main">
-        <div class="services-category-info">
-            <span id="catSubtitle">SECURE YOUR FUTURE</span>
-            <h2 id="catMainTitle">Life Insurance</h2>
+    <!-- Premium Sticky Header -->
+    <header class="services-sticky-header">
+        <h1>Our Services</h1>
+        <p>Premium Protection Plans</p>
+    </header>
+
+    <!-- Horizontal Category Tabs -->
+    <nav class="services-tabs-row" id="categoryTabs">
+        <button class="services-tab active" data-category="LIFE">Life Insurance</button>
+        <button class="services-tab" data-category="HEALTH">Health Insurance</button>
+        <button class="services-tab" data-category="MOTOR">Motor Insurance</button>
+        <button class="services-tab" data-category="TRAVEL">Travel Insurance</button>
+        <button class="services-tab" data-category="SAVINGS">Savings & Pension</button>
+        <button class="services-tab" data-category="AGENCY">Agency</button>
+    </nav>
+
+    <!-- Main Section -->
+    <main class="services-main-container">
+        <div class="services-section-heading">
+            <h2 id="currentCategoryTitle">Life Insurance Plans</h2>
+            <span class="services-swipe-label">Swipe <i class="fas fa-arrow-right"></i></span>
         </div>
 
-        <div class="services-snap-row" id="appleGrid">
-            <!-- Apple Cards will be injected here -->
+        <div class="services-netflix-row" id="servicesGrid">
+            <!-- Cards will be injected by JavaScript -->
         </div>
     </main>
 
-    <!-- Floating Bottom Nav -->
+    <!-- Floating Bottom Nav (Reusing existing components but scoped) -->
     <nav class="bottom-nav">
         <div class="nav-indicator" style="left: 12.5%;"></div>
-        <a href="services.html" class="nav-item active">
+        <a href="services.html" class="nav-item active" id="bottom-nav-services">
             <i class="fas fa-th-large"></i>
             <span>Services</span>
         </a>
-        <a href="index.html" class="nav-item home-item">
+        <a href="index.html" class="nav-item home-item" id="bottom-nav-home">
             <div class="home-btn">
                 <i class="fas fa-home"></i>
             </div>
             <span>Home</span>
         </a>
-        <a href="index.html#offers" class="nav-item">
+        <a href="index.html#offers" class="nav-item" id="bottom-nav-offers">
             <i class="fas fa-percent"></i>
             <span>Offers</span>
         </a>
     </nav>
 
+    <script src="script.js"></script>
     <script>
-        const appleData = {
-            LIFE: {
-                title: "Life Insurance",
-                subtitle: "SECURE YOUR LEGACY",
-                items: [
-                    { name: "Term Protection", sub: "Maximum Coverage", img: "images/premium_life_insurance_netflix_1777539955013.png" },
-                    { name: "Savings Plus", sub: "Growth & Safety", img: "images/premium_savings_pension_netflix_1777540023298.png" }
-                ]
-            },
-            HEALTH: {
-                title: "Health Insurance",
-                subtitle: "WELLNESS FOR FAMILY",
-                items: [
-                    { name: "Family Shield", sub: "Cashless Network", img: "images/premium_health_insurance_netflix_1777539971482.png" },
-                    { name: "Critical Care", sub: "Advanced Support", img: "images/medical_consultation_premium_1776751609522.png" }
-                ]
-            },
-            MOTOR: {
-                title: "Motor Insurance",
-                subtitle: "PROTECTION ON ROAD",
-                items: [
-                    { name: "Car Luxury", sub: "Zero Depreciation", img: "images/premium_car_insurance_hero_1777370034395.png" },
-                    { name: "Bike Swift", sub: "Instant Policy", img: "images/premium_motor_insurance_netflix_1777539988685.png" }
-                ]
-            },
-            TRAVEL: {
-                title: "Travel Insurance",
-                subtitle: "EXPLORE WITHOUT WORRY",
-                items: [
-                    { name: "Global Wanderer", sub: "Worldwide Support", img: "images/premium_travel_insurance_netflix_1777540004997.png" },
-                    { name: "Domestic Trip", sub: "India Special", img: "images/travel_card.png" }
-                ]
-            },
-            SAVINGS: {
-                title: "Savings & Pension",
-                subtitle: "RETIRE WITH PRIDE",
-                items: [
-                    { name: "Golden Pension", sub: "Life-long Income", img: "images/premium_savings_pension_netflix_1777540023298.png" },
-                    { name: "Education Goal", sub: "For Your Kids", img: "images/premium_group_insurance_netflix_1777540057873.png" }
-                ]
-            },
-            AGENCY: {
-                title: "Agency Partner",
-                subtitle: "BUILD YOUR CAREER",
-                items: [
-                    { name: "Join SFS", sub: "Certified Advisor", img: "images/agency_card.png" }
-                ]
-            }
+        const servicesData = {
+            LIFE: [
+                {
+                    title: "Term Insurance",
+                    desc: "Comprehensive financial security for your loved ones with high cover at affordable rates.",
+                    img: "images/premium_life_insurance_netflix_1777539955013.png"
+                },
+                {
+                    title: "Savings Plan",
+                    desc: "Build wealth while staying protected. Perfect blend of insurance and long-term returns.",
+                    img: "images/premium_savings_pension_netflix_1777540023298.png"
+                }
+            ],
+            HEALTH: [
+                {
+                    title: "Family Health",
+                    desc: "One plan to cover your entire family. Access to 8500+ top cashless hospitals across India.",
+                    img: "images/premium_health_insurance_netflix_1777539971482.png"
+                },
+                {
+                    title: "Critical Illness",
+                    desc: "Lump sum payment on diagnosis of 30+ life-threatening diseases to cover treatment costs.",
+                    img: "images/medical_consultation_premium_1776751609522.png"
+                }
+            ],
+            MOTOR: [
+                {
+                    title: "Car Insurance",
+                    desc: "Full comprehensive protection for your car with zero-depreciation and roadside assistance.",
+                    img: "images/premium_car_insurance_hero_1777370034395.png"
+                },
+                {
+                    title: "Bike Insurance",
+                    desc: "Quick and easy protection for your two-wheeler with instant policy issuance and renewal.",
+                    img: "images/premium_motor_insurance_netflix_1777539988685.png"
+                }
+            ],
+            TRAVEL: [
+                {
+                    title: "International Travel",
+                    desc: "Global protection for your trips abroad. Covers medical emergencies, lost baggage, and flight delays.",
+                    img: "images/premium_travel_insurance_netflix_1777540004997.png"
+                },
+                {
+                    title: "Domestic Travel",
+                    desc: "Worry-free travel within India. Coverage for cancellations, accidents, and travel delays.",
+                    img: "images/travel_card.png"
+                }
+            ],
+            SAVINGS: [
+                {
+                    title: "Pension Plans",
+                    desc: "Secure your retirement with guaranteed lifelong income and tax-saving benefits.",
+                    img: "images/premium_savings_pension_netflix_1777540023298.png"
+                },
+                {
+                    title: "Child Education",
+                    desc: "Invest today for your child's future goals. Guaranteed payouts for higher education milestones.",
+                    img: "images/premium_group_insurance_netflix_1777540057873.png"
+                }
+            ],
+            AGENCY: [
+                {
+                    title: "Agency Recruitment",
+                    desc: "Join SFS as a certified advisor. Earn high commissions and build a professional career in insurance.",
+                    img: "images/agency_card.png"
+                }
+            ]
         };
 
-        function renderAppleCards(cat) {
-            const grid = document.getElementById('appleGrid');
-            const mainTitle = document.getElementById('catMainTitle');
-            const subTitle = document.getElementById('catSubtitle');
+        function renderCards(category) {
+            const grid = document.getElementById('servicesGrid');
+            const categoryTitle = document.getElementById('currentCategoryTitle');
             
-            const data = appleData[cat];
-            mainTitle.textContent = data.title;
-            subTitle.textContent = data.subtitle;
-            
+            // Set heading
+            const categoryNames = {
+                LIFE: "Life Insurance Plans",
+                HEALTH: "Health Insurance Plans",
+                MOTOR: "Motor & Vehicle Plans",
+                TRAVEL: "Travel & Trip Plans",
+                SAVINGS: "Savings & Retirement",
+                AGENCY: "Agency Opportunities"
+            };
+            categoryTitle.textContent = categoryNames[category];
+
+            // Clear grid
             grid.innerHTML = '';
             grid.scrollLeft = 0;
 
-            data.items.forEach((item, index) => {
+            // Inject cards
+            servicesData[category].forEach((item, index) => {
                 const card = document.createElement('div');
-                card.className = 'services-apple-card';
+                card.className = 'services-card';
                 
-                const waMsg = encodeURIComponent(`I want to know more about ${item.name} insurance plans. Please assist.`);
-                const waLink = `https://wa.me/916382560104?text=${waMsg}`;
+                // WhatsApp Link Generation
+                const waMessage = encodeURIComponent(`I am interested in ${item.title} insurance. Please assist me with plans.`);
+                const waLink = `https://wa.me/916382560104?text=${waMessage}`;
 
                 card.innerHTML = `
-                    <img src="${item.img}" alt="${item.name}" class="services-card-img">
-                    <div class="services-card-overlay">
-                        <div class="services-card-top">
-                            <h3 class="services-card-title">${item.name}</h3>
-                            <span class="services-card-subtitle">${item.sub}</span>
+                    <div class="services-img-container">
+                        <img src="${item.img}" alt="${item.title}" class="services-card-img">
+                        <div class="services-img-overlay">
+                            <h3 class="services-card-title-on-img">${item.title}</h3>
                         </div>
-                        <a href="${waLink}" target="_blank" class="services-glass-btn">
-                            Book Now <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <div class="services-card-info">
+                        <p class="services-card-desc">${item.desc}</p>
+                        <a href="${waLink}" target="_blank" class="services-book-btn">
+                            Book Now <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 `;
                 
                 grid.appendChild(card);
                 
-                // Entrance animation
+                // Animation Stagger
                 setTimeout(() => {
-                    card.classList.add('reveal');
-                }, index * 100 + 100);
+                    card.classList.add('animate-in');
+                }, index * 100 + 50);
             });
         }
 
-        // Tab Switching
-        const tabs = document.querySelectorAll('.services-tab-pill');
+        // Tab Switching Logic
+        const tabs = document.querySelectorAll('.services-tab');
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
+                // Remove active from all
                 tabs.forEach(t => t.classList.remove('active'));
+                // Add active to current
                 tab.classList.add('active');
                 
-                const cat = tab.getAttribute('data-cat');
-                renderAppleCards(cat);
+                const category = tab.getAttribute('data-category');
+                renderCards(category);
                 
+                // Smooth scroll tab into view
                 tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             });
         });
 
-        // Initial
+        // Initial Render
         document.addEventListener('DOMContentLoaded', () => {
-            renderAppleCards('LIFE');
+            renderCards('LIFE');
         });
     </script>
 </body>
