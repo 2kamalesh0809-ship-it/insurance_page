@@ -3322,16 +3322,22 @@ img {
 /* 14. Why SFS Feature Animations */
 .feature-item {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(20px);
     transition: all 0.6s ease-out;
 }
 
 .feature-left {
-    transform: translateX(-60px);
+    transform: translateX(-40px);
 }
 
 .feature-right {
-    transform: translateX(60px);
+    transform: translateX(40px);
+}
+
+@media (max-width: 768px) {
+    .feature-left, .feature-right {
+        transform: translateX(0) translateY(20px); /* Slide up instead of side on mobile to prevent overflow */
+    }
 }
 
 .feature-item.show {
@@ -3367,12 +3373,28 @@ img {
 .why-item.feature-item {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 12px;
-    padding: 15px; /* Slight padding for hover effect safety */
-    margin: 5px -15px; /* Offset padding to maintain alignment */
+    padding: 15px;
+    margin: 10px 0; /* Removed negative margin to prevent mobile overflow */
 }
 
 .why-item.feature-item:hover {
     transform: scale(1.02) !important;
     background: #ffffff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile Service Grid Fix */
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px !important;
+    }
+    
+    .service-card {
+        height: 180px !important; /* Slightly taller for better readability */
+    }
+    
+    .service-card-content h3 {
+        font-size: 1.1rem !important;
+    }
 }
