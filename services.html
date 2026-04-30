@@ -13,18 +13,22 @@
             padding-bottom: 110px;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         .services-page-container {
-            padding: 2rem 1.5rem;
+            padding: 2.5rem 0;
+            background: linear-gradient(to bottom, #f8fafc, #eef2f7);
+            min-height: 100vh;
         }
 
         .services-header {
             margin-bottom: 2rem;
+            padding: 0 1.5rem;
         }
 
         .services-header h1 {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #0c3666;
             margin-bottom: 0.5rem;
@@ -32,114 +36,145 @@
 
         .services-header p {
             color: #64748b;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
 
-        /* Netflix Style Horizontal Row */
+        /* TRUE Netflix Style Horizontal Row */
         .services-section-title {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: #0c3666;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 1.5rem;
         }
 
         .swipe-hint {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: #ff6600;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 4px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: translateX(0); opacity: 1; }
-            50% { transform: translateX(5px); opacity: 0.7; }
-            100% { transform: translateX(0); opacity: 1; }
         }
 
         .services-row {
             display: flex;
             overflow-x: auto;
-            gap: 16px;
-            padding: 10px 0 30px;
+            gap: 0;
+            padding: 20px 0 40px;
             scroll-snap-type: x mandatory;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE/Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .services-row::-webkit-scrollbar {
-            display: none; /* Chrome/Safari */
+            display: none;
+        }
+
+        /* For centering the first and last cards */
+        .services-row::before,
+        .services-row::after {
+            content: '';
+            flex: 0 0 7.5%; /* (100% - 85%) / 2 */
         }
 
         /* Card Design */
         .service-card {
-            min-width: 82%;
+            min-width: 85%;
+            max-width: 85%;
             flex-shrink: 0;
             scroll-snap-align: center;
             background: #ffffff;
-            border-radius: 24px;
+            border-radius: 26px;
             overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+            border: 1px solid rgba(255, 255, 255, 0.8);
             position: relative;
+            transform: scale(0.92);
+            opacity: 0.6;
+            margin: 0 8px;
         }
 
-        .service-card:active {
-            transform: scale(0.97);
+        .service-card.active {
+            transform: scale(1);
+            opacity: 1;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.18);
+        }
+
+        .service-image-container {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
         }
 
         .service-image {
             width: 100%;
-            height: 160px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card.active .service-image {
+            transform: scale(1.05);
         }
 
         .service-content {
-            padding: 18px;
+            padding: 24px;
+            background: #ffffff;
         }
 
         .service-title {
-            font-size: 1.2rem;
-            font-weight: 700;
+            font-size: 1.4rem;
+            font-weight: 800;
             color: #0c3666;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .service-desc {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #64748b;
-            line-height: 1.4;
-            margin-bottom: 15px;
+            line-height: 1.5;
+            margin-bottom: 20px;
         }
 
         .service-btn {
             display: block;
             background: linear-gradient(135deg, #ff6600, #ff8533);
             color: white;
-            padding: 12px;
-            border-radius: 14px;
+            padding: 14px;
+            border-radius: 16px;
             text-align: center;
             font-weight: 700;
             text-decoration: none;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+            font-size: 1.05rem;
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .service-btn:active {
+            transform: scale(0.96);
+            box-shadow: 0 4px 10px rgba(255, 102, 0, 0.2);
         }
 
         /* Desktop Adjustments */
-        @media (min-width: 769px) {
+        @media (min-width: 992px) {
             .services-page-container {
-                max-width: 1000px;
+                max-width: 1200px;
                 margin: 0 auto;
             }
             .service-card {
-                min-width: 300px;
+                min-width: 400px;
+                max-width: 400px;
+            }
+            .services-row::before,
+            .services-row::after {
+                flex: 0 0 calc((100% - 400px) / 2);
             }
         }
     </style>
@@ -155,66 +190,78 @@
         <div class="services-section">
             <h2 class="services-section-title">
                 Insurance Services
-                <span class="swipe-hint" id="swipeHint">Swipe <i class="fas fa-arrow-right"></i></span>
+                <span class="swipe-hint">Swipe <i class="fas fa-arrow-right"></i></span>
             </h2>
             
             <div class="services-row" id="servicesRow">
                 <!-- Life Insurance -->
                 <div class="service-card">
-                    <img src="images/service_life_insurance_1777536303418.png" alt="Life Insurance" class="service-image">
+                    <div class="service-image-container">
+                        <img src="images/service_life_insurance_1777536303418.png" alt="Life Insurance" class="service-image">
+                    </div>
                     <div class="service-content">
                         <h3 class="service-title">Life Insurance</h3>
-                        <p class="service-desc">Family protection with secure and flexible life coverage plans.</p>
+                        <p class="service-desc">Protect your family’s future with secure coverage and flexible plans.</p>
                         <a href="index.html#financial-services" class="service-btn">Book Now</a>
                     </div>
                 </div>
 
                 <!-- Health Insurance -->
                 <div class="service-card">
-                    <img src="images/service_health_insurance_1777536320532.png" alt="Health Insurance" class="service-image">
+                    <div class="service-image-container">
+                        <img src="images/service_health_insurance_1777536320532.png" alt="Health Insurance" class="service-image">
+                    </div>
                     <div class="service-content">
                         <h3 class="service-title">Health Insurance</h3>
-                        <p class="service-desc">Complete medical coverage with access to top cashless hospitals.</p>
+                        <p class="service-desc">Stay stress-free with complete medical protection and cashless hospitals.</p>
                         <a href="index.html#financial-services" class="service-btn">Book Now</a>
                     </div>
                 </div>
 
                 <!-- Motor Insurance -->
                 <div class="service-card">
-                    <img src="images/service_motor_insurance_1777536337058.png" alt="Motor Insurance" class="service-image">
+                    <div class="service-image-container">
+                        <img src="images/service_motor_insurance_1777536337058.png" alt="Motor Insurance" class="service-image">
+                    </div>
                     <div class="service-content">
                         <h3 class="service-title">Motor Insurance</h3>
-                        <p class="service-desc">All-round vehicle protection with instant policy and claim support.</p>
+                        <p class="service-desc">Drive confidently with complete vehicle protection and instant claims.</p>
                         <a href="index.html#financial-services" class="service-btn">Book Now</a>
                     </div>
                 </div>
 
                 <!-- Travel Insurance -->
                 <div class="service-card">
-                    <img src="images/service_travel_insurance_1777536357061.png" alt="Travel Insurance" class="service-image">
+                    <div class="service-image-container">
+                        <img src="images/service_travel_insurance_1777536357061.png" alt="Travel Insurance" class="service-image">
+                    </div>
                     <div class="service-content">
                         <h3 class="service-title">Travel Insurance</h3>
-                        <p class="service-desc">Global travel safety with emergency assistance wherever you go.</p>
+                        <p class="service-desc">Travel worry-free with global coverage and emergency assistance.</p>
                         <a href="index.html#financial-services" class="service-btn">Book Now</a>
                     </div>
                 </div>
 
                 <!-- Savings -->
                 <div class="service-card">
-                    <img src="images/service_savings_pension_1777536392500.png" alt="Savings / Pension" class="service-image">
+                    <div class="service-image-container">
+                        <img src="images/service_savings_pension_1777536392500.png" alt="Savings / Pension" class="service-image">
+                    </div>
                     <div class="service-content">
                         <h3 class="service-title">Savings / Pension</h3>
-                        <p class="service-desc">Retirement & wealth building with smart long-term savings plans.</p>
+                        <p class="service-desc">Build long-term wealth and secure your retirement with smart plans.</p>
                         <a href="index.html#financial-services" class="service-btn">Book Now</a>
                     </div>
                 </div>
 
                 <!-- Group Insurance -->
                 <div class="service-card">
-                    <img src="images/service_group_insurance_1777536374746.png" alt="Group Insurance" class="service-image">
+                    <div class="service-image-container">
+                        <img src="images/service_group_insurance_1777536374746.png" alt="Group Insurance" class="service-image">
+                    </div>
                     <div class="service-content">
                         <h3 class="service-title">Group Insurance</h3>
-                        <p class="service-desc">Customized employee coverage for corporate teams and businesses.</p>
+                        <p class="service-desc">Protect your employees with customized corporate insurance solutions.</p>
                         <a href="index.html#financial-services" class="service-btn">Book Now</a>
                     </div>
                 </div>
@@ -243,19 +290,40 @@
 
     <script src="script.js"></script>
     <script>
-        // Hide swipe hint after first interaction
+        // Netflix-style Center Detection
         const servicesRow = document.getElementById('servicesRow');
-        const swipeHint = document.getElementById('swipeHint');
-        
-        servicesRow.addEventListener('scroll', () => {
-            if (servicesRow.scrollLeft > 20) {
-                swipeHint.style.opacity = '0';
-                swipeHint.style.transition = 'opacity 0.5s ease';
-                setTimeout(() => {
-                    swipeHint.style.display = 'none';
-                }, 500);
-            }
-        }, { once: true });
+        const cards = document.querySelectorAll('.service-card');
+
+        function updateActiveCard() {
+            const rowRect = servicesRow.getBoundingClientRect();
+            const rowCenter = rowRect.left + rowRect.width / 2;
+
+            let closestCard = null;
+            let minDistance = Infinity;
+
+            cards.forEach(card => {
+                const cardRect = card.getBoundingClientRect();
+                const cardCenter = cardRect.left + cardRect.width / 2;
+                const distance = Math.abs(rowCenter - cardCenter);
+
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestCard = card;
+                }
+            });
+
+            cards.forEach(card => {
+                if (card === closestCard) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+        }
+
+        servicesRow.addEventListener('scroll', updateActiveCard);
+        window.addEventListener('load', updateActiveCard);
+        window.addEventListener('resize', updateActiveCard);
     </script>
 </body>
 </html>
