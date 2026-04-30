@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SFS Services | Premium Insurance Experience</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <style>
         /* SCOPED SERVICES PAGE STYLES */
         :root {
@@ -19,7 +21,8 @@
 
         body.services-page-body {
             background-color: var(--services-bg);
-            padding-top: 0 !important; /* Remove global top padding */
+            padding-top: 0 !important;
+            /* Remove global top padding */
             padding-bottom: 110px;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
@@ -30,7 +33,8 @@
         .services-carousel-container {
             position: relative;
             width: 100%;
-            height: 300px; /* Increased from 240px */
+            height: 300px;
+            /* Increased from 240px */
             overflow: hidden;
             border-radius: 0 0 24px 24px;
             background: #0c3666;
@@ -63,7 +67,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -162,7 +166,7 @@
             -webkit-backdrop-filter: blur(15px);
             z-index: 1000;
             padding: 15px 20px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .services-sticky-header h1 {
@@ -271,7 +275,7 @@
             display: flex;
             flex-direction: column;
             position: relative;
-            border: 1px solid rgba(0,0,0,0.03);
+            border: 1px solid rgba(0, 0, 0, 0.03);
             opacity: 0;
             transform: translateY(20px);
             transition: all 0.5s ease-out;
@@ -306,7 +310,7 @@
             left: 0;
             width: 100%;
             height: 70%;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -318,7 +322,7 @@
             font-size: 1.5rem;
             font-weight: 800;
             margin: 0;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
         .services-card-info {
@@ -367,23 +371,28 @@
                 justify-content: center;
                 gap: 30px;
             }
+
             .services-card {
                 min-width: 320px;
                 max-width: 320px;
             }
+
             .services-sticky-header {
                 padding: 40px 100px 20px;
             }
+
             .services-tabs-row {
                 justify-content: center;
                 padding: 20px 0 40px;
             }
+
             .services-section-heading {
                 padding: 0 100px;
             }
         }
     </style>
 </head>
+
 <body class="services-page-body">
 
     <!-- Premium Sliding Carousel -->
@@ -391,54 +400,59 @@
         <div class="services-carousel-track" id="carouselTrack">
             <!-- Slide 1: Family -->
             <div class="services-slide active">
-                <img src="images/hero_family_house_wide_final_1776775163384.png" alt="Family" class="services-slide-img">
+                <img src="images/WhatsApp Image 2026-04-27 at 6.38.20 PM.jpeg" alt="Family" class="services-slide-img">
                 <div class="services-slide-overlay">
                     <div class="services-slide-content">
                         <span class="services-slide-tag">PROTECTION</span>
                         <h2 class="services-slide-title">Protect Your Family</h2>
-                        <p class="services-hero-subtext" style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">Secure their future with confidence</p>
+                        <p class="services-hero-subtext" style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">
+                            Secure their future with confidence</p>
                         <a href="#servicesGrid" class="services-slide-cta">Explore Services</a>
                     </div>
                 </div>
             </div>
             <!-- Slide 2: Health -->
             <div class="services-slide">
-                <img src="images/premium_health_insurance_netflix_1777539971482.png" alt="Health" class="services-slide-img">
+                <img src="images/WhatsApp Image 2026-04-27 at 6.38.21 PM (2).jpeg" alt="Health"
+                    class="services-slide-img">
                 <div class="services-slide-overlay">
                     <div class="services-slide-content">
                         <span class="services-slide-tag">HEALTH</span>
                         <h2 class="services-slide-title">Health Comes First</h2>
-                        <p class="services-hero-subtext" style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">Cashless treatment across India</p>
+                        <p class="services-hero-subtext" style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">
+                            Cashless treatment across India</p>
                         <a href="#servicesGrid" class="services-slide-cta">Explore Services</a>
                     </div>
                 </div>
             </div>
             <!-- Slide 3: Motor -->
             <div class="services-slide">
-                <img src="images/premium_motor_insurance_netflix_1777539988685.png" alt="Motor" class="services-slide-img">
+                <img src="images/WhatsApp Image 2026-04-27 at 6.38.20 PM.jpeg" alt="Motor" class="services-slide-img">
                 <div class="services-slide-overlay">
                     <div class="services-slide-content">
                         <span class="services-slide-tag">MOTOR</span>
                         <h2 class="services-slide-title">Drive With Confidence</h2>
-                        <p class="services-hero-subtext" style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">Complete motor protection plans</p>
+                        <p class="services-hero-subtext" style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">
+                            Complete motor protection plans</p>
                         <a href="#servicesGrid" class="services-slide-cta">Explore Services</a>
                     </div>
                 </div>
             </div>
             <!-- Slide 4: Travel -->
             <div class="services-slide">
-                <img src="images/premium_travel_insurance_netflix_1777540004997.png" alt="Travel" class="services-slide-img">
+                <img src="images/WhatsApp Image 2026-04-27 at 5.34.03 PM.jpeg" alt="Travel" class="services-slide-img">
                 <div class="services-slide-overlay">
                     <div class="services-slide-content">
                         <span class="services-slide-tag">TRAVEL</span>
                         <h2 class="services-slide-title">Travel Without Worries</h2>
-                        <p class="services-hero-subtext" style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">Global coverage, zero stress</p>
+                        <p class="services-hero-subtext" style="color: rgba(255,255,255,0.9); margin-bottom: 15px;">
+                            Global coverage, zero stress</p>
                         <a href="#servicesGrid" class="services-slide-cta">Explore Services</a>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <!-- Indicators -->
         <div class="services-carousel-dots">
             <div class="services-dot active" data-index="0"></div>
@@ -570,7 +584,7 @@
         function renderCards(category) {
             const grid = document.getElementById('servicesGrid');
             const categoryTitle = document.getElementById('currentCategoryTitle');
-            
+
             // Set heading
             const categoryNames = {
                 LIFE: "Life Insurance Plans",
@@ -590,7 +604,7 @@
             servicesData[category].forEach((item, index) => {
                 const card = document.createElement('div');
                 card.className = 'services-card';
-                
+
                 // WhatsApp Link Generation
                 const waMessage = encodeURIComponent(`I am interested in ${item.title} insurance. Please assist me with plans.`);
                 const waLink = `https://wa.me/916382560104?text=${waMessage}`;
@@ -609,9 +623,9 @@
                         </a>
                     </div>
                 `;
-                
+
                 grid.appendChild(card);
-                
+
                 // Animation Stagger
                 setTimeout(() => {
                     card.classList.add('animate-in');
@@ -627,10 +641,10 @@
                 tabs.forEach(t => t.classList.remove('active'));
                 // Add active to current
                 tab.classList.add('active');
-                
+
                 const category = tab.getAttribute('data-category');
                 renderCards(category);
-                
+
                 // Smooth scroll tab into view
                 tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             });
@@ -647,7 +661,7 @@
             track.style.transform = `translateX(-${index * 25}%)`;
             dots.forEach(dot => dot.classList.remove('active'));
             dots[index].classList.add('active');
-            
+
             slides.forEach(slide => slide.classList.remove('active'));
             slides[index].classList.add('active');
             currentSlide = index;
@@ -671,7 +685,7 @@
 
         // Swipe Support (Simple)
         let touchStartX = 0;
-        track.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX, {passive: true});
+        track.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX, { passive: true });
         track.addEventListener('touchend', e => {
             let touchEndX = e.changedTouches[0].clientX;
             if (touchStartX - touchEndX > 50) {
@@ -686,7 +700,7 @@
                 updateCarousel(prev);
                 autoSlideInterval = setInterval(nextSlide, 3000);
             }
-        }, {passive: true});
+        }, { passive: true });
 
         // Initial Render
         document.addEventListener('DOMContentLoaded', () => {
@@ -696,4 +710,5 @@
         });
     </script>
 </body>
+
 </html>
