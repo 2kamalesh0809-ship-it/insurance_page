@@ -421,6 +421,20 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.add(index % 2 === 0 ? 'benefit-left' : 'benefit-right');
         item.style.transitionDelay = `${index * 0.1}s`;
         benefitObserver.observe(item);
+    // 14. Why SFS Feature Animations
+    const featureItems = document.querySelectorAll('.feature-item');
+    const featureObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    featureItems.forEach((item, index) => {
+        item.classList.add(index % 2 === 0 ? 'feature-left' : 'feature-right');
+        item.style.transitionDelay = `${index * 0.1}s`;
+        featureObserver.observe(item);
     });
 });
 
