@@ -49,11 +49,7 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #FF6A00;
+    transition: var(--transition);
 }
 
 h1, h2, h3, h4, h5, h6 {
