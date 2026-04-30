@@ -392,5 +392,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentActive = document.querySelector('.nav-item.active');
         if (currentActive) updateIndicator(currentActive);
     });
+    // 12. CTA Highlight Logic (Refer Now Button)
+    setTimeout(() => {
+        const arrow = document.querySelector('.cta-arrow');
+        const btn = document.querySelector('.refer-btn');
+        
+        if (arrow && btn) {
+            arrow.classList.add('show');
+            btn.classList.add('highlight');
+
+            setTimeout(() => {
+                arrow.classList.remove('show');
+                btn.classList.remove('highlight');
+            }, 2000);
+        }
+    }, 3000);
 });
 

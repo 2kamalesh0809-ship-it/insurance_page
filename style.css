@@ -2317,6 +2317,44 @@ header.active .main-nav {
     font-weight: 700;
 }
 
+/* CTA Highlight Behavior */
+.cta-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.cta-arrow {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #ff6600;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
+
+.cta-arrow.show {
+    opacity: 1;
+    animation: arrowMove 0.8s infinite alternate;
+}
+
+@keyframes arrowMove {
+    from { transform: translateX(-50%) translateY(0); }
+    to { transform: translateX(-50%) translateY(6px); }
+}
+
+.refer-btn {
+    transition: all 0.3s ease !important;
+}
+
+.refer-btn.highlight {
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.6) !important;
+    transform: scale(1.05);
+}
+
 .offer-content-display {
     flex: 1;
     position: relative;

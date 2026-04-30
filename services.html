@@ -142,94 +142,6 @@
                 min-width: 300px;
             }
         }
-        /* CTA Section Enhancements */
-        .cta-section {
-            margin-top: 2rem;
-            padding-bottom: 2rem;
-        }
-
-        .cta-card {
-            background: linear-gradient(135deg, #0c3666, #1e4a7a);
-            border-radius: 24px;
-            padding: 30px 20px;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: visible;
-        }
-
-        .gift-icon {
-            font-size: 2.5rem;
-            color: #ffcc00;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .cta-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            font-weight: 800;
-        }
-
-        .cta-content p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-            margin-bottom: 25px;
-            line-height: 1.5;
-        }
-
-        .cta-btn-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-
-        .refer-btn {
-            display: inline-block;
-            background: #ff6600;
-            color: white;
-            padding: 14px 40px;
-            border-radius: 50px;
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 1rem;
-            animation: bounceIn 0.6s ease, pulseGlow 2.5s ease-in-out infinite;
-            transition: all 0.3s ease;
-        }
-
-        .refer-btn:active {
-            transform: scale(0.97);
-        }
-
-        .arrow-indicator {
-            position: absolute;
-            top: -45px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #ff6600;
-            font-size: 1.5rem;
-            animation: floatArrow 1s infinite alternate;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            pointer-events: none;
-            z-index: 10;
-        }
-
-        @keyframes floatArrow {
-            from { transform: translateX(-50%) translateY(0); }
-            to { transform: translateX(-50%) translateY(8px); }
-        }
-
-        @keyframes pulseGlow {
-            0% { box-shadow: 0 0 0 rgba(255,102,0,0); }
-            50% { box-shadow: 0 0 18px rgba(255,102,0,0.5); }
-            100% { box-shadow: 0 0 0 rgba(255,102,0,0); }
-        }
-
-        @keyframes bounceIn {
-            0% { transform: scale(0.95); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
     </style>
 </head>
 <body>
@@ -308,21 +220,6 @@
                 </div>
             </div>
         </div>
-        <div class="cta-section">
-            <div class="cta-card">
-                <div class="cta-content">
-                    <i class="fas fa-gift gift-icon"></i>
-                    <h3>Refer & Earn Rewards</h3>
-                    <p>Invite your friends and family to SFS Insurance and earn exclusive benefits on every successful policy.</p>
-                    <div class="cta-btn-wrapper">
-                        <div class="arrow-indicator" id="referArrow">
-                            <i class="fas fa-arrow-down"></i>
-                        </div>
-                        <a href="https://wa.me/916382560104?text=Hello%2C%20I%20want%20to%20refer%20a%20friend%20for%20insurance." class="refer-btn">Refer Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <!-- Apple-Style Floating Bottom Nav -->
@@ -359,19 +256,6 @@
                 }, 500);
             }
         }, { once: true });
-
-        // Refer Arrow Indicator Logic
-        window.addEventListener('load', () => {
-            const referArrow = document.getElementById('referArrow');
-            if (referArrow) {
-                setTimeout(() => {
-                    referArrow.style.opacity = '1';
-                    setTimeout(() => {
-                        referArrow.style.opacity = '0';
-                    }, 2000); // Visible for 2 seconds
-                }, 3000); // Show after 3 seconds
-            }
-        });
     </script>
 </body>
 </html>
