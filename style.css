@@ -3164,3 +3164,117 @@ img {
         padding-bottom: 100px;
     }
 }
+
+/* Premium Visual Services Section */
+.services-grid.visual-experience {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.service-visual-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.service-visual-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.card-hero-img {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+}
+
+.card-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-visual-card:hover .card-hero-img img {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+}
+
+.card-body {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body h3 {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0c3666;
+    margin-bottom: 15px;
+}
+
+.card-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    flex: 1;
+}
+
+.card-benefits li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #64748b;
+    margin-bottom: 8px;
+}
+
+.card-benefits li i {
+    color: #22c55e;
+    font-size: 0.8rem;
+}
+
+.visual-book-btn {
+    display: block;
+    background: linear-gradient(135deg, #ff6600, #ff8533);
+    color: white;
+    padding: 12px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.2);
+}
+
+.visual-book-btn:active {
+    transform: scale(0.95);
+}
+
+.service-visual-card.highlight {
+    animation: glow-pulse 1.5s ease-in-out infinite alternate;
+    z-index: 10;
+    position: relative;
+}
+
+@keyframes glow-pulse {
+    0% { box-shadow: 0 0 5px rgba(255, 102, 0, 0.2); border: 1px solid rgba(255, 102, 0, 0.1); }
+    100% { box-shadow: 0 0 25px rgba(255, 102, 0, 0.8); border: 2px solid #ff6600; }
+}

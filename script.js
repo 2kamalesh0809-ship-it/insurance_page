@@ -392,5 +392,43 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentActive = document.querySelector('.nav-item.active');
         if (currentActive) updateIndicator(currentActive);
     });
+    // 12. Visual Service Cards Logic (Highlighting & Redirect)
+    window.bookService = function(serviceId) {
+        const isHomePage = window.location.pathname.endsWith('index.html') || 
+                           window.location.pathname === '/' || 
+                           window.location.pathname.endsWith('/');
+        
+        if (isHomePage) {
+            const card = document.getElementById(`card-${serviceId}`);
+            if (card) {
+                // Scroll to card
+                card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // Add highlight effect
+                card.classList.add('highlight');
+                
+                // Remove highlight after 3 seconds
+                setTimeout(() => {
+                    card.classList.remove('highlight');
+                }, 3000);
+            }
+        } else {
+            // Redirect to home with hash
+            window.location.href = `index.html#card-${serviceId}`;
+        }
+    };
+
+    // Check for hash on page load
+    const checkHash = () => {
+        const hash = window.location.hash;
+        if (hash && hash.startsWith('#card-')) {
+            const serviceId = hash.replace('#card-', '');
+            setTimeout(() => {
+                window.bookService(serviceId);
+            }, 500); // Small delay to ensure everything is rendered
+        }
+    };
+
+    checkHash();
 });
 
