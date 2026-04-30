@@ -407,5 +407,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 5000);
         }
     }, 3000);
+    // 13. Comprehensive Benefits Alternating Animations
+    const benefitItems = document.querySelectorAll('.benefits-simple-grid .benefit-item');
+    const benefitObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.2 });
+
+    benefitItems.forEach((item, index) => {
+        item.classList.add(index % 2 === 0 ? 'benefit-left' : 'benefit-right');
+        item.style.transitionDelay = `${index * 0.1}s`;
+        benefitObserver.observe(item);
+    });
 });
 

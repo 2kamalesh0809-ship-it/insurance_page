@@ -1147,6 +1147,21 @@ header.active .main-nav {
     padding: 10px 14px;
     border-radius: 12px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    opacity: 0;
+    transition: all 0.8s ease-out;
+}
+
+.benefit-left {
+    transform: translateX(-60px);
+}
+
+.benefit-right {
+    transform: translateX(60px);
+}
+
+.benefit-item.show {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .benefit-item:nth-last-child(-n+2) {
