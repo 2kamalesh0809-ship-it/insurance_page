@@ -392,20 +392,25 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentActive = document.querySelector('.nav-item.active');
         if (currentActive) updateIndicator(currentActive);
     });
-    // 12. CTA Highlight Logic (Refer Now Button)
+    // 12. CTA Highlight & Guide Logic (Offers Section)
     setTimeout(() => {
-        const arrow = document.querySelector('.cta-arrow');
-        const btn = document.querySelector('.refer-btn');
-        
-        if (arrow && btn) {
-            arrow.classList.add('show');
-            btn.classList.add('highlight');
+        const ctaWrappers = document.querySelectorAll('.cta-wrapper');
+        ctaWrappers.forEach(wrapper => {
+            const arrow = wrapper.querySelector('.cta-arrow');
+            const btn = wrapper.querySelector('.cta-btn');
+            
+            if (arrow && btn) {
+                arrow.classList.add('show');
+                // Optional: Add highlight to button as well if needed, 
+                // but user specifically asked for arrow logic in PART 1.
+                btn.classList.add('highlight'); 
 
-            setTimeout(() => {
-                arrow.classList.remove('show');
-                btn.classList.remove('highlight');
-            }, 2000);
-        }
+                setTimeout(() => {
+                    arrow.classList.remove('show');
+                    btn.classList.remove('highlight');
+                }, 2000);
+            }
+        });
     }, 3000);
 });
 

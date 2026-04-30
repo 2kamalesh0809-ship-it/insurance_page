@@ -2317,19 +2317,20 @@ header.active .main-nav {
     font-weight: 700;
 }
 
-/* CTA Highlight Behavior */
+/* CTA Highlight & Guide Behavior */
 .cta-wrapper {
     position: relative;
-    display: inline-block;
+    display: block;
+    width: 100%;
 }
 
 .cta-arrow {
     position: absolute;
-    top: -28px;
+    top: -30px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 24px;
-    color: #ff6600;
+    font-size: 22px;
+    color: #ff6600; /* Default orange, will override if needed but ⬇ looks good in orange */
     opacity: 0;
     pointer-events: none;
     z-index: 10;
@@ -2338,21 +2339,75 @@ header.active .main-nav {
 
 .cta-arrow.show {
     opacity: 1;
-    animation: arrowMove 0.8s infinite alternate;
+    animation: arrowBounce 0.8s infinite alternate;
 }
 
-@keyframes arrowMove {
+@keyframes arrowBounce {
     from { transform: translateX(-50%) translateY(0); }
     to { transform: translateX(-50%) translateY(6px); }
 }
 
-.refer-btn {
-    transition: all 0.3s ease !important;
+/* Common CTA Button Styles */
+.cta-btn {
+    display: block;
+    padding: 14px;
+    border-radius: 30px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
-.refer-btn.highlight {
-    box-shadow: 0 0 20px rgba(255, 102, 0, 0.6) !important;
-    transform: scale(1.05);
+.cta-btn:active {
+    transform: scale(0.97);
+}
+
+/* Unique Identity Gradients */
+.instant {
+    background: linear-gradient(135deg, #ff6600, #ff8533) !important;
+    color: white !important;
+}
+
+.signup {
+    background: linear-gradient(135deg, #007bff, #3399ff) !important;
+    color: white !important;
+}
+
+.referral {
+    background: linear-gradient(135deg, #00c853, #4caf50) !important;
+    color: white !important;
+}
+
+/* Icon Color Match (Selectors) */
+.offer-selector-item.active.instant-icon {
+    border-color: rgba(255, 102, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(255, 102, 0, 0.15);
+}
+.offer-selector-item.active.instant-icon i,
+.offer-selector-item.active.instant-icon span {
+    color: #ff6600 !important;
+}
+
+.offer-selector-item.active.signup-icon {
+    border-color: rgba(0, 123, 255, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.15);
+}
+.offer-selector-item.active.signup-icon i,
+.offer-selector-item.active.signup-icon span {
+    color: #007bff !important;
+}
+
+.offer-selector-item.active.referral-icon {
+    border-color: rgba(0, 200, 83, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 200, 83, 0.15);
+}
+.offer-selector-item.active.referral-icon i,
+.offer-selector-item.active.referral-icon span {
+    color: #00c853 !important;
 }
 
 .offer-content-display {
