@@ -195,7 +195,7 @@
             
             <div class="services-row" id="servicesRow">
                 <!-- Life Insurance -->
-                <div class="service-card">
+                <div class="service-card active">
                     <div class="service-image-container">
                         <img src="images/premium_life_insurance_netflix_1777539955013.png" alt="Life Insurance" class="service-image">
                     </div>
@@ -295,6 +295,7 @@
         const cards = document.querySelectorAll('.service-card');
 
         function updateActiveCard() {
+            if (!servicesRow) return;
             const rowRect = servicesRow.getBoundingClientRect();
             const rowCenter = rowRect.left + rowRect.width / 2;
 
@@ -324,6 +325,12 @@
         servicesRow.addEventListener('scroll', updateActiveCard);
         window.addEventListener('load', updateActiveCard);
         window.addEventListener('resize', updateActiveCard);
+
+        // Initial call
+        updateActiveCard();
+        // Force update after a short delay for layout calculation
+        setTimeout(updateActiveCard, 100);
+        setTimeout(updateActiveCard, 500);
     </script>
 </body>
 </html>
