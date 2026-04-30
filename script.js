@@ -421,6 +421,8 @@ document.addEventListener('DOMContentLoaded', () => {
         item.classList.add(index % 2 === 0 ? 'benefit-left' : 'benefit-right');
         item.style.transitionDelay = `${index * 0.1}s`;
         benefitObserver.observe(item);
+    });
+
     // 14. Why SFS Feature Animations
     const featureItems = document.querySelectorAll('.feature-item');
     const featureObserver = new IntersectionObserver((entries) => {
