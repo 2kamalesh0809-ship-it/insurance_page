@@ -468,36 +468,48 @@
     <footer class="footer section-padding">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col brand-col">
-                    <div class="logo"><img src="images/sfs_logo.jpg" alt="SFS Logo"><span>SFS</span></div>
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;"><span class="logo-text" style="font-family: 'Playfair Display', serif;">SFS</span>
+                    </div>
                     <p>Securing your life, health, and assets with premium insurance solutions tailored for the modern Indian family.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
-                <div class="footer-col">
+                <div class="footer-links">
                     <h4>Insurance</h4>
                     <ul>
-                        <li><a href="life-insurance.html">Life Insurance</a></li>
                         <li><a href="health-insurance.html">Health Insurance</a></li>
                         <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                        <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                        <li><a href="life-insurance.html">Life Insurance</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
+                <div class="footer-links">
                     <h4>Finance</h4>
                     <ul>
                         <li><a href="personal-loan.html">Personal Loan</a></li>
                         <li><a href="savings-pension.html">Savings & Pension</a></li>
+                        <li><a href="investment.html">Investment Plans</a></li>
                     </ul>
                 </div>
-                <div class="footer-col">
-                    <h4>Support</h4>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
                     <ul>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="claims.html">Claims</a></li>
-                        <li><a href="glossary.html">Knowledge Centre</a></li>
+                        <li><i class="fas fa-phone-alt"></i> +91 63825 60104</li>
+                        <li><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 3/82 Pillayar Koil Street, Porur, Chennai 600056</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 SFS Insurance. All Rights Reserved.</p>
+                <p>&copy; 2026 SFS Insurance. All Rights Reserved. IRDAI Registration No. 123456</p>
+                <div class="legal-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-service.html">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -534,7 +546,7 @@
             const whatsappUrl = `https://wa.me/916382560104?text=${encodedMessage}`;
             window.location.href = whatsappUrl;
         });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
