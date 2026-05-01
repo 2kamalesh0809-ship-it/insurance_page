@@ -3473,9 +3473,31 @@ img {
     color: #718096;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+    .reviews-slider {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        overflow-x: visible;
+        scroll-snap-type: none;
+        gap: 30px;
+        padding: 40px 0;
+    }
+
     .review-card {
-        min-width: 300px;
+        min-width: 0;
+        max-width: none;
+        height: 280px; /* Slightly taller for grid look */
+    }
+
+    .bottom-nav {
+        display: none !important;
+    }
+}
+
+@media (max-width: 991px) {
+    .review-card {
+        min-width: 85%;
+        max-width: 300px;
     }
 }
 
