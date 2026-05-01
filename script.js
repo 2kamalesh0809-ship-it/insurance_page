@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Add staggered delay if multiple items enter at once
                     setTimeout(() => {
                         entry.target.classList.add('show');
-                    }, index * 100);
+                    }, index * 60);
                 } else {
                     // Fallback for legacy elements using inline styles
                     entry.target.style.opacity = '1';
