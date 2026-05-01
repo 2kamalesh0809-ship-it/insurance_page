@@ -126,13 +126,27 @@
         @media (max-width: 768px) {
             .travel-hero {
                 height: auto !important;
-                min-height: auto !important;
+                min-height: 100vh !important; /* Keep it full screen if possible but allow growth */
                 overflow: visible !important;
                 padding: 0 !important;
+                display: block !important; /* Stack elements on mobile */
             }
 
             .travel-hero .container.hero-content {
-                padding: 90px 16px 60px !important;
+                padding: 140px 16px 80px !important; /* Increased top padding to clear header */
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem !important; /* Scale down heading for mobile */
+                line-height: 1.2 !important;
+            }
+
+            .hero-content p {
+                font-size: 1rem !important;
+                margin: 15px 0 !important;
             }
 
             .hero-content h1, 
@@ -143,7 +157,11 @@
 
             .hero-cta-wrapper .btn {
                 display: inline-block !important;
-                margin-top: 20px !important;
+                margin-top: 10px !important;
+            }
+
+            .hero-form-card {
+                margin-bottom: 40px !important; /* Space at bottom of hero */
             }
 
             .travel-submit-btn {
