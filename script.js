@@ -470,6 +470,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     staggeredItems.forEach(item => staggeredObserver.observe(item));
 
+    // 8. Reviews Auto-Slider
+    const reviewsSlider = document.querySelector('.reviews-slider');
+    if (reviewsSlider) {
+        let isPaused = false;
+        let slideInterval;
+
+        const startAutoSlide = () => {
+            slideInterval = setInterval(() => {
+                if (!isPaused) {
+                    const cardWidth = reviewsSlider.querySelector('.review-card').offsetWidth + 20;
+                    const maxScroll = reviewsSlider.scrollWidth - reviewsSlider.offsetWidth;
+                    
+                    if (reviewsSlider.scrollLeft >= maxScroll - 10) {
+                        reviewsSlider.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        reviewsSlider.scrollBy({ left: cardWidth, behavior: 'smooth' });
+                    }
+                }
+            }, 4000);
+        };
+
+        reviewsSlider.addEventListener('mouseenter', () => isPaused = true);
+        reviewsSlider.addEventListener('mouseleave', () => isPaused = false);
+        reviewsSlider.addEventListener('touchstart', () => isPaused = true);
+        reviewsSlider.addEventListener('touchend', () => {
+            setTimeout(() => isPaused = false, 2000);
+        });
+
+        startAutoSlide();
+    }
+
     // 6. Personal Loan EMI Calculator
     const calculateBtn = document.getElementById('calculateEMI');
     if (calculateBtn) {
