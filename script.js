@@ -27,24 +27,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Scroll Animations (Intersection Observer)
     const observerOptions = {
-        threshold: 0.1
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                // Add show class for elements using CSS animations
+                if (entry.target.classList.contains('animate-on-scroll') || entry.target.classList.contains('feature-item')) {
+                    // Add staggered delay if multiple items enter at once
+                    setTimeout(() => {
+                        entry.target.classList.add('show');
+                    }, index * 100);
+                } else {
+                    // Fallback for legacy elements using inline styles
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    // Apply initial styles and observe
-    const animElements = document.querySelectorAll('.feature-card, .plan-card, .testimonial-card, .why-us-text, .why-us-image, .service-card, .trust-stat');
+    // Apply initial styles and observe all animatable elements
+    const animElements = document.querySelectorAll('.feature-card, .plan-card, .testimonial-card, .why-us-text, .why-us-image, .service-card, .trust-stat, .animate-on-scroll, .feature-item');
     animElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'all 0.6s ease-out';
+        if (!el.classList.contains('animate-on-scroll') && !el.classList.contains('feature-item')) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+        }
         observer.observe(el);
     });
 
@@ -87,27 +100,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 6. Mobile Menu Toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const megaMenuContainer = document.querySelector('.mega-menu-container');
+    const navMenu = document.querySelector('.nav-menu');
     
-    if (mobileMenuBtn && megaMenuContainer) {
-        mobileMenuBtn.addEventListener('click', () => {
-            megaMenuContainer.classList.toggle('active');
+    if (mobileMenuBtn && navMenu) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            
             const icon = mobileMenuBtn.querySelector('i');
-            if (megaMenuContainer.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
             } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                icon.classList.replace('fa-times', 'fa-bars');
             }
         });
 
-        // Close menu on link click
-        megaMenuContainer.querySelectorAll('a').forEach(link => {
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // Close menu when clicking on a link
+        navMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                megaMenuContainer.classList.remove('active');
-                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
-                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                navMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
             });
         });
     }
@@ -510,46 +533,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 text.classList.toggle('collapsed');
                 btn.innerText = text.classList.contains('collapsed') ? "Read more" : "Show less";
             }
-        });
-    });
-
-    // 10. Global Popup Calculator Logic
-    const calcModal = document.getElementById('calcModal');
-    const closeCalc = document.getElementById('closeCalc');
-    
-    window.openPopup = function() {
-        if (calcModal) {
-            calcModal.classList.add('active');
-            document.body.classList.add('modal-open');
-        }
-    };
-
-    window.closePopup = function() {
-        if (calcModal) {
-            calcModal.classList.remove('active');
-            document.body.classList.remove('modal-open');
-        }
-    };
-
-    if (closeCalc) {
-        closeCalc.addEventListener('click', closePopup);
-    }
-
-    // Close on outside click
-    if (calcModal) {
-        calcModal.addEventListener('click', (e) => {
-            if (e.target === calcModal) {
-                closePopup();
-            }
-        });
-    }
-
-    // Update existing "Check Your Premium" buttons to use openPopup
-    const premiumBtns = document.querySelectorAll('a[href="#quote"]');
-    premiumBtns.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            openPopup();
         });
     });
 
