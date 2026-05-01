@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Personal Loan | SFS Insurance</title>
+    <meta name="description" content="Apply for instant personal loans with SFS. Quick approvals, low interest rates, and minimal documentation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .loan-hero {
+            position: relative;
+            background-image: url('images/hero_family_house_wide_final_1776775163384.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 100px 0 60px;
+            border-radius: 0 0 30px 30px;
+            overflow: hidden;
+        }
+
+        .loan-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(12, 54, 102, 0.9), rgba(12, 54, 102, 0.5));
+            backdrop-filter: blur(2px);
+        }
+
+        .loan-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .loan-tag {
+            background: #FF6A00;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .loan-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            line-height: 1.1;
+        }
+
+        .loan-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+
+        .calculator-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .calc-card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .calc-input-group {
+            margin-bottom: 25px;
+        }
+
+        .calc-input-group label {
+            display: block;
+            font-weight: 600;
+            color: #0c3666;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .calc-input-group input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .calc-input-group input:focus {
+            outline: none;
+            border-color: #FF6A00;
+            box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.1);
+        }
+
+        .calc-result {
+            background: #0c3666;
+            color: white;
+            padding: 40px;
+            border-radius: 24px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .emi-amount {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #FF6A00;
+            margin: 15px 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .benefit-card i {
+            font-size: 2rem;
+            color: #FF6A00;
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: #0c3666;
+        }
+
+        .application-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0c3666, #082a50);
+            color: white;
+        }
+
+        .glass-form-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 50px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 0;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group select option {
+            background: #0c3666;
+            color: white;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #FF6A00;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: #FF6A00;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .submit-btn:hover {
+            background: #e65f00;
+            transform: scale(1.02);
+        }
+
+        @media (max-width: 768px) {
+            .loan-hero h1 { font-size: 2.5rem; }
+            .calc-grid, .form-grid { grid-template-columns: 1fr; }
+            .form-group.full-width { grid-column: span 1; }
+            .glass-form-card { padding: 30px 20px; }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="top-header">
+            <div class="container top-header-content">
+                <div class="top-header-left">
+                    <a href="tel:+916382560104"><i class="fas fa-phone-alt"></i> Call Back</a>
+                </div>
+                <div class="top-header-right">
+                    <span class="divider" style="margin: 0 15px; color: #ddd;"></span>
+                    <a href="glossary.html">Info Centre</a>
+                </div>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <div class="navbar-container">
+                <div class="logo-section">
+                    <a href="index.html" class="logo">
+                        <img src="images/sfs_logo.jpg" alt="SFS Logo">
+                        <span class="logo-white">SFS</span>
+                    </a>
+                </div>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu mega-menu-container">
+                    <li class="mobile-menu-header" style="display: none;">
+                        <div class="logo">
+                            <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;">
+                            <span class="logo-text" style="font-family: 'Playfair Display', serif; color: white;">SFS</span>
+                        </div>
+                    </li>
+                    <li><a href="life-insurance.html">Life / Term Insurance</a></li>
+                    <li><a href="health-insurance.html">Health Insurance</a></li>
+                    <li><a href="travel-insurance.html">Travel Insurance</a></li>
+                    <li><a href="group-insurance.html">Group Insurance</a></li>
+                    <li><a href="savings-pension.html">Savings / Pension</a></li>
+                    <li><a href="personal-loan.html" class="active">Personal Loan</a></li>
+                    <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                    <li><a href="index.html#offers">Offers</a></li>
+                    <li><a href="agency-recruitment.html">Agency Recruitment</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="loan-hero">
+            <div class="container">
+                <div class="loan-tag">Instant Approvals</div>
+                <h1>Get Instant <br>Personal Loan</h1>
+                <p>Quick approvals, minimal documentation, and flexible repayment options tailored for your needs.</p>
+                <a href="#apply" class="btn btn-primary" style="padding: 15px 40px; font-size: 1.1rem;">Apply Now</a>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="benefits-section section-padding">
+            <div class="container">
+                <div class="section-header centered">
+                    <span class="subtitle">Advantages</span>
+                    <h2>Why Choose SFS Loans?</h2>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Instant Approval</h4>
+                        <p>Get your loan approved within minutes with our automated appraisal system.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-percentage"></i>
+                        <h4>Low Interest Rates</h4>
+                        <p>Starting at competitive rates to make your repayments stress-free.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h4>Flexible Repayment</h4>
+                        <p>Choose a tenure that fits your budget, ranging from 12 to 60 months.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-file-invoice"></i>
+                        <h4>Minimal Documentation</h4>
+                        <p>Paperless process. Just upload your KYC and income proof online.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h4>Quick Disbursal</h4>
+                        <p>Funds are transferred to your bank account within 24 hours of approval.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculator Section -->
+        <section class="calculator-section">
+            <div class="container">
+                <div class="calc-grid">
+                    <div class="calc-card">
+                        <h2 style="margin-bottom: 30px; color: #0c3666;">EMI Calculator</h2>
+                        <div class="calc-input-group">
+                            <label>Loan Amount (₹)</label>
+                            <input type="number" id="loanAmount" value="500000" step="10000">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Interest Rate (%)</label>
+                            <input type="number" id="interestRate" value="10.5" step="0.1">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Tenure (Months)</label>
+                            <input type="number" id="tenure" value="36">
+                        </div>
+                        <button class="btn btn-primary" id="calculateEMI" style="width: 100%;">Calculate EMI</button>
+                    </div>
+                    <div class="calc-result">
+                        <p style="text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Your Monthly EMI</p>
+                        <div class="emi-amount" id="emiDisplay">₹ 16,255</div>
+                        <p style="opacity: 0.8;">Total Interest Payable: <span id="totalInterest">₹ 85,180</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Form -->
+        <section id="apply" class="application-section">
+            <div class="container">
+                <div class="section-header centered" style="margin-bottom: 60px;">
+                    <span class="subtitle" style="color: #FF6A00;">Start Now</span>
+                    <h2 style="color: white;">Apply for Personal Loan</h2>
+                    <p style="color: rgba(255,255,255,0.7);">Fill in your details and our team will get in touch with you shortly.</p>
+                </div>
+                <div class="glass-form-card">
+                    <form id="loanForm">
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label>Full Name</label>
+                                <input type="text" id="fullName" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" id="phoneNumber" placeholder="+91 XXXXX XXXXX" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" id="email" placeholder="john@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Monthly Income (₹)</label>
+                                <input type="number" id="income" placeholder="50000" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Employment Type</label>
+                                <select id="employmentType" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="Salaried">Salaried</option>
+                                    <option value="Self-Employed">Self-Employed</option>
+                                    <option value="Business">Business</option>
+                                </select>
+                            </div>
+                            <div class="form-group full-width">
+                                <label>Requested Loan Amount (₹)</label>
+                                <input type="number" id="requestedAmount" placeholder="500000" required>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer section-padding">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="logo"><img src="images/sfs_logo.jpg" alt="SFS Logo"><span>SFS</span></div>
+                    <p>Securing your life, health, and assets with premium insurance solutions tailored for the modern Indian family.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Insurance</h4>
+                    <ul>
+                        <li><a href="life-insurance.html">Life Insurance</a></li>
+                        <li><a href="health-insurance.html">Health Insurance</a></li>
+                        <li><a href="motor-insurance.html">Motor Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Finance</h4>
+                    <ul>
+                        <li><a href="personal-loan.html">Personal Loan</a></li>
+                        <li><a href="savings-pension.html">Savings & Pension</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="claims.html">Claims</a></li>
+                        <li><a href="glossary.html">Knowledge Centre</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SFS Insurance. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Inline EMI Calculator Logic (also added to script.js but for immediate use here)
+        document.getElementById('calculateEMI')?.addEventListener('click', () => {
+            const P = parseFloat(document.getElementById('loanAmount').value);
+            const R = parseFloat(document.getElementById('interestRate').value) / 12 / 100;
+            const N = parseFloat(document.getElementById('tenure').value);
+
+            if (P && R && N) {
+                const emi = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
+                const totalPayment = emi * N;
+                const totalInterest = totalPayment - P;
+
+                document.getElementById('emiDisplay').innerText = '₹ ' + Math.round(emi).toLocaleString('en-IN');
+                document.getElementById('totalInterest').innerText = '₹ ' + Math.round(totalInterest).toLocaleString('en-IN');
+            }
+        });
+
+        // Form Submission logic
+        document.getElementById('loanForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phoneNumber').value;
+            const amount = document.getElementById('requestedAmount').value;
+            
+            const message = `Hi, I want to apply for a Personal Loan.\nName: ${name}\nPhone: ${phone}\nLoan Amount: ₹${amount}`;
+            const encodedMessage = encodeURIComponent(message);
+            
+            const whatsappUrl = `https://wa.me/916382560104?text=${encodedMessage}`;
+            window.location.href = whatsappUrl;
+        });
+    </script>
+</body>
+
+</html>

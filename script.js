@@ -469,5 +469,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
 
     staggeredItems.forEach(item => staggeredObserver.observe(item));
+
+    // 6. Personal Loan EMI Calculator
+    const calculateBtn = document.getElementById('calculateEMI');
+    if (calculateBtn) {
+        calculateBtn.addEventListener('click', () => {
+            const P = parseFloat(document.getElementById('loanAmount').value);
+            const R = parseFloat(document.getElementById('interestRate').value) / 12 / 100;
+            const N = parseFloat(document.getElementById('tenure').value);
+
+            if (P && R && N) {
+                const emi = (P * R * Math.pow(1 + R, N)) / (Math.pow(1 + R, N) - 1);
+                const totalPayment = emi * N;
+                const totalInterest = totalPayment - P;
+
+                const emiDisplay = document.getElementById('emiDisplay');
+                const interestDisplay = document.getElementById('totalInterest');
+
+                if (emiDisplay) emiDisplay.innerText = '₹ ' + Math.round(emi).toLocaleString('en-IN');
+                if (interestDisplay) interestDisplay.innerText = '₹ ' + Math.round(totalInterest).toLocaleString('en-IN');
+            }
+        });
+    }
+
+    // 7. Personal Loan Form Submission (WhatsApp Redirect)
+    const loanForm = document.getElementById('loanForm');
+    if (loanForm) {
+        loanForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('fullName')?.value;
+            const phone = document.getElementById('phoneNumber')?.value;
+            const amount = document.getElementById('requestedAmount')?.value;
+            
+            if (name && phone && amount) {
+                const message = `Hi, I want to apply for a Personal Loan.\nName: ${name}\nPhone: ${phone}\nLoan Amount: ₹${amount}`;
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappUrl = `https://wa.me/916382560104?text=${encodedMessage}`;
+                window.location.href = whatsappUrl;
+            }
+        });
+    }
 });
 
