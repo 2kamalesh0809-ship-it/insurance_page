@@ -1738,22 +1738,37 @@ header.active .main-nav {
 }
 
 .social-links a {
-    width: 32px;
-    height: 32px;
+    width: 40px;
+    height: 40px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     color: #ffffff;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-links a[href*="wa.me"] {
+    background: #25D366;
+}
+
+.social-links a[href*="instagram"] {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
 .social-links a:hover {
-    background: #ffffff;
-    color: #E85D04;
-    transform: translateY(-3px);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-links a[href*="wa.me"]:hover {
+    background: #128C7E;
+}
+
+.social-links a[href*="instagram"]:hover {
+    filter: brightness(1.1);
 }
 
 .footer-bottom {
