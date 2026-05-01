@@ -461,20 +461,40 @@
                 const tobacco = document.getElementById("tobacco").value;
                 const phone = document.getElementById("phone").value;
 
-                if (!name || !age || !gender || !phone) {
+                // 1. Validate inputs: All fields required
+                if (!name || !age || !gender || !tobacco || !phone) {
                     alert("Please fill all details");
                     return;
                 }
 
-                if (phone.length < 10) {
+                // Phone number must be valid (10 digits or with +91)
+                const phoneClean = phone.replace(/\D/g, '');
+                if (phoneClean.length < 10) {
                     alert("Please enter a valid phone number");
                     return;
                 }
 
-                const message = `Hello, I would like to get a Term Insurance quote:\n\nName: ${name}\nAge: ${age}\nGender: ${gender}\nTobacco User: ${tobacco}\nPhone: ${phone}`;
+                // 2. Construct WhatsApp message dynamically (STRICT FORMAT)
+                const message = `Hello, I need a Term Life Insurance Quote.
+
+Details:
+- Name: ${name}
+- Age: ${age}
+- Gender: ${gender.charAt(0).toUpperCase() + gender.slice(1)}
+- Tobacco User: ${tobacco.charAt(0).toUpperCase() + tobacco.slice(1)}
+- Phone: ${phone}
+
+Source:
+- Page: Term Life Insurance
+- Website: SFS Insurance`;
+
+                // 3. Encode the message
                 const encodedMessage = encodeURIComponent(message);
+                
+                // 4. Redirect URL
                 const whatsappURL = `https://wa.me/916382560104?text=${encodedMessage}`;
 
+                // 5. Open in new tab
                 window.open(whatsappURL, "_blank");
             });
         }
