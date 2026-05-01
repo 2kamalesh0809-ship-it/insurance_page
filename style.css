@@ -3219,8 +3219,9 @@ img {
     }
 }
 
-/* Apple-Style Floating Bottom Navigation */
+/* Mobile-Only Bottom Navigation */
 .bottom-nav {
+    display: none;
     position: fixed;
     bottom: 14px;
     left: 50%;
@@ -3232,7 +3233,6 @@ img {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-radius: 24px;
-    display: flex;
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -3314,9 +3314,9 @@ img {
     margin-top: 28px;
 }
 
-@media (min-width: 769px) {
+@media (max-width: 768px) {
     .bottom-nav {
-        display: none;
+        display: flex;
     }
 }
 
