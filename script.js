@@ -501,6 +501,18 @@ document.addEventListener('DOMContentLoaded', () => {
         startAutoSlide();
     }
 
+    // 9. Review "Read More" Toggle
+    const readMoreBtns = document.querySelectorAll('.read-more');
+    readMoreBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const text = btn.previousElementSibling;
+            if (text && text.classList.contains('review-text')) {
+                text.classList.toggle('collapsed');
+                btn.innerText = text.classList.contains('collapsed') ? "Read more" : "Show less";
+            }
+        });
+    });
+
     // 6. Personal Loan EMI Calculator
     const calculateBtn = document.getElementById('calculateEMI');
     if (calculateBtn) {

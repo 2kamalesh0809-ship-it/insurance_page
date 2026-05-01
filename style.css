@@ -3415,7 +3415,8 @@ img {
 .review-card {
     min-width: 85%;
     max-width: 300px;
-    height: 250px; /* Adjusted slightly for padding + footer */
+    min-height: 250px;
+    height: auto;
     flex: 0 0 auto;
     scroll-snap-align: center;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -3432,11 +3433,15 @@ img {
     font-size: 13px;
     line-height: 1.5;
     color: #4a5568;
+    transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.review-text.collapsed {
     display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    margin-bottom: 8px;
 }
 
 .read-more {
