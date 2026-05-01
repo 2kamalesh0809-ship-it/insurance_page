@@ -1772,12 +1772,20 @@ header.active .main-nav {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-links a[href*="wa.me"] {
+.social-links a[href*="wa.me"], 
+.social-links a .fa-whatsapp {
     background: #25D366;
 }
 
-.social-links a[href*="instagram"] {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+/* Specific fix for Instagram button colors in mobile menu and footer */
+.social-links a[href*="instagram"], 
+.social-links a .fa-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%) !important;
+}
+
+/* Force social link icons to be white and centered */
+.social-links a i {
+    color: #ffffff !important;
 }
 
 .social-links a:hover {
@@ -1789,8 +1797,40 @@ header.active .main-nav {
     background: #128C7E;
 }
 
-.social-links a[href*="instagram"]:hover {
-    filter: brightness(1.1);
+/* Mobile Menu Contact Info Vertical Alignment */
+.mobile-menu-footer .contact-info {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin-top: 20px !important;
+}
+
+.mobile-menu-footer .contact-info span {
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+}
+
+/* Dynamic labels for mobile menu contact info */
+.mobile-menu-footer .contact-info span:first-child::before {
+    content: "For Contacting";
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.mobile-menu-footer .contact-info span:last-child::before {
+    content: "For Mailing";
+    font-size: 10px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2px;
 }
 
 .footer-bottom {
