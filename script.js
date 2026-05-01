@@ -450,5 +450,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 5. Staggered Scroll Animations (Intersection Observer)
+    const staggeredItems = document.querySelectorAll('.animate-on-scroll');
+    const staggeredObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // Find all items in the section for index-based staggering
+                const index = Array.from(staggeredItems).indexOf(entry.target);
+                
+                setTimeout(() => {
+                    entry.target.classList.add('show');
+                }, index * 150);
+                
+                staggeredObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    staggeredItems.forEach(item => staggeredObserver.observe(item));
 });
 
