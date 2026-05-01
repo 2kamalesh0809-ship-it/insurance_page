@@ -513,6 +513,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // 10. Global Popup Calculator Logic
+    const calcModal = document.getElementById('calcModal');
+    const closeCalc = document.getElementById('closeCalc');
+    
+    window.openPopup = function() {
+        if (calcModal) {
+            calcModal.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+    };
+
+    window.closePopup = function() {
+        if (calcModal) {
+            calcModal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+    };
+
+    if (closeCalc) {
+        closeCalc.addEventListener('click', closePopup);
+    }
+
+    // Close on outside click
+    if (calcModal) {
+        calcModal.addEventListener('click', (e) => {
+            if (e.target === calcModal) {
+                closePopup();
+            }
+        });
+    }
+
+    // Update existing "Check Your Premium" buttons to use openPopup
+    const premiumBtns = document.querySelectorAll('a[href="#quote"]');
+    premiumBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openPopup();
+        });
+    });
+
     // 6. Personal Loan EMI Calculator
     const calculateBtn = document.getElementById('calculateEMI');
     if (calculateBtn) {
