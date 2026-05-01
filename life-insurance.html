@@ -353,10 +353,14 @@
                     <h3 style="color: #0c3666; font-size: 2rem; margin-bottom: 10px; text-align: center;">Term Premium Calculator</h3>
                     <p style="color: #64748b; margin-bottom: 30px; text-align: center;">Calculate your protection cost instantly</p>
                     <form id="calculator-form" class="premium-form">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" id="fullName" placeholder="Enter your full name" required>
+                        </div>
                         <div class="form-row">
                             <div class="form-group flex-1">
                                 <label>Age</label>
-                                <input type="number" placeholder="Eg: 25" required>
+                                <input type="number" id="age" placeholder="Eg: 25" required>
                             </div>
                             <div class="form-group flex-1">
                                 <label>Gender</label>
@@ -378,7 +382,7 @@
                             <label>Phone Number</label>
                             <input type="tel" id="phone" placeholder="+91 XXXXX XXXXX" required>
                         </div>
-                        <button type="submit" class="btn btn-block" style="background: #E85D04; color: white; width: 100%; padding: 14px; border-radius: 10px; font-weight: 600; font-size: 1.1rem; border: none; cursor: pointer;">Calculate Premium <i class="fas fa-chevron-right" style="margin-left: 8px;"></i></button>
+                        <button type="submit" id="lifeCalcBtn" class="btn btn-block" style="background: #E85D04; color: white; width: 100%; padding: 14px; border-radius: 10px; font-weight: 600; font-size: 1.1rem; border: none; cursor: pointer;">Calculate Premium <i class="fas fa-chevron-right" style="margin-left: 8px;"></i></button>
                     </form>
                 </div>
             </div>
@@ -391,38 +395,44 @@
                         <div class="logo">
                             <img src="images/sfs_logo.jpg" alt="SFS Logo" style="height: 35px; width: auto; border-radius: 6px; margin-right: 10px;"><span class="logo-text" style="font-family: 'Playfair Display', serif;">SFS</span>
                         </div>
-                        <p>India's most trusted premium health insurance provider. Protecting your health and your family's future with AI-powered care.</p>
+                        <p>Securing your life, health, and assets with premium insurance solutions tailored for the modern Indian family.</p>
                         <div class="social-links">
-                            
                             <a href="https://wa.me/916382560104" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
-                            
                             <a href="#"><i class="fab fa-instagram"></i></a>
                         </div>
-                    </div>
-                    <div class="footer-links">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="index.html#features">Our Features</a></li>
-                            <li><a href="index.html#plans">Insurance Plans</a></li>
-                            <li><a href="index.html#why-us">Why Choose Us</a></li>
-                            <li><a href="index.html#faq">Help & FAQ</a></li>
-                        </ul>
                     </div>
                     <div class="footer-links">
                         <h4>Insurance</h4>
                         <ul>
                             <li><a href="health-insurance.html">Health Insurance</a></li>
+                            <li><a href="motor-insurance.html">Motor Insurance</a></li>
                             <li><a href="travel-insurance.html">Travel Insurance</a></li>
-                            <li><a href="life-insurance.html">Life / Term</a></li>
-                            <li><a href="savings-pension.html">Savings / Pension</a></li>
+                            <li><a href="life-insurance.html">Life Insurance</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-links">
+                        <h4>Finance</h4>
+                        <ul>
+                            <li><a href="personal-loan.html">Personal Loan</a></li>
+                            <li><a href="savings-pension.html">Savings & Pension</a></li>
+                            <li><a href="investment.html">Investment Plans</a></li>
                         </ul>
                     </div>
                     <div class="footer-contact">
                         <h4>Contact Us</h4>
                         <ul>
-                            <li><i class="fas fa-phone-alt"></i> +91 63825 60104</li>
-                            <li><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</li>
-                            <li><i class="fas fa-map-marker-alt"></i> 3/82 Pillayar Koil Street, Porur, Chennai 600056</li>
+                            <li>
+                                <span class="contact-label">For Contacting</span>
+                                <a href="tel:+916382560104"><i class="fas fa-phone-alt"></i> +91 63825 60104</a>
+                            </li>
+                            <li>
+                                <span class="contact-label">For Mailing</span>
+                                <a href="mailto:sathvikinsuranceservice@gmail.com"><i class="fas fa-envelope"></i> sathvikinsuranceservice@gmail.com</a>
+                            </li>
+                            <li>
+                                <span class="contact-label">Our Office</span>
+                                <span><i class="fas fa-map-marker-alt"></i> 3/82 Pillayar Koil Street, Porur, Chennai 600056</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -438,6 +448,37 @@
     </main>
 
     <script src="script.js"></script>
+    <script>
+        // Specific handler for Life Insurance Calculator
+        const lifeCalcBtn = document.getElementById('lifeCalcBtn');
+        if (lifeCalcBtn) {
+            lifeCalcBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById("fullName").value;
+                const age = document.getElementById("age").value;
+                const gender = document.getElementById("gender").value;
+                const tobacco = document.getElementById("tobacco").value;
+                const phone = document.getElementById("phone").value;
+
+                if (!name || !age || !gender || !phone) {
+                    alert("Please fill all details");
+                    return;
+                }
+
+                if (phone.length < 10) {
+                    alert("Please enter a valid phone number");
+                    return;
+                }
+
+                const message = `Hello, I would like to get a Term Insurance quote:\n\nName: ${name}\nAge: ${age}\nGender: ${gender}\nTobacco User: ${tobacco}\nPhone: ${phone}`;
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappURL = `https://wa.me/916382560104?text=${encodedMessage}`;
+
+                window.open(whatsappURL, "_blank");
+            });
+        }
+    </script>
 </body>
 
 </html>

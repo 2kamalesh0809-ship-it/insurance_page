@@ -67,12 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
         quoteBtn.addEventListener('click', function(e) {
             e.preventDefault();
             
+            const name = document.getElementById("fullName").value;
             const age = document.getElementById("age").value;
             const gender = document.getElementById("gender").value;
             const city = document.getElementById("city").value;
             const phone = document.getElementById("phone").value;
 
-            if (!age || !gender || !city || !phone) {
+            if (!name || !age || !gender || !city || !phone) {
                 alert("Please fill all details");
                 return;
             }
@@ -83,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const message = `Hello, I would like to get an insurance quote:\n\nAge: ${age}\nGender: ${gender}\nCity: ${city}\nPhone: ${phone}`;
+            const message = `Hello, I would like to get an insurance quote:\n\nName: ${name}\nAge: ${age}\nGender: ${gender}\nCity: ${city}\nPhone: ${phone}`;
             const encodedMessage = encodeURIComponent(message);
             const whatsappURL = `https://wa.me/916382560104?text=${encodedMessage}`;
 
