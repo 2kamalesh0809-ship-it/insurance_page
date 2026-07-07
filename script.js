@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const message = `Hello, I would like to get an insurance quote:\n\nName: ${name}\nAge: ${age}\nGender: ${gender}\nCity: ${city}\nPhone: ${phone}`;
             const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/916382560104?text=${encodedMessage}`;
+            const whatsappURL = `https://wa.me/918870055667?text=${encodedMessage}`;
 
             window.open(whatsappURL, "_blank");
         });
@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const waMessage = `Hello, I want a health insurance quote.%0A%0AAge: ${age}%0AGender: ${gender}%0ACity: ${city}%0APhone: ${phone}`;
-            const waUrl = `https://wa.me/916382560104?text=${waMessage}`;
+            const waUrl = `https://wa.me/918870055667?text=${waMessage}`;
 
             window.open(waUrl, '_blank');
         });
@@ -572,7 +572,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (name && phone && amount) {
                 const message = `Hi, I want to apply for a Personal Loan.\nName: ${name}\nPhone: ${phone}\nLoan Amount: ₹${amount}`;
                 const encodedMessage = encodeURIComponent(message);
-                const whatsappUrl = `https://wa.me/916382560104?text=${encodedMessage}`;
+                const whatsappUrl = `https://wa.me/918870055667?text=${encodedMessage}`;
                 window.location.href = whatsappUrl;
             }
         });

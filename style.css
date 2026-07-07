@@ -1251,6 +1251,165 @@ header.active .main-nav {
     font-size: 1.25rem;
 }
 
+/* CEO Section Layout */
+.ceo-section {
+    background-color: #ffffff;
+    border-top: 1px solid rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.ceo-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.ceo-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ceo-content h2 {
+    font-size: 2.8rem;
+    color: var(--primary);
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.ceo-quote-box {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 4px solid var(--secondary);
+}
+
+.ceo-quote-box .quote-icon {
+    position: absolute;
+    top: -15px;
+    left: 0.5rem;
+    font-size: 3rem;
+    color: rgba(255, 122, 26, 0.08);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.ceo-text {
+    font-size: 1.15rem;
+    color: #475569;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.ceo-text:last-of-type {
+    margin-bottom: 0;
+}
+
+.ceo-signature {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.signature-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.signature-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.ceo-image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.ceo-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 12px;
+    box-shadow: 0 15px 40px rgba(10, 25, 47, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    max-width: 300px; /* Reduced to medium/small size as requested */
+    width: 100%;
+    transition: var(--transition);
+}
+
+.ceo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 60px rgba(10, 25, 47, 0.12);
+}
+
+.ceo-img {
+    width: 100%;
+    border-radius: 18px;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4 / 5;
+}
+
+.ceo-badge {
+    position: absolute;
+    bottom: -12px;
+    right: 20px;
+    background: var(--primary);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 8px 16px rgba(10, 25, 47, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+}
+
+.ceo-badge i {
+    color: var(--secondary);
+}
+
+@media (max-width: 992px) {
+    .ceo-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        text-align: center;
+    }
+    
+    .ceo-content {
+        align-items: center;
+    }
+    
+    .ceo-quote-box {
+        padding-left: 0;
+        border-left: none;
+    }
+    
+    .ceo-quote-box .quote-icon {
+        display: none;
+    }
+    
+    .ceo-card {
+        margin: 0 auto;
+    }
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
